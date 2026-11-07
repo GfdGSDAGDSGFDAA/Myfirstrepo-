@@ -9,10 +9,10 @@
     "still": "remotion still src/index.ts EduPreview"
   },
   "dependencies": {
-    "@fontsource/ibm-plex-mono": "^5.3.0",
-    "@fontsource/inter-tight": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0",
+    "@fontsource/inter-tight": "5.3.0",
     "@remotion/cli": "4.0.541",
-    "@remotion/fonts": "^4.0.541",
+    "@remotion/fonts": "4.0.541",
     "@remotion/google-fonts": "4.0.541",
     "@remotion/noise": "4.0.541",
     "@remotion/paths": "4.0.541",
