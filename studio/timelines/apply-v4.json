@@ -1,0 +1,581 @@
+{
+ "fps": 60,
+ "duration": 36.0,
+ "voice": "af_heart",
+ "engine": "kokoro-v1.0 + polish",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Time off, denied. Closing Saturday. Thirteen twenty-five an hour.",
+   "start": 0.2,
+   "end": 3.77,
+   "words": [
+    {
+     "w": "Time",
+     "start": 0.2,
+     "end": 0.52
+    },
+    {
+     "w": "off,",
+     "start": 0.52,
+     "end": 0.84
+    },
+    {
+     "w": "denied.",
+     "start": 0.84,
+     "end": 1.32
+    },
+    {
+     "w": "Closing",
+     "start": 1.32,
+     "end": 1.8
+    },
+    {
+     "w": "Saturday.",
+     "start": 1.8,
+     "end": 2.52
+    },
+    {
+     "w": "Thirteen",
+     "start": 2.52,
+     "end": 2.88
+    },
+    {
+     "w": "twenty-five",
+     "start": 2.88,
+     "end": 3.24
+    },
+    {
+     "w": "an",
+     "start": 3.24,
+     "end": 3.4
+    },
+    {
+     "w": "hour.",
+     "start": 3.4,
+     "end": 3.77
+    }
+   ],
+   "asr": "Time off denied, closing Saturday, 1325 an hour."
+  },
+  {
+   "id": "idea",
+   "text": "So you design a hoodie on your break, and your friends call it unrealistic.",
+   "start": 3.97,
+   "end": 7.642,
+   "words": [
+    {
+     "w": "So",
+     "start": 3.97,
+     "end": 4.21
+    },
+    {
+     "w": "you",
+     "start": 4.21,
+     "end": 4.29
+    },
+    {
+     "w": "design",
+     "start": 4.29,
+     "end": 4.61
+    },
+    {
+     "w": "a",
+     "start": 4.61,
+     "end": 4.69
+    },
+    {
+     "w": "hoodie",
+     "start": 4.69,
+     "end": 5.09
+    },
+    {
+     "w": "on",
+     "start": 5.09,
+     "end": 5.17
+    },
+    {
+     "w": "your",
+     "start": 5.17,
+     "end": 5.25
+    },
+    {
+     "w": "break,",
+     "start": 5.25,
+     "end": 5.73
+    },
+    {
+     "w": "and",
+     "start": 5.73,
+     "end": 5.89
+    },
+    {
+     "w": "your",
+     "start": 5.89,
+     "end": 6.05
+    },
+    {
+     "w": "friends",
+     "start": 6.05,
+     "end": 6.37
+    },
+    {
+     "w": "call",
+     "start": 6.37,
+     "end": 6.53
+    },
+    {
+     "w": "it",
+     "start": 6.53,
+     "end": 6.69
+    },
+    {
+     "w": "unrealistic.",
+     "start": 6.69,
+     "end": 7.642
+    }
+   ],
+   "asr": "So you design a hoodie on your break, and your friends call it unrealistic."
+  },
+  {
+   "id": "flop",
+   "text": "Your first store flops. Sixty dollars, gone. That's four and a half closing hours. Your second one flops too.",
+   "start": 7.822,
+   "end": 13.747,
+   "words": [
+    {
+     "w": "Your",
+     "start": 7.822,
+     "end": 8.062
+    },
+    {
+     "w": "first",
+     "start": 8.062,
+     "end": 8.302
+    },
+    {
+     "w": "store",
+     "start": 8.302,
+     "end": 8.542
+    },
+    {
+     "w": "flops.",
+     "start": 8.542,
+     "end": 9.302
+    },
+    {
+     "w": "Sixty",
+     "start": 9.302,
+     "end": 9.682
+    },
+    {
+     "w": "dollars,",
+     "start": 9.682,
+     "end": 10.062
+    },
+    {
+     "w": "gone.",
+     "start": 10.062,
+     "end": 10.542
+    },
+    {
+     "w": "That's",
+     "start": 10.542,
+     "end": 10.782
+    },
+    {
+     "w": "four",
+     "start": 10.782,
+     "end": 10.942
+    },
+    {
+     "w": "and",
+     "start": 10.942,
+     "end": 11.102
+    },
+    {
+     "w": "a",
+     "start": 11.102,
+     "end": 11.182
+    },
+    {
+     "w": "half",
+     "start": 11.182,
+     "end": 11.422
+    },
+    {
+     "w": "closing",
+     "start": 11.422,
+     "end": 11.822
+    },
+    {
+     "w": "hours.",
+     "start": 11.822,
+     "end": 12.382
+    },
+    {
+     "w": "Your",
+     "start": 12.382,
+     "end": 12.542
+    },
+    {
+     "w": "second",
+     "start": 12.542,
+     "end": 12.862
+    },
+    {
+     "w": "one",
+     "start": 12.862,
+     "end": 13.022
+    },
+    {
+     "w": "flops",
+     "start": 13.022,
+     "end": 13.422
+    },
+    {
+     "w": "too.",
+     "start": 13.422,
+     "end": 13.747
+    }
+   ],
+   "asr": "Your first store flops.$60 gone. That's four and a half closing hours. Your second one flops too."
+  },
+  {
+   "id": "how",
+   "text": "So the third time, you sell it before it exists. You post the mockup three nights in a row. The third one hits. Forty people ask. Fourteen pay. You print fourteen.",
+   "start": 13.947,
+   "end": 22.533,
+   "words": [
+    {
+     "w": "So",
+     "start": 13.947,
+     "end": 14.187
+    },
+    {
+     "w": "the",
+     "start": 14.187,
+     "end": 14.347
+    },
+    {
+     "w": "third",
+     "start": 14.347,
+     "end": 14.587
+    },
+    {
+     "w": "time,",
+     "start": 14.587,
+     "end": 14.827
+    },
+    {
+     "w": "you",
+     "start": 14.827,
+     "end": 14.987
+    },
+    {
+     "w": "sell",
+     "start": 14.987,
+     "end": 15.227
+    },
+    {
+     "w": "it",
+     "start": 15.227,
+     "end": 15.387
+    },
+    {
+     "w": "before",
+     "start": 15.387,
+     "end": 15.547
+    },
+    {
+     "w": "it",
+     "start": 15.547,
+     "end": 15.707
+    },
+    {
+     "w": "exists.",
+     "start": 15.707,
+     "end": 16.347
+    },
+    {
+     "w": "You",
+     "start": 16.347,
+     "end": 16.507
+    },
+    {
+     "w": "post",
+     "start": 16.507,
+     "end": 16.667
+    },
+    {
+     "w": "the",
+     "start": 16.667,
+     "end": 16.827
+    },
+    {
+     "w": "mockup",
+     "start": 16.827,
+     "end": 17.307
+    },
+    {
+     "w": "three",
+     "start": 17.307,
+     "end": 17.547
+    },
+    {
+     "w": "nights",
+     "start": 17.547,
+     "end": 17.787
+    },
+    {
+     "w": "in",
+     "start": 17.787,
+     "end": 17.947
+    },
+    {
+     "w": "a",
+     "start": 17.947,
+     "end": 18.027
+    },
+    {
+     "w": "row.",
+     "start": 18.027,
+     "end": 18.427
+    },
+    {
+     "w": "The",
+     "start": 18.427,
+     "end": 18.587
+    },
+    {
+     "w": "third",
+     "start": 18.587,
+     "end": 18.827
+    },
+    {
+     "w": "one",
+     "start": 18.827,
+     "end": 19.067
+    },
+    {
+     "w": "hits.",
+     "start": 19.067,
+     "end": 19.507
+    },
+    {
+     "w": "Forty",
+     "start": 19.507,
+     "end": 19.947
+    },
+    {
+     "w": "people",
+     "start": 19.947,
+     "end": 20.267
+    },
+    {
+     "w": "ask.",
+     "start": 20.267,
+     "end": 20.747
+    },
+    {
+     "w": "Fourteen",
+     "start": 20.747,
+     "end": 21.227
+    },
+    {
+     "w": "pay.",
+     "start": 21.227,
+     "end": 21.627
+    },
+    {
+     "w": "You",
+     "start": 21.627,
+     "end": 21.707
+    },
+    {
+     "w": "print",
+     "start": 21.707,
+     "end": 22.12
+    },
+    {
+     "w": "fourteen.",
+     "start": 22.12,
+     "end": 22.533
+    }
+   ],
+   "asr": "So the third time you sell it before it exists. You post the mock-up three nights in a row. The third one hits. 40 people ask. 14 pay. You print 14."
+  },
+  {
+   "id": "math",
+   "text": "After costs, that's two hundred thirty-eight dollars, and you never risked a cent.",
+   "start": 22.733,
+   "end": 26.444,
+   "words": [
+    {
+     "w": "After",
+     "start": 22.733,
+     "end": 23.133
+    },
+    {
+     "w": "costs,",
+     "start": 23.133,
+     "end": 23.533
+    },
+    {
+     "w": "that's",
+     "start": 23.533,
+     "end": 24.373
+    },
+    {
+     "w": "two",
+     "start": 24.373,
+     "end": 24.793
+    },
+    {
+     "w": "hundred",
+     "start": 24.793,
+     "end": 25.003
+    },
+    {
+     "w": "thirty-eight",
+     "start": 25.003,
+     "end": 25.108
+    },
+    {
+     "w": "dollars,",
+     "start": 25.108,
+     "end": 25.213
+    },
+    {
+     "w": "and",
+     "start": 25.213,
+     "end": 25.293
+    },
+    {
+     "w": "you",
+     "start": 25.293,
+     "end": 25.453
+    },
+    {
+     "w": "never",
+     "start": 25.453,
+     "end": 25.613
+    },
+    {
+     "w": "risked",
+     "start": 25.613,
+     "end": 26.013
+    },
+    {
+     "w": "a",
+     "start": 26.013,
+     "end": 26.093
+    },
+    {
+     "w": "cent.",
+     "start": 26.093,
+     "end": 26.444
+    }
+   ],
+   "asr": "After costs, that's$238, and you never risked a cent."
+  },
+  {
+   "id": "friend",
+   "text": "And the friend who said unrealistic? Wants one for free.",
+   "start": 26.664,
+   "end": 29.525,
+   "words": [
+    {
+     "w": "And",
+     "start": 26.664,
+     "end": 26.904
+    },
+    {
+     "w": "the",
+     "start": 26.904,
+     "end": 26.984
+    },
+    {
+     "w": "friend",
+     "start": 26.984,
+     "end": 27.224
+    },
+    {
+     "w": "who",
+     "start": 27.224,
+     "end": 27.384
+    },
+    {
+     "w": "said",
+     "start": 27.384,
+     "end": 27.624
+    },
+    {
+     "w": "unrealistic?",
+     "start": 27.624,
+     "end": 28.504
+    },
+    {
+     "w": "Wants",
+     "start": 28.504,
+     "end": 28.824
+    },
+    {
+     "w": "one",
+     "start": 28.824,
+     "end": 28.984
+    },
+    {
+     "w": "for",
+     "start": 28.984,
+     "end": 29.064
+    },
+    {
+     "w": "free.",
+     "start": 29.064,
+     "end": 29.525
+    }
+   ],
+   "asr": "And the friend who said unrealistic wants one for free."
+  },
+  {
+   "id": "end",
+   "text": "Still closing Saturday. Just not forever.",
+   "start": 29.745,
+   "end": 32.038,
+   "words": [
+    {
+     "w": "Still",
+     "start": 29.745,
+     "end": 30.145
+    },
+    {
+     "w": "closing",
+     "start": 30.145,
+     "end": 30.545
+    },
+    {
+     "w": "Saturday.",
+     "start": 30.545,
+     "end": 31.185
+    },
+    {
+     "w": "Just",
+     "start": 31.185,
+     "end": 31.345
+    },
+    {
+     "w": "not",
+     "start": 31.345,
+     "end": 31.505
+    },
+    {
+     "w": "forever.",
+     "start": 31.505,
+     "end": 32.038
+    }
+   ],
+   "asr": "Still closing Saturday, just not forever."
+  }
+ ]
+}

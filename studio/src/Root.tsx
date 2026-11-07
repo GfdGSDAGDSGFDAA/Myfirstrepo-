@@ -7,6 +7,7 @@ import {DoorsV3, DOORS_V3_FRAMES} from './scenes/doors-v3/DoorsV3';
 import {ApplyV1, APPLY_V1_FRAMES} from './scenes/apply-v1/ApplyV1';
 import {ApplyV2, APPLY_V2_FRAMES} from './scenes/apply-v2/ApplyV2';
 import {ApplyV3, APPLY_V3_FRAMES} from './scenes/apply-v3/ApplyV3';
+import {ApplyV4, APPLY_V4_FRAMES} from './scenes/apply-v4/ApplyV4';
 
 const handle = delayRender('fonts');
 fontsReady.then(() => continueRender(handle));
@@ -36,6 +37,11 @@ export const Root: React.FC = () => (
     <Composition id="ApplyV3" component={ApplyV3} durationInFrames={APPLY_V3_FRAMES}
       fps={60} width={1080} height={1920} defaultProps={{withMusic: true}} />
     <Composition id="ApplyV3Clean" component={ApplyV3} durationInFrames={APPLY_V3_FRAMES}
+      fps={60} width={1080} height={1920} defaultProps={{withMusic: false}} />
+    {/* Pathform #2 v4 (panel round 2): shift-hours losses, honest funnel + receipt, group-chat payoff, lock-screen loop. ApplyV4 = with song (REVIEW ONLY). */}
+    <Composition id="ApplyV4" component={ApplyV4} durationInFrames={APPLY_V4_FRAMES}
+      fps={60} width={1080} height={1920} defaultProps={{withMusic: true}} />
+    <Composition id="ApplyV4Clean" component={ApplyV4} durationInFrames={APPLY_V4_FRAMES}
       fps={60} width={1080} height={1920} defaultProps={{withMusic: false}} />
   </>
 );
