@@ -41,3 +41,5 @@ bash pipeline/setup_models.sh models
 | 7.1–11.1 s | "College is one door. It was never the only one." | The COLLEGE label appears. Its light settles to match the others. All doors swell together on "only one". The hero turns toward the side doors. |
 
 > **New here? Read `docs/HANDOFF.md` first.**
+
+> PC setup: `docs/PC_SETUP.md`  |  Obsidian vault: `Pathform-Vault/`
