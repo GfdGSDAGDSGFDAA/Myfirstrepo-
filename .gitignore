@@ -2,3 +2,4 @@ models/
 .venv/
 __pycache__/
 studio/public/audio/*/music-preview-only.wav
+/*.mp4
