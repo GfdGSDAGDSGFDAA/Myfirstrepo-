@@ -273,15 +273,17 @@ export const Hallway3: React.FC<{t: number; cam: Cam; showHero: boolean}> = ({t,
     if (a <= 0.01) return null;
     const top = P([d.side * W, FLOOR - DH, d.z + DW / 2]);
     if (top.d < 0.6 || (top.d > 8.5 && !isHero)) return null;
-    const half = d.label!.length * 14.5;
-    const x = Math.max(36 + half, Math.min(1044 - half, isHero && top.d > 6 ? Math.max(top.x, 640 + half) : top.x));
+    const text = `${d.item + 1} · ${d.label}`;
+    const half = text.length * 14.5;
+    if (isHero && top.d > 9) return null; // far away it would sit on the college arch; the caption names it anyway
+    const x = isHero ? 1044 - half : Math.max(36 + half, Math.min(1044 - half, top.x));
     const y = top.y - 34;
     if (Math.abs(x - 540) < 90 && !isHero) return null;
     return (
       <g key={`l${i}`} opacity={Math.min(1, a)}>
         <line x1={top.x} y1={top.y - 8} x2={top.x} y2={y + 12} stroke={s.fg} strokeWidth={2} opacity={0.8} />
         <text x={x} y={y} textAnchor="middle" fontFamily={s.fontMono} fontSize={42}
-          fontWeight={500} letterSpacing="0.08em" fill={s.fg} stroke={s.bg} strokeWidth={10} paintOrder="stroke">{d.label}</text>
+          fontWeight={500} letterSpacing="0.08em" fill={s.fg} stroke={s.bg} strokeWidth={10} paintOrder="stroke">{text}</text>
       </g>
     );
   });

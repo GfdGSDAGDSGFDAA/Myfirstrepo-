@@ -76,6 +76,25 @@ export const DoorsV3: React.FC<{withMusic?: boolean}> = ({withMusic = true}) => 
 
       <LineCaptions t={t} chunks={CHUNKS} y={300} style={s} hidden={t > T.end - 0.12} />
 
+      {/* hook overlay: gives people a reason to send it */}
+      {t < 3.9 && (
+        <div style={{position: 'absolute', top: 205, left: 24, right: 24, textAlign: 'center', fontFamily: s.fontDisplay, whiteSpace: 'nowrap',
+          fontSize: 31, fontWeight: 500, color: 'rgba(244,243,239,0.62)', letterSpacing: '-0.01em',
+          opacity: prog(t, 0, 0.25, ease.out) * (1 - prog(t, 3.5, 3.9, ease.in))}}>
+          for the kid who gets asked “so what college?” every Thanksgiving
+        </div>
+      )}
+      {/* comment prompt on the last line */}
+      {t > T.hallwayQ + 0.25 && (
+        <div style={{position: 'absolute', top: 420, left: 0, right: 0, textAlign: 'center', fontFamily: s.fontMono,
+          fontSize: 36, fontWeight: 500, letterSpacing: '0.1em', color: s.fg,
+          opacity: prog(t, T.hallwayQ + 0.25, T.hallwayQ + 0.55, ease.out),
+          transform: `translateY(${(1 - prog(t, T.hallwayQ + 0.25, T.hallwayQ + 0.55, ease.out)) * 14}px)`,
+          textShadow: '0 0 14px rgba(255,255,255,0.35)'}}>
+          WHICH DOOR ARE YOU? 1–5
+        </div>
+      )}
+
       <AbsoluteFill style={{
         opacity: s.grain, mixBlendMode: 'screen',
         backgroundImage: `url(${staticFile('grain.png')})`, backgroundRepeat: 'repeat',

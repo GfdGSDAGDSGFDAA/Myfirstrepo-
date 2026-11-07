@@ -26,3 +26,5 @@ Status: **P** = provisional (awaiting owner review), **A** = accepted, **R** = r
 | 20 | Bedroom stats show honest progress (DAY 1 · 14 → DAY 120 · 12.4K) | A (owner) | |
 | 21 | Added "You don't even have to know what you want yet." | A (owner) | Most shareable line per testers (14yo would send) |
 | 22 | Viewer simulation (3 personas) is part of QA before delivery | A (owner) | Directional, not real data |
+| 23 | Hero walks into CLOTHING BRAND door (testers trusted it more); doors numbered 1–5 + "WHICH DOOR ARE YOU? 1–5" prompt on last line | A (owner) | |
+| 24 | Hook overlay: "for the kid who gets asked “so what college?” every Thanksgiving" (0–3.9 s) | A (owner) | Post before Nov 26 |
