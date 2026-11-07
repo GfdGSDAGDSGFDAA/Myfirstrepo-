@@ -21,7 +21,8 @@ for (const [i, ts] of times.entries()) {
 await browser.close({silent: true});
 const cols = Math.min(6, files.length);
 const rows = Math.ceil(files.length / cols);
-execFileSync('ffmpeg', ['-v', 'error', '-y', '-framerate', '1', '-i', path.join(dir, '%03d.png'),
-  '-vf', `drawtext=text='%{n}':x=8:y=8:fontsize=22:fontcolor=red,tile=${cols}x${rows}:padding=4`, '-frames:v', '1', out]);
+// explicit inputs + xstack-free tiling: label each still, then tile all of them (nb_frames = count, so nothing is dropped)
+execFileSync('ffmpeg', ['-v', 'error', '-y', '-framerate', '1', '-start_number', '0', '-i', path.join(dir, '%03d.png'),
+  '-vf', `drawtext=text='%{n}':x=8:y=8:fontsize=22:fontcolor=red,tile=${cols}x${rows}:padding=4:nb_frames=${files.length}`, '-frames:v', '1', out]);
 fs.rmSync(dir, {recursive: true});
 console.log('wrote', out, times.map((t, i) => `${i}=${t}s`).join(' '));

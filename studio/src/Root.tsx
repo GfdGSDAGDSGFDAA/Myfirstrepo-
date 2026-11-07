@@ -5,6 +5,7 @@ import {EduPreview, EDU_PREVIEW_FRAMES} from './scenes/edu-preview/EduPreview';
 import {DoorsV2, DOORS_V2_FRAMES} from './scenes/doors-v2/DoorsV2';
 import {DoorsV3, DOORS_V3_FRAMES} from './scenes/doors-v3/DoorsV3';
 import {ApplyV1, APPLY_V1_FRAMES} from './scenes/apply-v1/ApplyV1';
+import {ApplyV2, APPLY_V2_FRAMES} from './scenes/apply-v2/ApplyV2';
 
 const handle = delayRender('fonts');
 fontsReady.then(() => continueRender(handle));
@@ -24,6 +25,11 @@ export const Root: React.FC = () => (
       fps={60} width={1080} height={1920} defaultProps={{withMusic: false}} />
     {/* Pathform video #2. No song yet: the owner sends one after the first cut. Post the Clean export. */}
     <Composition id="ApplyV1Clean" component={ApplyV1} durationInFrames={APPLY_V1_FRAMES}
+      fps={60} width={1080} height={1920} defaultProps={{withMusic: false}} />
+    {/* Pathform #2 v2. ApplyV2 = with "Disparate Youth" (REVIEW ONLY, not ours to post). Post ApplyV2Clean + add the sound in TikTok. */}
+    <Composition id="ApplyV2" component={ApplyV2} durationInFrames={APPLY_V2_FRAMES}
+      fps={60} width={1080} height={1920} defaultProps={{withMusic: true}} />
+    <Composition id="ApplyV2Clean" component={ApplyV2} durationInFrames={APPLY_V2_FRAMES}
       fps={60} width={1080} height={1920} defaultProps={{withMusic: false}} />
   </>
 );

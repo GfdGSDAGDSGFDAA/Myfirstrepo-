@@ -1,0 +1,19 @@
+{
+  "title": "Apply v2 — either way (loops)",
+  "music": "Santigold - Disparate Youth (TikTok sound, starts at 'Don't look ahead'): bar = 1.5785 s, lift at 23.75 s",
+  "voice": "af_heart",
+  "speed": 1.1,
+  "fps": 60,
+  "totalDuration": 40.0,
+  "sentencePause": 0.14,
+  "clausePause": 0.06,
+  "sections": [
+    {"id": "hook", "speed": 1.1, "pauseAfter": 0.25, "text": "People will call your business idea unrealistic, then apply to a company that started as somebody else's idea."},
+    {"id": "plan", "pauseAfter": 0.2, "text": "Since you were a kid it's been one plan. Good grades, college, get hired, climb. Nobody asks what you want to build."},
+    {"id": "opinions", "pauseAfter": 0.2, "text": "Start something and suddenly everyone's an expert. Too risky. Be realistic. Get a real job."},
+    {"id": "flop", "pauseAfter": 0.22, "text": "And yeah, your first idea might flop. So might your second."},
+    {"id": "safe", "pauseAfter": 0.22, "text": "But the safe route isn't safe either. Someone else sets your hours, your pay, and when you get a day off."},
+    {"id": "story", "pauseAfter": 0.25, "text": "Then one day the people who laughed are replying to your story, asking how you started."},
+    {"id": "loop", "pauseAfter": 0.0, "text": "So start anyway. Because either way,"}
+  ]
+}

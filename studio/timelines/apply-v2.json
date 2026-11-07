@@ -1,0 +1,616 @@
+{
+ "fps": 60,
+ "duration": 40.0,
+ "voice": "af_heart",
+ "engine": "kokoro-v1.0 + polish",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "People will call your business idea unrealistic, then apply to a company that started as somebody else's idea.",
+   "start": 0.2,
+   "end": 6.54,
+   "words": [
+    {
+     "w": "People",
+     "start": 0.2,
+     "end": 0.6
+    },
+    {
+     "w": "will",
+     "start": 0.6,
+     "end": 0.76
+    },
+    {
+     "w": "call",
+     "start": 0.76,
+     "end": 1.0
+    },
+    {
+     "w": "your",
+     "start": 1.0,
+     "end": 1.16
+    },
+    {
+     "w": "business",
+     "start": 1.16,
+     "end": 1.56
+    },
+    {
+     "w": "idea",
+     "start": 1.56,
+     "end": 2.12
+    },
+    {
+     "w": "unrealistic,",
+     "start": 2.12,
+     "end": 3.16
+    },
+    {
+     "w": "then",
+     "start": 3.16,
+     "end": 3.4
+    },
+    {
+     "w": "apply",
+     "start": 3.4,
+     "end": 3.72
+    },
+    {
+     "w": "to",
+     "start": 3.72,
+     "end": 3.88
+    },
+    {
+     "w": "a",
+     "start": 3.88,
+     "end": 3.96
+    },
+    {
+     "w": "company",
+     "start": 3.96,
+     "end": 4.44
+    },
+    {
+     "w": "that",
+     "start": 4.44,
+     "end": 4.6
+    },
+    {
+     "w": "started",
+     "start": 4.6,
+     "end": 5.0
+    },
+    {
+     "w": "as",
+     "start": 5.0,
+     "end": 5.24
+    },
+    {
+     "w": "somebody",
+     "start": 5.24,
+     "end": 5.64
+    },
+    {
+     "w": "else's",
+     "start": 5.64,
+     "end": 6.12
+    },
+    {
+     "w": "idea.",
+     "start": 6.12,
+     "end": 6.54
+    }
+   ],
+   "asr": "People will call your business idea unrealistic, then apply to a company that started as somebody else's idea."
+  },
+  {
+   "id": "plan",
+   "text": "Since you were a kid it's been one plan. Good grades, college, get hired, climb. Nobody asks what you want to build.",
+   "start": 6.79,
+   "end": 12.756,
+   "words": [
+    {
+     "w": "Since",
+     "start": 6.79,
+     "end": 7.11
+    },
+    {
+     "w": "you",
+     "start": 7.11,
+     "end": 7.19
+    },
+    {
+     "w": "were",
+     "start": 7.19,
+     "end": 7.27
+    },
+    {
+     "w": "a",
+     "start": 7.27,
+     "end": 7.43
+    },
+    {
+     "w": "kid",
+     "start": 7.43,
+     "end": 7.67
+    },
+    {
+     "w": "it's",
+     "start": 7.67,
+     "end": 7.91
+    },
+    {
+     "w": "been",
+     "start": 7.91,
+     "end": 8.07
+    },
+    {
+     "w": "one",
+     "start": 8.07,
+     "end": 8.31
+    },
+    {
+     "w": "plan.",
+     "start": 8.31,
+     "end": 8.79
+    },
+    {
+     "w": "Good",
+     "start": 8.79,
+     "end": 8.95
+    },
+    {
+     "w": "grades,",
+     "start": 8.95,
+     "end": 9.43
+    },
+    {
+     "w": "college,",
+     "start": 9.43,
+     "end": 9.91
+    },
+    {
+     "w": "get",
+     "start": 9.91,
+     "end": 10.07
+    },
+    {
+     "w": "hired,",
+     "start": 10.07,
+     "end": 10.55
+    },
+    {
+     "w": "climb.",
+     "start": 10.55,
+     "end": 11.03
+    },
+    {
+     "w": "Nobody",
+     "start": 11.03,
+     "end": 11.43
+    },
+    {
+     "w": "asks",
+     "start": 11.43,
+     "end": 11.83
+    },
+    {
+     "w": "what",
+     "start": 11.83,
+     "end": 11.99
+    },
+    {
+     "w": "you",
+     "start": 11.99,
+     "end": 12.07
+    },
+    {
+     "w": "want",
+     "start": 12.07,
+     "end": 12.23
+    },
+    {
+     "w": "to",
+     "start": 12.23,
+     "end": 12.31
+    },
+    {
+     "w": "build.",
+     "start": 12.31,
+     "end": 12.756
+    }
+   ],
+   "asr": "Since you were a kid it's been one plan. Good grades, college, get hired, climb. Nobody asks what you want to build."
+  },
+  {
+   "id": "opinions",
+   "text": "Start something and suddenly everyone's an expert. Too risky. Be realistic. Get a real job.",
+   "start": 12.956,
+   "end": 18.236,
+   "words": [
+    {
+     "w": "Start",
+     "start": 12.956,
+     "end": 13.356
+    },
+    {
+     "w": "something",
+     "start": 13.356,
+     "end": 13.676
+    },
+    {
+     "w": "and",
+     "start": 13.676,
+     "end": 13.836
+    },
+    {
+     "w": "suddenly",
+     "start": 13.836,
+     "end": 14.236
+    },
+    {
+     "w": "everyone's",
+     "start": 14.236,
+     "end": 14.716
+    },
+    {
+     "w": "an",
+     "start": 14.716,
+     "end": 14.876
+    },
+    {
+     "w": "expert.",
+     "start": 14.876,
+     "end": 15.436
+    },
+    {
+     "w": "Too",
+     "start": 15.436,
+     "end": 15.676
+    },
+    {
+     "w": "risky.",
+     "start": 15.676,
+     "end": 16.316
+    },
+    {
+     "w": "Be",
+     "start": 16.316,
+     "end": 16.476
+    },
+    {
+     "w": "realistic.",
+     "start": 16.476,
+     "end": 17.196
+    },
+    {
+     "w": "Get",
+     "start": 17.196,
+     "end": 17.436
+    },
+    {
+     "w": "a",
+     "start": 17.436,
+     "end": 17.516
+    },
+    {
+     "w": "real",
+     "start": 17.516,
+     "end": 17.676
+    },
+    {
+     "w": "job.",
+     "start": 17.676,
+     "end": 18.236
+    }
+   ],
+   "asr": "Start something and suddenly everyone's an expert. Too risky. Be realistic. Get a real job."
+  },
+  {
+   "id": "flop",
+   "text": "And yeah, your first idea might flop. So might your second.",
+   "start": 18.436,
+   "end": 21.438,
+   "words": [
+    {
+     "w": "And",
+     "start": 18.436,
+     "end": 18.676
+    },
+    {
+     "w": "yeah,",
+     "start": 18.676,
+     "end": 18.996
+    },
+    {
+     "w": "your",
+     "start": 18.996,
+     "end": 19.156
+    },
+    {
+     "w": "first",
+     "start": 19.156,
+     "end": 19.396
+    },
+    {
+     "w": "idea",
+     "start": 19.396,
+     "end": 19.796
+    },
+    {
+     "w": "might",
+     "start": 19.796,
+     "end": 19.956
+    },
+    {
+     "w": "flop.",
+     "start": 19.956,
+     "end": 20.516
+    },
+    {
+     "w": "So",
+     "start": 20.516,
+     "end": 20.676
+    },
+    {
+     "w": "might",
+     "start": 20.676,
+     "end": 20.836
+    },
+    {
+     "w": "your",
+     "start": 20.836,
+     "end": 20.996
+    },
+    {
+     "w": "second.",
+     "start": 20.996,
+     "end": 21.438
+    }
+   ],
+   "asr": "And yeah, your first idea might flop, so might your second."
+  },
+  {
+   "id": "safe",
+   "text": "But the safe route isn't safe either. Someone else sets your hours, your pay, and when you get a day off.",
+   "start": 21.658,
+   "end": 26.631,
+   "words": [
+    {
+     "w": "But",
+     "start": 21.658,
+     "end": 21.818
+    },
+    {
+     "w": "the",
+     "start": 21.818,
+     "end": 21.898
+    },
+    {
+     "w": "safe",
+     "start": 21.898,
+     "end": 22.218
+    },
+    {
+     "w": "route",
+     "start": 22.218,
+     "end": 22.538
+    },
+    {
+     "w": "isn't",
+     "start": 22.538,
+     "end": 22.778
+    },
+    {
+     "w": "safe",
+     "start": 22.778,
+     "end": 23.098
+    },
+    {
+     "w": "either.",
+     "start": 23.098,
+     "end": 23.498
+    },
+    {
+     "w": "Someone",
+     "start": 23.498,
+     "end": 23.818
+    },
+    {
+     "w": "else",
+     "start": 23.818,
+     "end": 24.058
+    },
+    {
+     "w": "sets",
+     "start": 24.058,
+     "end": 24.298
+    },
+    {
+     "w": "your",
+     "start": 24.298,
+     "end": 24.458
+    },
+    {
+     "w": "hours,",
+     "start": 24.458,
+     "end": 24.858
+    },
+    {
+     "w": "your",
+     "start": 24.858,
+     "end": 25.018
+    },
+    {
+     "w": "pay,",
+     "start": 25.018,
+     "end": 25.418
+    },
+    {
+     "w": "and",
+     "start": 25.418,
+     "end": 25.578
+    },
+    {
+     "w": "when",
+     "start": 25.578,
+     "end": 25.738
+    },
+    {
+     "w": "you",
+     "start": 25.738,
+     "end": 25.898
+    },
+    {
+     "w": "get",
+     "start": 25.898,
+     "end": 26.058
+    },
+    {
+     "w": "a",
+     "start": 26.058,
+     "end": 26.138
+    },
+    {
+     "w": "day",
+     "start": 26.138,
+     "end": 26.298
+    },
+    {
+     "w": "off.",
+     "start": 26.298,
+     "end": 26.631
+    }
+   ],
+   "asr": "But the safe route isn't safe either. Someone else sets your hours, your pay, and when you get a day off."
+  },
+  {
+   "id": "story",
+   "text": "Then one day the people who laughed are replying to your story, asking how you started.",
+   "start": 26.851,
+   "end": 31.074,
+   "words": [
+    {
+     "w": "Then",
+     "start": 26.851,
+     "end": 27.171
+    },
+    {
+     "w": "one",
+     "start": 27.171,
+     "end": 27.331
+    },
+    {
+     "w": "day",
+     "start": 27.331,
+     "end": 27.491
+    },
+    {
+     "w": "the",
+     "start": 27.491,
+     "end": 27.651
+    },
+    {
+     "w": "people",
+     "start": 27.651,
+     "end": 27.891
+    },
+    {
+     "w": "who",
+     "start": 27.891,
+     "end": 28.051
+    },
+    {
+     "w": "laughed",
+     "start": 28.051,
+     "end": 28.451
+    },
+    {
+     "w": "are",
+     "start": 28.451,
+     "end": 28.611
+    },
+    {
+     "w": "replying",
+     "start": 28.611,
+     "end": 29.011
+    },
+    {
+     "w": "to",
+     "start": 29.011,
+     "end": 29.171
+    },
+    {
+     "w": "your",
+     "start": 29.171,
+     "end": 29.331
+    },
+    {
+     "w": "story,",
+     "start": 29.331,
+     "end": 29.891
+    },
+    {
+     "w": "asking",
+     "start": 29.891,
+     "end": 30.211
+    },
+    {
+     "w": "how",
+     "start": 30.211,
+     "end": 30.451
+    },
+    {
+     "w": "you",
+     "start": 30.451,
+     "end": 30.611
+    },
+    {
+     "w": "started.",
+     "start": 30.611,
+     "end": 31.074
+    }
+   ],
+   "asr": "Then one day the people who laughed are replying to your story, asking how you started."
+  },
+  {
+   "id": "loop",
+   "text": "So start anyway. Because either way,",
+   "start": 31.324,
+   "end": 33.284,
+   "words": [
+    {
+     "w": "So",
+     "start": 31.324,
+     "end": 31.644
+    },
+    {
+     "w": "start",
+     "start": 31.644,
+     "end": 31.884
+    },
+    {
+     "w": "anyway.",
+     "start": 31.884,
+     "end": 32.364
+    },
+    {
+     "w": "Because",
+     "start": 32.364,
+     "end": 32.604
+    },
+    {
+     "w": "either",
+     "start": 32.604,
+     "end": 32.924
+    },
+    {
+     "w": "way,",
+     "start": 32.924,
+     "end": 33.284
+    }
+   ],
+   "asr": "So start anyway, because either way."
+  }
+ ]
+}

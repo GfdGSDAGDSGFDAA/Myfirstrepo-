@@ -14,3 +14,5 @@ files from these original CC0 packs:
 Pack→file mapping comes from the collection's index (`pack` field). CC0: no attribution required; kept for provenance.
 Not usable from this cloud session: Freesound, Sonniss, Pixabay, BBC SFX (hosts blocked). For a pro-grade upgrade on the PC,
 the Sonniss GDC bundles (royalty-free, commercial use OK) are the best free option.
+| keyboard_key-* | Keyboard Soundpack #1 | unicaegames (OpenGameArt) |
+| body_breath | 80 CC0 creature SFX (human sounds) | rubberduck (OpenGameArt) |

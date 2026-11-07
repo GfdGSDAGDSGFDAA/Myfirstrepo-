@@ -95,3 +95,39 @@ export const FigureSide: React.FC<{
     </g>
   );
 };
+
+// ---------------------------------------------------------------- poses added for Apply v2 (human, varied)
+/** Holding a phone out at chest height to show someone the screen. */
+export const showPhonePose: Pose = {thighF: 3, shinF: 0, thighB: -3, shinB: 0, armF: 74, foreF: -6, armB: 6, foreB: 14, lean: -2, bob: 0, hipY: -0.74};
+/** Phone in hand, looking down at it (scrolling). */
+export const scrollPose: Pose = {thighF: 2, shinF: 0, thighB: -2, shinB: 0, armF: 30, foreF: 78, armB: 12, foreB: 40, lean: 6, bob: 0, hipY: -0.74};
+/** Laugh A: doubled over, hands near the knees. k = 0..1 intensity, ph = laugh cycle (radians). */
+export const laughDoublePose = (k: number, ph: number): Pose => ({
+  thighF: 8 * k, shinF: -14 * k, thighB: -4, shinB: -10 * k,
+  armF: 18 + 10 * k, foreF: 8, armB: 14 + 8 * k, foreB: 10,
+  lean: (10 + 26 * k) + 4 * k * Math.sin(ph), bob: 0.01 * k * Math.sin(ph * 2), hipY: -0.74 + 0.03 * k,
+});
+/** Laugh B: leans back, one hand on the stomach, head tipping. */
+export const laughBackPose = (k: number, ph: number): Pose => ({
+  thighF: 6, shinF: -3, thighB: -6, shinB: 0,
+  armF: 22 + 6 * k, foreF: 100 * k, armB: -8 - 20 * k, foreB: 30 * k,
+  lean: -(5 + 12 * k) - 4 * k * Math.abs(Math.sin(ph)), bob: -0.012 * k * Math.abs(Math.sin(ph)), hipY: -0.74,
+});
+/** Laugh C: hand over the mouth, small shaking. */
+export const laughMouthPose = (k: number, ph: number): Pose => ({
+  thighF: 3, shinF: 0, thighB: -3, shinB: 0,
+  armF: 20 + 120 * k, foreF: 120 * k, armB: 4, foreB: 10,
+  lean: 4 + 8 * k + 2.5 * k * Math.sin(ph * 1.5), bob: 0.006 * k * Math.sin(ph * 3), hipY: -0.74,
+});
+/** A hop down (p = 0..1): crouch, push, airborne, land with bent knees. */
+export const hopPose = (p: number): Pose => {
+  const crouch = Math.max(0, Math.sin(Math.min(1, p / 0.25) * Math.PI)) * (p < 0.25 ? 1 : 0);
+  const air = p > 0.25 && p < 0.7 ? Math.sin(((p - 0.25) / 0.45) * Math.PI) : 0;
+  const land = p >= 0.7 ? Math.sin(((p - 0.7) / 0.3) * Math.PI) : 0;
+  const bend = crouch + land;
+  return {
+    thighF: 30 * bend + 22 * air, shinF: -55 * bend - 30 * air, thighB: 18 * bend - 12 * air, shinB: -50 * bend - 20 * air,
+    armF: -20 * crouch + 40 * air + 10 * land, foreF: 20, armB: -30 * crouch + 30 * air, foreB: 20,
+    lean: 14 * bend + 4 * air, bob: 0, hipY: -0.74 + 0.16 * bend,
+  };
+};
