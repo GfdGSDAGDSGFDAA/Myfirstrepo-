@@ -54,7 +54,10 @@ export const LineCaptions: React.FC<{t: number; chunks: C[]; y: number; style: S
     const live = 1 - prog(t, Math.max(nextStart, w.start + 0.22) - 0.02, Math.max(nextStart, w.start + 0.22) + 0.18, ease.soft);
     const isKey = big || ch.key.has(i);
     const grey = isKey ? 1 : interpolate(live, [0, 1], [0.42, 1]);
-    const label = big ? w.w.replace(/[,]$/, '').toUpperCase() : w.w;
+    // owner rule: a caption line never ENDS on a comma (commas only inside a line)
+    const endsLine = i === ch.words.length - 1 || (ch.big !== undefined && i === ch.words.length - 1 - (ch.big === ch.words.length - 1 ? 1 : 0));
+    const text = endsLine ? w.w.replace(/,$/, '') : w.w;
+    const label = big ? w.w.replace(/[,]$/, '').toUpperCase() : text;
     const bigFit = Math.min(size * 1.85, 980 / (label.length * 0.62));
     return (
       <span key={i} style={{
