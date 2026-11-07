@@ -1,0 +1,24 @@
+{
+  "title": "Doors v3 — the door in your pocket",
+  "music": "VYZEE (Slowed): drop 4.2 s, bass-out 22.15 s",
+  "voice": "af_heart",
+  "speed": 1.04,
+  "fps": 30,
+  "totalDuration": 31.5,
+  "sentencePause": 0.16,
+  "clausePause": 0.07,
+  "sections": [
+    { "id": "hook", "endBy": 4.02,
+      "text": "Everyone told you college is the only way. They never showed you these." },
+    { "id": "list", "at": 4.62, "pauseAfter": 0.22,
+      "text": "E-commerce. Day trading. Freelancing. Reselling. Your own brand. Content creation. And about a hundred more." },
+    { "id": "ridicule", "pauseAfter": 0.2,
+      "text": "People call these ridiculous, right up until somebody actually pulls it off." },
+    { "id": "gpa", "pauseAfter": 0.2,
+      "text": "Nobody's asking for your GPA. They want to know if you can actually do it." },
+    { "id": "bedroom", "pauseAfter": 0.25,
+      "text": "Right now, people your age are building audiences from their bedroom, with a phone and Wi-Fi." },
+    { "id": "close", "at": 23.0, "pauseAfter": 0.0,
+      "text": "College isn't bad. It's just not the only door. And the one in your pocket? It's already open." }
+  ]
+}

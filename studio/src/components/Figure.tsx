@@ -18,6 +18,9 @@ export type FigurePose = {
   turn?: number; // 0 = square to camera, 1 = turned to the right
   pointDeg?: number | null; // right arm aims at this screen angle (0 = right, -90 = up)
   pointAmt?: number;
+  leanDeg?: number; // whole body tilt about the feet (- = lean back)
+  headDY?: number; // head offset (laughing: head tips back/bobs)
+  leftArmDeg?: number; // free second arm (e.g. hand to belly while laughing)
 };
 
 type Props = FigurePose & {
@@ -48,6 +51,7 @@ const capsule = (x: number, y: number, w: number, h: number) => (
 export const Figure: React.FC<Props> = ({
   x, y, scale, fill = '#F3F2EE', opacity = 1, outline = false, strokePx = 2.2, bodyFill = '#050506',
   walkPhase = 0, walk = 0, turn = 0, pointDeg = null, pointAmt = 0, filterId,
+  leanDeg = 0, headDY = 0, leftArmDeg = 0,
 }) => {
   const sw = Math.sin(walkPhase);
   const bob = -Math.abs(sw) * 0.03 * walk;
@@ -65,7 +69,7 @@ export const Figure: React.FC<Props> = ({
   return (
     <g transform={`translate(${x} ${y}) scale(${scale})`} opacity={opacity}
       filter={filterId ? `url(#${filterId})` : undefined} {...paint}>
-      <g transform={`translate(${sway} ${bob})`}>
+      <g transform={`translate(${sway} ${bob}) rotate(${leanDeg} 0 0)`}>
         {/* legs */}
         <g transform={`translate(0 ${-liftL})`}>{capsule(-0.084, HIP_Y, LEG_W, -HIP_Y + liftL * 0.2)}</g>
         <g transform={`translate(0 ${-liftR})`}>{capsule(0.084, HIP_Y, LEG_W, -HIP_Y + liftR * 0.2)}</g>
@@ -77,14 +81,14 @@ export const Figure: React.FC<Props> = ({
             L -0.125,${HIP_Y - 0.02} Q -0.172,${HIP_Y - 0.02} -0.178,${HIP_Y - 0.07}
             L -0.218,${SHOULDER_Y + 0.11} C -0.222,${SHOULDER_Y + 0.02} -0.2,${SHOULDER_Y - 0.03} -0.105,${SHOULDER_Y - 0.03} Z`} />
           {/* arms */}
-          <g opacity={1 - turn} transform={`rotate(${armSwing} ${-ARM_X} ${SHOULDER_Y + 0.045})`}>
+          <g opacity={1 - turn} transform={`rotate(${armSwing + leftArmDeg} ${-ARM_X} ${SHOULDER_Y + 0.045})`}>
             {capsule(-ARM_X, SHOULDER_Y, ARM_W, ARM_LEN)}
           </g>
           <g transform={`rotate(${-armSwing + pointRot} ${ARM_X} ${SHOULDER_Y + 0.045})`}>
             {capsule(ARM_X, SHOULDER_Y, ARM_W, ARM_LEN)}
           </g>
         </g>
-        <circle cx={0.04 * turn} cy={HEAD_Y} r={HEAD_R} />
+        <circle cx={0.04 * turn} cy={HEAD_Y + headDY} r={HEAD_R} />
       </g>
     </g>
   );

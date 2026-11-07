@@ -1,0 +1,507 @@
+{
+ "fps": 30,
+ "duration": 31.5,
+ "voice": "af_heart",
+ "engine": "kokoro-v1.0 + polish",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Everyone told you college is the only way. They never showed you these.",
+   "start": 0.12,
+   "end": 4.042,
+   "words": [
+    {
+     "w": "Everyone",
+     "start": 0.12,
+     "end": 0.68
+    },
+    {
+     "w": "told",
+     "start": 0.68,
+     "end": 0.92
+    },
+    {
+     "w": "you",
+     "start": 0.92,
+     "end": 1.08
+    },
+    {
+     "w": "college",
+     "start": 1.08,
+     "end": 1.56
+    },
+    {
+     "w": "is",
+     "start": 1.56,
+     "end": 1.72
+    },
+    {
+     "w": "the",
+     "start": 1.72,
+     "end": 1.96
+    },
+    {
+     "w": "only",
+     "start": 1.96,
+     "end": 2.2
+    },
+    {
+     "w": "way.",
+     "start": 2.2,
+     "end": 2.68
+    },
+    {
+     "w": "They",
+     "start": 2.68,
+     "end": 2.92
+    },
+    {
+     "w": "never",
+     "start": 2.92,
+     "end": 3.16
+    },
+    {
+     "w": "showed",
+     "start": 3.16,
+     "end": 3.4
+    },
+    {
+     "w": "you",
+     "start": 3.4,
+     "end": 3.56
+    },
+    {
+     "w": "these.",
+     "start": 3.56,
+     "end": 4.042
+    }
+   ],
+   "asr": "Everyone told you college is the only way. They never showed you these."
+  },
+  {
+   "id": "list",
+   "text": "E-commerce. Day trading. Freelancing. Reselling. Your own brand. Content creation. And about a hundred more.",
+   "start": 4.62,
+   "end": 11.438,
+   "words": [
+    {
+     "w": "E-commerce.",
+     "start": 4.62,
+     "end": 5.34
+    },
+    {
+     "w": "Day",
+     "start": 5.34,
+     "end": 5.66
+    },
+    {
+     "w": "trading.",
+     "start": 5.66,
+     "end": 6.38
+    },
+    {
+     "w": "Freelancing.",
+     "start": 6.38,
+     "end": 7.34
+    },
+    {
+     "w": "Reselling.",
+     "start": 7.34,
+     "end": 8.06
+    },
+    {
+     "w": "Your",
+     "start": 8.06,
+     "end": 8.3
+    },
+    {
+     "w": "own",
+     "start": 8.3,
+     "end": 8.54
+    },
+    {
+     "w": "brand.",
+     "start": 8.54,
+     "end": 9.1
+    },
+    {
+     "w": "Content",
+     "start": 9.1,
+     "end": 9.66
+    },
+    {
+     "w": "creation.",
+     "start": 9.66,
+     "end": 10.3
+    },
+    {
+     "w": "And",
+     "start": 10.3,
+     "end": 10.46
+    },
+    {
+     "w": "about",
+     "start": 10.46,
+     "end": 10.7
+    },
+    {
+     "w": "a",
+     "start": 10.7,
+     "end": 10.78
+    },
+    {
+     "w": "hundred",
+     "start": 10.78,
+     "end": 11.1
+    },
+    {
+     "w": "more.",
+     "start": 11.1,
+     "end": 11.438
+    }
+   ],
+   "asr": "E-commerce day trading, freelancing, reselling, your own brand, content creation, and about a hundred more."
+  },
+  {
+   "id": "ridicule",
+   "text": "People call these ridiculous, right up until somebody actually pulls it off.",
+   "start": 11.658,
+   "end": 15.778,
+   "words": [
+    {
+     "w": "People",
+     "start": 11.658,
+     "end": 12.058
+    },
+    {
+     "w": "call",
+     "start": 12.058,
+     "end": 12.298
+    },
+    {
+     "w": "these",
+     "start": 12.298,
+     "end": 12.538
+    },
+    {
+     "w": "ridiculous,",
+     "start": 12.538,
+     "end": 13.498
+    },
+    {
+     "w": "right",
+     "start": 13.498,
+     "end": 13.738
+    },
+    {
+     "w": "up",
+     "start": 13.738,
+     "end": 13.898
+    },
+    {
+     "w": "until",
+     "start": 13.898,
+     "end": 14.218
+    },
+    {
+     "w": "somebody",
+     "start": 14.218,
+     "end": 14.698
+    },
+    {
+     "w": "actually",
+     "start": 14.698,
+     "end": 15.018
+    },
+    {
+     "w": "pulls",
+     "start": 15.018,
+     "end": 15.338
+    },
+    {
+     "w": "it",
+     "start": 15.338,
+     "end": 15.498
+    },
+    {
+     "w": "off.",
+     "start": 15.498,
+     "end": 15.778
+    }
+   ],
+   "asr": "People call these ridiculous, right up until somebody actually pulls it off."
+  },
+  {
+   "id": "gpa",
+   "text": "Nobody's asking for your GPA. They want to know if you can actually do it.",
+   "start": 15.978,
+   "end": 20.127,
+   "words": [
+    {
+     "w": "Nobody's",
+     "start": 15.978,
+     "end": 16.618
+    },
+    {
+     "w": "asking",
+     "start": 16.618,
+     "end": 16.938
+    },
+    {
+     "w": "for",
+     "start": 16.938,
+     "end": 17.098
+    },
+    {
+     "w": "your",
+     "start": 17.098,
+     "end": 17.338
+    },
+    {
+     "w": "GPA.",
+     "start": 17.338,
+     "end": 18.218
+    },
+    {
+     "w": "They",
+     "start": 18.218,
+     "end": 18.378
+    },
+    {
+     "w": "want",
+     "start": 18.378,
+     "end": 18.618
+    },
+    {
+     "w": "to",
+     "start": 18.618,
+     "end": 18.698
+    },
+    {
+     "w": "know",
+     "start": 18.698,
+     "end": 18.858
+    },
+    {
+     "w": "if",
+     "start": 18.858,
+     "end": 19.018
+    },
+    {
+     "w": "you",
+     "start": 19.018,
+     "end": 19.178
+    },
+    {
+     "w": "can",
+     "start": 19.178,
+     "end": 19.338
+    },
+    {
+     "w": "actually",
+     "start": 19.338,
+     "end": 19.658
+    },
+    {
+     "w": "do",
+     "start": 19.658,
+     "end": 19.738
+    },
+    {
+     "w": "it.",
+     "start": 19.738,
+     "end": 20.127
+    }
+   ],
+   "asr": "Nobody's asking for your GPA. They want to know if you can actually do it."
+  },
+  {
+   "id": "bedroom",
+   "text": "Right now, people your age are building audiences from their bedroom, with a phone and Wi-Fi.",
+   "start": 20.327,
+   "end": 25.343,
+   "words": [
+    {
+     "w": "Right",
+     "start": 20.327,
+     "end": 20.647
+    },
+    {
+     "w": "now,",
+     "start": 20.647,
+     "end": 21.047
+    },
+    {
+     "w": "people",
+     "start": 21.047,
+     "end": 21.287
+    },
+    {
+     "w": "your",
+     "start": 21.287,
+     "end": 21.527
+    },
+    {
+     "w": "age",
+     "start": 21.527,
+     "end": 21.767
+    },
+    {
+     "w": "are",
+     "start": 21.767,
+     "end": 21.927
+    },
+    {
+     "w": "building",
+     "start": 21.927,
+     "end": 22.327
+    },
+    {
+     "w": "audiences",
+     "start": 22.327,
+     "end": 22.887
+    },
+    {
+     "w": "from",
+     "start": 22.887,
+     "end": 23.047
+    },
+    {
+     "w": "their",
+     "start": 23.047,
+     "end": 23.207
+    },
+    {
+     "w": "bedroom,",
+     "start": 23.207,
+     "end": 23.847
+    },
+    {
+     "w": "with",
+     "start": 23.847,
+     "end": 24.007
+    },
+    {
+     "w": "a",
+     "start": 24.007,
+     "end": 24.167
+    },
+    {
+     "w": "phone",
+     "start": 24.167,
+     "end": 24.487
+    },
+    {
+     "w": "and",
+     "start": 24.487,
+     "end": 24.727
+    },
+    {
+     "w": "Wi-Fi.",
+     "start": 24.727,
+     "end": 25.343
+    }
+   ],
+   "asr": "Right now, people your age are building audiences from their bedroom, with a phone and Wi-Fi."
+  },
+  {
+   "id": "close",
+   "text": "College isn't bad. It's just not the only door. And the one in your pocket? It's already open.",
+   "start": 25.593,
+   "end": 30.806,
+   "words": [
+    {
+     "w": "College",
+     "start": 25.593,
+     "end": 26.073
+    },
+    {
+     "w": "isn't",
+     "start": 26.073,
+     "end": 26.393
+    },
+    {
+     "w": "bad.",
+     "start": 26.393,
+     "end": 26.953
+    },
+    {
+     "w": "It's",
+     "start": 26.953,
+     "end": 27.193
+    },
+    {
+     "w": "just",
+     "start": 27.193,
+     "end": 27.433
+    },
+    {
+     "w": "not",
+     "start": 27.433,
+     "end": 27.593
+    },
+    {
+     "w": "the",
+     "start": 27.593,
+     "end": 27.753
+    },
+    {
+     "w": "only",
+     "start": 27.753,
+     "end": 28.073
+    },
+    {
+     "w": "door.",
+     "start": 28.073,
+     "end": 28.553
+    },
+    {
+     "w": "And",
+     "start": 28.553,
+     "end": 28.713
+    },
+    {
+     "w": "the",
+     "start": 28.713,
+     "end": 28.873
+    },
+    {
+     "w": "one",
+     "start": 28.873,
+     "end": 29.033
+    },
+    {
+     "w": "in",
+     "start": 29.033,
+     "end": 29.193
+    },
+    {
+     "w": "your",
+     "start": 29.193,
+     "end": 29.273
+    },
+    {
+     "w": "pocket?",
+     "start": 29.273,
+     "end": 29.833
+    },
+    {
+     "w": "It's",
+     "start": 29.833,
+     "end": 30.073
+    },
+    {
+     "w": "already",
+     "start": 30.073,
+     "end": 30.393
+    },
+    {
+     "w": "open.",
+     "start": 30.393,
+     "end": 30.806
+    }
+   ],
+   "asr": "College isn't bad. It's just not the only door, and the one in your pocket, it's already open."
+  }
+ ]
+}
