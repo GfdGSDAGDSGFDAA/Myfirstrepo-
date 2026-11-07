@@ -142,13 +142,13 @@ export const DinnerLayer: React.FC<{t: number; cam: Cam}> = ({t, cam}) => {
 
   // speech bubble "WHAT COLLEGE?"
   const bubble = (() => {
-    const a = prog(t, T.college - 0.05, T.college + 0.2, ease.out) * (1 - prog(t, T.morphA, T.morphA + 0.3, ease.in));
+    const a = prog(t, T.told - 0.05, T.told + 0.2, ease.out) * (1 - prog(t, T.morphA + 0.15, T.morphA + 0.45, ease.in));
     if (a <= 0) return null;
     const h = P([0.98, FLOOR - 1.55, 12.5]);
-    const x = h.x - 40;
-    const y = h.y - 120;
+    const x = Math.min(h.x - 120, 840); // keep the whole bubble on screen
+    const y = h.y - 150;
     return (
-      <g opacity={a} transform={`translate(${x} ${y + (1 - a) * 14}) scale(${0.9 + 0.1 * a})`}>
+      <g opacity={a} transform={`translate(${x - 30} ${y - 40 + (1 - a) * 14}) scale(${1.55 * (0.9 + 0.1 * a)})`}>
         <rect x={-190} y={-44} width={300} height={78} rx={39} fill="#0b0b0b" stroke={s.fg} strokeWidth={2.5} />
         <polygon points="62,30 92,30 96,64" fill="#0b0b0b" stroke={s.fg} strokeWidth={2.5} strokeLinejoin="round" />
         <rect x={60} y={24} width={36} height={12} fill="#0b0b0b" />

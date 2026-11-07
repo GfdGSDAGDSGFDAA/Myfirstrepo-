@@ -101,8 +101,8 @@ export const PhoneOverlay: React.FC<{t: number}> = ({t}) => {
         <line x1={CX - DW / 2 - 26} y1={bot} x2={CX + DW / 2 + 26} y2={bot} stroke={s.fg} strokeWidth={2} opacity={0.5} />
         {/* fingers wrap the right edge, thumb on the left: the phone is held, not floating */}
         <g fill={s.fg}>
-          {[0, 1, 2, 3].map((i) => (
-            <rect key={i} x={CX + PW / 2 - 22} y={CY - 70 + i * 86} width={96} height={62} rx={31} />
+          {[96, 108, 104, 88].map((len, i) => (
+            <rect key={i} x={CX + PW / 2 - 26} y={CY - 76 + i * 78} width={len} height={80} rx={40} transform={`rotate(${-4 + i * 3} ${CX + PW / 2} ${CY - 36 + i * 78})`} />
           ))}
           <rect x={CX - PW / 2 - 56} y={CY + 118} width={128} height={64} rx={32} transform={`rotate(-38 ${CX - PW / 2} ${CY + 150})`} />
         </g>

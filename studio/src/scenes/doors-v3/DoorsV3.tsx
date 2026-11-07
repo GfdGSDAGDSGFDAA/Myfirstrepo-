@@ -16,11 +16,11 @@ export {FRAMES as DOORS_V3_FRAMES} from './timing';
 // one line on screen at a time; `key` words settle white, others settle grey
 const CHUNKS = buildChunks(tl.lines, {
   hook: [{n: 2, key: [1]}, {n: 4, key: [3]}, {n: 3}, {n: 1, key: [0]}],
-  list: [{n: 1, key: [0]}, {n: 1, key: [0]}, {n: 1, key: [0]}, {n: 2, key: [0, 1]}, {n: 3, key: [0, 1, 2]}, {n: 4}, {n: 4, key: [2, 3]}, {n: 4}],
+  list: [{n: 2, key: [0, 1]}, {n: 1, key: [0]}, {n: 2, key: [0, 1]}, {n: 2, key: [0, 1]}, {n: 3, key: [0, 1, 2]}, {n: 4}, {n: 4, key: [2, 3]}, {n: 4}],
   ridicule: [{n: 3}, {n: 1, key: [0]}, {n: 4}, {n: 4, key: [1, 2, 3]}],
   gpa: [{n: 4}, {n: 5, key: [4]}, {n: 5}, {n: 6, key: [4, 5]}],
-  bedroom: [{n: 2}, {n: 3}, {n: 2}, {n: 3, key: [2]}, {n: 5, key: [2, 4]}, {n: 3}, {n: 3, key: [2]}],
-  close: [{n: 3}, {n: 3}, {n: 3, key: [1, 2]}, {n: 3}, {n: 3, key: [2]}, {n: 3, key: [2]}, {n: 4}, {n: 5, key: [4]}],
+  bedroom: [{n: 2}, {n: 3}, {n: 4, key: [3]}, {n: 3, key: [2]}, {n: 5, key: [2, 4]}, {n: 3}, {n: 3, key: [2]}],
+  close: [{n: 3, key: [0, 1, 2]}, {n: 3}, {n: 3, key: [1, 2]}, {n: 3}, {n: 3, key: [2]}, {n: 3, key: [2]}, {n: 4}, {n: 5, key: [4]}],
 });
 
 type CamV = {x: number; y: number; z: number; pitch: number};
@@ -123,7 +123,26 @@ export const DoorsV3: React.FC<{withMusic?: boolean}> = ({withMusic = true}) => 
           opacity: qA, transform: `translateY(${(1 - qA) * 16}px)`}}>
           <div style={{fontSize: 76, fontWeight: 700, color: s.fg, letterSpacing: '-0.02em',
             textShadow: '0 0 10px rgba(255,255,255,0.45), 0 0 28px rgba(255,255,255,0.2)'}}>Which door is yours?</div>
-          <div style={{marginTop: 18, fontSize: 40, fontWeight: 500, color: 'rgba(244,243,239,0.6)'}}>comment its number</div>
+        </div>
+      )}
+      {/* end card legend: every number readable, college included */}
+      {qA > 0 && (
+        <div style={{position: 'absolute', top: 500, left: 150, right: 150, padding: '24px 34px', borderRadius: 28,
+          background: 'rgba(8,8,9,0.86)', border: '2px solid rgba(244,243,239,0.55)', fontFamily: s.fontDisplay,
+          opacity: qA, transform: `translateY(${(1 - qA) * 20}px)`}}>
+          {[['0', 'College'], ['1', 'Selling online'], ['2', 'Freelancing'], ['3', 'Reselling'], ['4', 'Making content'], ['5', 'Clothing brand']].map(([n, l], i) => (
+            <div key={n} style={{display: 'flex', alignItems: 'center', gap: 22, fontSize: 40, fontWeight: 600, color: s.fg, lineHeight: 1.45,
+              opacity: prog(t, T.question + 0.2 + i * 0.07, T.question + 0.45 + i * 0.07, ease.out)}}>
+              <span style={{width: 52, height: 52, borderRadius: 26, border: '3px solid #f4f3ef', display: 'inline-flex',
+                alignItems: 'center', justifyContent: 'center', fontSize: 30, fontWeight: 700}}>{n}</span>{l}
+            </div>
+          ))}
+        </div>
+      )}
+      {qA > 0 && (
+        <div style={{position: 'absolute', top: 392, left: 0, right: 0, textAlign: 'center', fontFamily: s.fontDisplay,
+          fontSize: 44, fontWeight: 600, color: 'rgba(244,243,239,0.92)', opacity: prog(t, T.question + 0.35, T.question + 0.65, ease.out)}}>
+          send this to whoever gets asked this year
         </div>
       )}
 

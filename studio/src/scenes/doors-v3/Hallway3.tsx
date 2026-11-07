@@ -267,35 +267,27 @@ export const Hallway3: React.FC<{
     return (
       <g key={`b${i}`} transform={mirror ? `translate(${2 * p.x} 0) scale(-1 1)` : undefined}>
         <Figure x={p.x} y={p.y - laugh * 0.015 * p.s} scale={p.s} fill={s.fg} outline bodyFill="#161616" strokePx={3}
-          opacity={appear} pointDeg={pointer ? (mirror ? 180 - ang : ang) : 128} pointAmt={(pointer ? 0.9 : 1) * (1 - blown)}
-          leanDeg={(pointer ? -3 : -6) - (pointer ? 4 : 8) * laugh - 16 * blown} headDY={-0.05 * laugh} leftArmDeg={-38 * (1 - blown) + 20 * blown} />
+          opacity={appear} pointDeg={pointer ? (mirror ? 180 - ang : ang) : 58} pointAmt={(pointer ? 0.9 : 0.8) * (1 - blown)}
+          leanDeg={(pointer ? -3 : -8) - (pointer ? 4 : 10) * laugh - 16 * blown} headDY={-0.06 * laugh}
+          leftArmDeg={pointer ? -38 * (1 - blown) + 20 * blown : (22 + 8 * laugh) * (1 - blown)} />
       </g>
     );
   });
 
-  // ---------------------------------------------------------- labels
+  // ---------------------------------------------------------- big number badges ON the doors (persist all video)
   const labels = DOORS.map((d, i) => {
-    if (d.item === undefined || closeShot(t)) return null;
+    if (d.item === undefined) return null;
     const it = T.items[d.item];
-    const isHero = d === HERO_DOOR;
-    const nextIt = T.items[d.item + 1] ?? T.hundred;
-    const a = prog(t, it, it + 0.2, ease.out) * (1 - prog(t, nextIt - 0.05, nextIt + 0.15, ease.soft)) +
-      (isHero ? prog(t, T.they, T.they + 0.3) * (1 - prog(t, T.whiteIn - 0.5, T.whiteIn)) : 0);
-    if (a <= 0.01) return null;
-    const top = P([d.side * W, FLOOR - DH, d.z + DW / 2]);
-    if (top.d < 0.6 || (top.d > 8.5 && !isHero)) return null;
-    const text = `${d.item + 1} · ${d.label}`;
-    const half = text.length * 14.5;
-    if (isHero && top.d > 9) return null; // far away it would sit on the college arch; the caption names it anyway
-    // keep labels off the college arch in the middle of frame
-    const x = Math.max(36 + half, Math.min(1044 - half, d.side > 0 ? Math.max(top.x, 640 + half) : Math.min(top.x, 440 - half)));
-    if (top.y > 1250) return null;
-    const y = Math.min(top.y - 34, 840);
+    const a = prog(t, it - 0.02, it + 0.22, ease.out);
+    if (a <= 0) return null;
+    const c = P([d.side * (W - 0.02), FLOOR - 1.25, d.z + DW / 2]);
+    if (c.d < 0.7 || c.x < -60 || c.x > 1140) return null;
+    const r = Math.max(26, Math.min(64, 0.2 * c.s));
+    const pop = 1 + 0.25 * Math.sin(Math.PI * clamp01((t - it) / 0.3));
     return (
-      <g key={`l${i}`} opacity={Math.min(1, a)}>
-        <line x1={top.x} y1={top.y - 8} x2={top.x} y2={y + 12} stroke={s.fg} strokeWidth={2} opacity={0.8} />
-        <text x={x} y={y} textAnchor="middle" fontFamily={s.fontMono} fontSize={42}
-          fontWeight={500} letterSpacing="0.08em" fill={s.fg} stroke={s.bg} strokeWidth={10} paintOrder="stroke">{text}</text>
+      <g key={`l${i}`} opacity={a} transform={`translate(${c.x} ${c.y}) scale(${pop})`}>
+        <circle r={r} fill="#0b0b0b" stroke={s.fg} strokeWidth={3} />
+        <text y={r * 0.37} textAnchor="middle" fontFamily={s.fontDisplay} fontWeight={700} fontSize={r * 1.05} fill={s.fg}>{d.item + 1}</text>
       </g>
     );
   });
@@ -336,17 +328,16 @@ export const Hallway3: React.FC<{
     </g>
   );
 
-  const badges = numerals > 0 && DOORS.filter((d) => d.item !== undefined).map((d) => {
-    const top = P([d.side * W, FLOOR - DH - 0.35, d.z + DW / 2]);
-    if (top.d < 0.5 || top.x < -40 || top.x > 1120) return null;
-    const r = Math.max(32, Math.min(52, 0.18 * top.s));
+  const badges = numerals > 0 && (() => {
+    const c = P([0, FLOOR - 3.2, ez]);
+    const r = Math.max(30, Math.min(56, 0.2 * c.s));
     return (
-      <g key={`n${d.item}`} opacity={numerals}>
-        <circle cx={top.x} cy={top.y} r={r} fill="#0b0b0b" stroke={s.fg} strokeWidth={2.5} />
-        <text x={top.x} y={top.y + r * 0.36} textAnchor="middle" fontFamily={s.fontDisplay} fontWeight={700} fontSize={r * 1.05} fill={s.fg}>{d.item! + 1}</text>
+      <g opacity={numerals} transform={`translate(${c.x} ${c.y - r * 1.4})`}>
+        <circle r={r} fill="#0b0b0b" stroke={s.fg} strokeWidth={3} />
+        <text y={r * 0.37} textAnchor="middle" fontFamily={s.fontDisplay} fontWeight={700} fontSize={r * 1.05} fill={s.fg}>0</text>
       </g>
     );
-  });
+  })();
   const shaftA = P([0, FLOOR, ez]);
   const shaftB = P([0, FLOOR, ez - 10]);
 

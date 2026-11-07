@@ -68,8 +68,8 @@ export const Bedroom: React.FC<{t: number}> = ({t}) => {
           <polygon points={`300,1000 740,1000 860,${FLOOR_Y} 180,${FLOOR_Y}`} fill="url(#moonFloor)" />
         </g>
         {/* poster */}
-        <rect x={120} y={720} width={150} height={210} fill="none" stroke={s.fg} strokeWidth={2} opacity={0.5} />
-        <text x={195} y={835} textAnchor="middle" fontFamily={s.fontMono} fontSize={26} fontWeight={500} fill={s.fg} opacity={0.6} letterSpacing="0.1em">DROP 01</text>
+        <rect x={790} y={700} width={150} height={210} fill="none" stroke={s.fg} strokeWidth={2} opacity={0.5} />
+        <text x={865} y={815} textAnchor="middle" fontFamily={s.fontMono} fontSize={26} fontWeight={500} fill={s.fg} opacity={0.6} letterSpacing="0.1em">DROP 01</text>
         {/* clothing rack: his brand */}
         <g opacity={0.75}>
           <line x1={810} y1={1050} x2={1020} y2={1050} stroke={s.fg} strokeWidth={3} />
@@ -114,15 +114,15 @@ export const Bedroom: React.FC<{t: number}> = ({t}) => {
         const next = cards[i + 1]?.at ?? T.whyYou + 0.6;
         const a = prog(t, c.at, c.at + 0.25, ease.out) * (1 - prog(t, next - 0.12, next + 0.05, ease.in));
         if (a <= 0) return null;
-        const y = 560 + (1 - a) * 24;
+        const y = 590 + (1 - a) * 24;
         return (
           <g key={i} opacity={a} transform={`translate(540 ${y}) scale(${0.94 + 0.06 * a})`}>
-            <rect x={-330} y={-52} width={660} height={104} rx={52} fill="#0b0b0b" stroke={s.fg} strokeWidth={2.5} />
-            <g transform="translate(-280 0)" fill="none" stroke={s.fg} strokeWidth={4} strokeLinejoin="round">
+            <rect x={-400} y={-66} width={800} height={132} rx={66} fill="#0b0b0b" stroke={s.fg} strokeWidth={2.5} />
+            <g transform="translate(-335 0) scale(1.3)" fill="none" stroke={s.fg} strokeWidth={4} strokeLinejoin="round">
               <path d="M -16 -12 L 18 -12 L 15 22 L -13 22 Z" />
               <path d="M -6 -12 C -6 -28 10 -28 10 -12" />
             </g>
-            <text x={20} y={15} textAnchor="middle" fontFamily={s.fontMono} fontSize={42} fontWeight={500} letterSpacing="0.03em" fill={s.fg}>{c.text}</text>
+            <text x={30} y={18} textAnchor="middle" fontFamily={s.fontMono} fontSize={52} fontWeight={500} letterSpacing="0.03em" fill={s.fg}>{c.text}</text>
           </g>
         );
       })}

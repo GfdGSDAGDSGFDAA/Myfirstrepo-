@@ -30,25 +30,25 @@ export const T = {
   these: w('hook', -1),
   drop: 4.2,
   // --- hallway
-  items: [0, 1, 2, 3, 5].map((i) => w('list', i)), // E-com, Freelancing, Reselling, Content, That (clothing brand)
-  hundred: w('list', 12), // "and a hundred more nobody told you about"
+  items: [0, 2, 3, 5, 7].map((i) => w('list', i)), // Selling online, Freelancing, Reselling, Making content, That (clothing brand)
+  hundred: w('list', 14), // "and a hundred more nobody told you about"
   ridStart: sec('ridicule').start,
   ridiculous: w('ridicule', 3),
   until: w('ridicule', 4),
-  burst: 15.79, // beat on "off"
+  burst: 16.37, // beat between "pulls" and "off"
   gpaStart: sec('gpa').start,
   gpa: w('gpa', 8),
   they: w('gpa', 9), // hero starts walking to his door
-  arrive: 20.42,
-  stepIn: 20.78,
-  whiteIn: 21.02,
+  arrive: w('gpa', 9) + 1.2,
+  stepIn: w('gpa', 9) + 1.56,
+  whiteIn: sec('bedroom').start - 0.22,
   bedroom: sec('bedroom').start - 0.08,
   // --- bedroom
   audiences: w('bedroom', 2),
-  followersAt: w('bedroom', 9),
-  phone: w('bedroom', 12),
-  wifi: w('bedroom', 14),
-  whyYou: w('bedroom', 15),
+  followersAt: w('bedroom', 11),
+  phone: w('bedroom', 14),
+  wifi: w('bedroom', 16),
+  whyYou: w('bedroom', 17),
   // --- close
   collegeOk: sec('close').start,
   notOnly: w('close', 3),
@@ -59,6 +59,6 @@ export const T = {
   hallwayQ: w('close', 18),
   walkGo: w('close', -1), // "hallway?" → he steps forward
   question: sec('close').end + 0.02,
-  end: 35.503, // last beat
+  end: beats.find((b) => b >= sec('close').end + 2.3) ?? 37.245, // beat after the end card has had time to read
 };
 export const FRAMES = Math.round(T.end * FPS);

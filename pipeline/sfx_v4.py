@@ -15,7 +15,7 @@ def env(n, a, d):
 tl = json.load(open(sys.argv[1]))
 W = {l["id"]: l["words"] for l in tl["lines"]}
 S = {l["id"]: l for l in tl["lines"]}
-out = np.zeros((int(36.0 * SR), 2))
+out = np.zeros((int(38.0 * SR), 2))
 def put(x, at, g, pan=0.0):
     i = int(at * SR); x = x[: max(0, len(out) - i)]
     out[i:i + len(x), 0] += x * g * (1 - max(0, pan)); out[i:i + len(x), 1] += x * g * (1 + min(0, pan))
@@ -30,20 +30,21 @@ n = int(1.6 * SR); tt = np.arange(n) / n
 put(lp(rng.standard_normal(n), 700) * np.sin(np.pi * tt) ** 2, 2.6, 0.12)
 # footsteps on his walk to the door (one per beat) + two steps through it
 walk0 = W["gpa"][9]["start"]
-steps = [walk0 + 0.29 + i * 0.5805 for i in range(2)] + [20.42 + 0.36 + i * 0.25 for i in range(2)]
+arrive = walk0 + 1.2
+steps = [walk0 + 0.29 + i * 0.5805 for i in range(2)] + [arrive + 0.36 + i * 0.25 for i in range(2)]
 for at in steps:
     n = int(0.12 * SR)
     put(lp(rng.standard_normal(n), 900) * env(n, 0.002, 0.03), at, 0.18)
 # door handle click + creak as it swings open
-n = int(0.08 * SR); put(bp(rng.standard_normal(n), 2000, 6000) * env(n, 0.001, 0.01), 20.33, 0.2)
+n = int(0.08 * SR); put(bp(rng.standard_normal(n), 2000, 6000) * env(n, 0.001, 0.01), arrive - 0.09, 0.2)
 n = int(0.7 * SR); t = np.arange(n) / SR
 creak = np.sin(2 * np.pi * (180 + 90 * t / t[-1]) * t * (1 + 0.02 * np.sin(2 * np.pi * 31 * t))) * env(n, 0.05, 0.25)
-put(bp(creak, 150, 1600), 20.36, 0.07)
+put(bp(creak, 150, 1600), arrive - 0.06, 0.07)
 # light burst on "off"
 n = int(1.3 * SR); tt = np.arange(n) / n
-put(bp(rng.standard_normal(n), 300, 4000) * np.sin(np.pi * tt) ** 2 * (1 - tt) * 0.8, 15.79 - 0.35, 0.3)
+put(bp(rng.standard_normal(n), 300, 4000) * np.sin(np.pi * tt) ** 2 * (1 - tt) * 0.8, 16.37 - 0.35, 0.3)
 # order pings
-for k, idx in enumerate([2, 9, 12]):
+for k, idx in enumerate([2, 11, 14]):
     at = W["bedroom"][idx]["start"]
     n = int(0.6 * SR); t = np.arange(n) / SR
     f = [1318.5, 1568.0, 1760.0][k]

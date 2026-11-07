@@ -28,3 +28,8 @@ Status: **P** = provisional (awaiting owner review), **A** = accepted, **R** = r
 | 22 | Viewer simulation (3 personas) is part of QA before delivery | A (owner) | Directional, not real data |
 | 23 | Hero walks into CLOTHING BRAND door (testers trusted it more); doors numbered 1–5 + "WHICH DOOR ARE YOU? 1–5" prompt on last line | A (owner) | |
 | 24 | Hook overlay: "for the kid who gets asked “so what college?” every Thanksgiving" (0–3.9 s) | A (owner) | Post before Nov 26 |
+| 25 | v4: Thanksgiving dinner opening that morphs into the hallway in one camera move (table → floor light, back doorway → college entrance) | A (owner brief) | |
+| 26 | Phone door = real hinged door; portal dive into the final shot (no white flash) | A (owner brief) | |
+| 27 | Plain-language paths (Selling online, Reselling sneakers, Making content); big number badges on doors | A (panel) | 14yo didn't understand "e-commerce" |
+| 28 | End card: "Which door is yours?" + legend 0 College / 1–5 paths + "send this to whoever gets asked this year" | A (panel) | College gets #0 so college defenders comment too |
+| 29 | TTS pipeline squeezes internal pauses to ≤0.15 s | A (owner) | "no comma pauses" |

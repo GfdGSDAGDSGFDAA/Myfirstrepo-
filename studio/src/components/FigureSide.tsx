@@ -86,7 +86,7 @@ export const FigureSide: React.FC<{
         {leg(p.thighB, p.shinB, back)}
         <g transform={`translate(0 ${p.hipY}) rotate(${p.lean}) translate(0 ${-p.hipY})`}>
           {arm(p.armB, p.foreB, back)}
-          <rect x={-0.13} y={torsoTop} width={0.26} height={0.64} rx={0.11} fill={fill} />
+          <rect x={-0.16} y={torsoTop} width={0.32} height={0.64} rx={0.13} fill={fill} />
           <circle cx={0.03} cy={torsoTop - 0.2} r={0.152} fill={fill} />
           {arm(p.armF, p.foreF, fill, !!phone)}
         </g>
