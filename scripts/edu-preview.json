@@ -1,0 +1,15 @@
+{
+  "title": "Edu preview: The Hallway",
+  "hook": "A",
+  "voice": "af_heart",
+  "speed": 0.94,
+  "fps": 30,
+  "leadIn": 0.2,
+  "tail": 1.0,
+  "lines": [
+    { "id": "l1", "text": "At seventeen, everyone points you to the same door.", "pauseAfter": 0.55 },
+    { "id": "l2", "text": "Almost nobody shows you the rest of the hallway.", "pauseAfter": 1.0 },
+    { "id": "l3", "text": "College is one door.", "pauseAfter": 0.35 },
+    { "id": "l4", "text": "It was never the only one.", "pauseAfter": 0.0 }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "walkStart": "l1.start +0.1",
+  "flare": "l1.-2.start",
+  "walkStop": "l1.end +0.15",
+  "pullStart": "l2.start -0.2",
+  "doorsStart": "l2.4.start",
+  "pullEnd": "l2.end +0.75",
+  "collegeLabel": "l3.0.start",
+  "equalize": "l3.3.start",
+  "turn": "l4.start",
+  "swell": "l4.-2.start",
+  "end": "end"
+}

@@ -1,0 +1,193 @@
+{
+  "fps": 30,
+  "duration": 11.105,
+  "voice": "af_heart",
+  "engine": "kokoro-v1.0 (temporary)",
+  "lines": [
+    {
+      "id": "l1",
+      "text": "At seventeen, everyone points you to the same door.",
+      "start": 0.2,
+      "end": 3.111,
+      "words": [
+        {
+          "w": "At",
+          "start": 0.2,
+          "end": 0.387
+        },
+        {
+          "w": "seventeen,",
+          "start": 0.387,
+          "end": 0.948
+        },
+        {
+          "w": "everyone",
+          "start": 0.948,
+          "end": 1.455
+        },
+        {
+          "w": "points",
+          "start": 1.455,
+          "end": 1.856
+        },
+        {
+          "w": "you",
+          "start": 1.856,
+          "end": 2.096
+        },
+        {
+          "w": "to",
+          "start": 2.096,
+          "end": 2.283
+        },
+        {
+          "w": "the",
+          "start": 2.283,
+          "end": 2.523
+        },
+        {
+          "w": "same",
+          "start": 2.523,
+          "end": 2.817
+        },
+        {
+          "w": "door.",
+          "start": 2.817,
+          "end": 3.111
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "text": "Almost nobody shows you the rest of the hallway.",
+      "start": 3.661,
+      "end": 6.116,
+      "words": [
+        {
+          "w": "Almost",
+          "start": 3.661,
+          "end": 4.012
+        },
+        {
+          "w": "nobody",
+          "start": 4.012,
+          "end": 4.362
+        },
+        {
+          "w": "shows",
+          "start": 4.362,
+          "end": 4.666
+        },
+        {
+          "w": "you",
+          "start": 4.666,
+          "end": 4.877
+        },
+        {
+          "w": "the",
+          "start": 4.877,
+          "end": 5.087
+        },
+        {
+          "w": "rest",
+          "start": 5.087,
+          "end": 5.345
+        },
+        {
+          "w": "of",
+          "start": 5.345,
+          "end": 5.508
+        },
+        {
+          "w": "the",
+          "start": 5.508,
+          "end": 5.719
+        },
+        {
+          "w": "hallway.",
+          "start": 5.719,
+          "end": 6.116
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "text": "College is one door.",
+      "start": 7.116,
+      "end": 8.341,
+      "words": [
+        {
+          "w": "College",
+          "start": 7.116,
+          "end": 7.589
+        },
+        {
+          "w": "is",
+          "start": 7.589,
+          "end": 7.784
+        },
+        {
+          "w": "one",
+          "start": 7.784,
+          "end": 8.035
+        },
+        {
+          "w": "door.",
+          "start": 8.035,
+          "end": 8.341
+        }
+      ]
+    },
+    {
+      "id": "l4",
+      "text": "It was never the only one.",
+      "start": 8.691,
+      "end": 10.105,
+      "words": [
+        {
+          "w": "It",
+          "start": 8.691,
+          "end": 8.861
+        },
+        {
+          "w": "was",
+          "start": 8.861,
+          "end": 9.081
+        },
+        {
+          "w": "never",
+          "start": 9.081,
+          "end": 9.398
+        },
+        {
+          "w": "the",
+          "start": 9.398,
+          "end": 9.617
+        },
+        {
+          "w": "only",
+          "start": 9.617,
+          "end": 9.886
+        },
+        {
+          "w": "one.",
+          "start": 9.886,
+          "end": 10.105
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "walkStart": 0.3,
+    "flare": 2.523,
+    "walkStop": 3.261,
+    "pullStart": 3.461,
+    "doorsStart": 4.877,
+    "pullEnd": 6.866,
+    "collegeLabel": 7.116,
+    "equalize": 8.035,
+    "turn": 8.691,
+    "swell": 9.617,
+    "end": 11.105
+  }
+}
