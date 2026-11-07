@@ -33,3 +33,11 @@ Status: **P** = provisional (awaiting owner review), **A** = accepted, **R** = r
 | 27 | Plain-language paths (Selling online, Reselling sneakers, Making content); big number badges on doors | A (panel) | 14yo didn't understand "e-commerce" |
 | 28 | End card: "Which door is yours?" + legend 0 College / 1–5 paths + "send this to whoever gets asked this year" | A (panel) | College gets #0 so college defenders comment too |
 | 29 | TTS pipeline squeezes internal pauses to ≤0.15 s | A (owner) | "no comma pauses" |
+| 30 | Brand name confirmed: **Pathform** | A (owner) | |
+| 31 | Video #2 "Apply v1": owner's ChatGPT script tightened (~165 → ~105 words, ≈38 s); cut "Think about that" / "That's the part nobody pictures" (generic AI filler), fixed "suddenly jobless" grammar | A (owner) | Brief bans generic motivational lines; 38 s fits the format |
+| 32 | Apply v1 world: tower + job line → tower rewinds into a garage → "one plan" conveyor with 5 lit gates → hero steps off, builds, stack falls twice → layoffs at HIRED gate → laughers' phones → job listing is his → his tower, line at his door | A (owner picked) | One evolving metaphor; hook performs visually in <3 s (laugh → they're in the line) |
+| 33 | SFX = **real recordings only** (CC0: Kenney + OpenGameArt via Alvana Audio). Code-synthesized SFX (incl. the "SFX Kit" made with AI) rejected | A (owner) | Owner: "no AI generic ones". Credits in `studio/public/audio/apply-v1/sfx-src/CREDITS.md` |
+| 34 | No laughter SFX: no CC0 crowd-laugh recording reachable from the cloud (Freesound/Sonniss/Pixabay blocked) | P | Revisit on the PC (Sonniss GDC bundle) |
+| 35 | Camera gained optional `yaw` (+ = look right); old scenes unaffected | A | Spreads gates/signs that stacked behind each other |
+| 36 | End card prompt "What would you build?" (comment bait, no selling) | P | Gives a reason to comment; owner to confirm |
+| 37 | Song: none yet — owner sends a TikTok sound after the first cut; then add `ApplyV1` (with music, review only) + re-time cuts to its beats | P | |

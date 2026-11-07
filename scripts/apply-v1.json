@@ -1,0 +1,43 @@
+{
+  "title": "Apply v1 — the company people apply to",
+  "music": "none yet (owner will send a TikTok sound after the first cut)",
+  "voice": "af_heart",
+  "speed": 1.06,
+  "fps": 60,
+  "totalDuration": 42.0,
+  "sentencePause": 0.16,
+  "clausePause": 0.07,
+  "sections": [
+    {
+      "id": "hook",
+      "speed": 1.08,
+      "pauseAfter": 0.3,
+      "text": "They'll call your business idea unrealistic, then apply to a company that started as somebody's idea."
+    },
+    {
+      "id": "plan",
+      "pauseAfter": 0.22,
+      "text": "Since you were a kid it's been one plan. Good grades, college, get hired, climb, retire. Nobody asks what you want to build."
+    },
+    {
+      "id": "opinions",
+      "pauseAfter": 0.22,
+      "text": "Say you're starting something and suddenly everyone's an expert. Too risky. Be realistic. Get a real job."
+    },
+    {
+      "id": "flop",
+      "pauseAfter": 0.25,
+      "text": "Your first idea might flop. So might your second. But the safe route isn't guaranteed either. Companies lay people off every year."
+    },
+    {
+      "id": "flip",
+      "pauseAfter": 0.3,
+      "text": "Now picture the people who laughed, scrolling job listings, and the company hiring is yours."
+    },
+    {
+      "id": "close",
+      "pauseAfter": 0.0,
+      "text": "You spent years learning how to apply to companies. What if yours is the one people apply to?"
+    }
+  ]
+}

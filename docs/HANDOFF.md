@@ -7,7 +7,7 @@ repo: https://github.com/GfdGSDAGDSGFDAA/Myfirstrepo-   (branch claude/tender-al
 
 # Pathform video studio: handoff for a new chat
 
-> **Brand name:** the owner's message said "our brand name whichnisnpathform" — I read that as **"Pathform"**. This is **unconfirmed**. Ask the owner before putting the name on anything (watermarks, handles, captions).
+> **Brand name: Pathform** (confirmed by the owner, 2026-11-07).
 
 ## 0. How to use this document
 
@@ -243,6 +243,7 @@ Tokens live in `src/styles/styleA.ts`; spec in `docs/style-a.md`.
 | **Doors v2** (28 s) | Added the list of paths, music-synced to VYZEE | Too many pauses (lines pinned to beats), captions stacked, list shown going down instead of one-at-a-time, walk/laugh goofy, hallway/setting could look better, wanted dramatic moments, bedroom scene, "don't say college is bad", simulate 3 viewers |
 | **Doors v3** (34–36 s) | Continuous narration, 1-line captions, side-profile walk, atrium reveal, laughing crowd, bedroom, phone-door ending, loop | Wanted solid (not see-through) figures, quicker/smoother list with doors L/R/L/R, better laugh, camera reveal when walking into the door, bedroom must match the door he enters, Thanksgiving question as a spoken hook, ask "which door? 1–5" better, 60 fps, no pause after "GPA"/before "clothing brand" |
 | **Doors V4** (37.3 s, FINAL for now; code ids `DoorsV3*`) | See §9 | Owner's ChatGPT-written "V4 brief" (Thanksgiving dinner → morph → real phone-door ending). Implemented. |
+| **Apply v1** (≈38 s, `ApplyV1Clean`, `scenes/apply-v1/`) | See §9b | First cut sent; owner will send a song next |
 
 ---
 
@@ -272,6 +273,15 @@ Tokens live in `src/styles/styleA.ts`; spec in `docs/style-a.md`.
 **Engagement hook design (from the viewer panel):** Thanksgiving timing (post before ~Nov 26), "send this to whoever gets asked this year", a number for College (0) so college-defenders also comment, plain-language paths (a 14-year-old didn't know "e-commerce"), the honest day-1 progress cards.
 
 ---
+
+## 9b. Apply v1 (video #2)
+
+- Script `scripts/apply-v1.json` (tightened from the owner's ChatGPT draft). Timeline `timelines/apply-v1.json`; story beats in `scenes/apply-v1/timing.ts`.
+- Files: `Plaza.tsx` (tower, job line, laughers, garage rewind, his tower), `Belt.tsx` (conveyor, gates, blocks, bubbles, layoffs, `beltCam`), `Phones.tsx` (laughers on phones, job list + logo zoom), `ApplyV1.tsx` (shots, cameras, captions, end prompt).
+- SFX: `pipeline/sfx_apply.py` places **real CC0 recordings** from `public/audio/apply-v1/sfx-src/` (credits there). Run: `.venv/bin/python -I pipeline/sfx_apply.py studio/timelines/apply-v1.json studio/public/audio/apply-v1/sfx-src studio/public/audio/apply-v1/sfx.wav`.
+- QA stills in one go: `cd studio && node qa-stills.mjs ApplyV1Clean out.png 0.25 1.0 5.5 12 …` (times in seconds → one tiled sheet).
+- Speech bubbles in the "Too risky / Be realistic / Get a real job" beat replace the captions on purpose (captions hidden there).
+- When the song arrives: analyze it (Step C), add a `withMusic` composition, and re-time the hook/drop.
 
 ## 10. Audio details (everything)
 

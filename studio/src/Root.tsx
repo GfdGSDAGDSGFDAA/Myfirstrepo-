@@ -4,6 +4,7 @@ import {fontsReady} from './lib/fonts';
 import {EduPreview, EDU_PREVIEW_FRAMES} from './scenes/edu-preview/EduPreview';
 import {DoorsV2, DOORS_V2_FRAMES} from './scenes/doors-v2/DoorsV2';
 import {DoorsV3, DOORS_V3_FRAMES} from './scenes/doors-v3/DoorsV3';
+import {ApplyV1, APPLY_V1_FRAMES} from './scenes/apply-v1/ApplyV1';
 
 const handle = delayRender('fonts');
 fontsReady.then(() => continueRender(handle));
@@ -20,6 +21,9 @@ export const Root: React.FC = () => (
     <Composition id="DoorsV3" component={DoorsV3} durationInFrames={DOORS_V3_FRAMES}
       fps={60} width={1080} height={1920} defaultProps={{withMusic: true}} />
     <Composition id="DoorsV3Clean" component={DoorsV3} durationInFrames={DOORS_V3_FRAMES}
+      fps={60} width={1080} height={1920} defaultProps={{withMusic: false}} />
+    {/* Pathform video #2. No song yet: the owner sends one after the first cut. Post the Clean export. */}
+    <Composition id="ApplyV1Clean" component={ApplyV1} durationInFrames={APPLY_V1_FRAMES}
       fps={60} width={1080} height={1920} defaultProps={{withMusic: false}} />
   </>
 );
