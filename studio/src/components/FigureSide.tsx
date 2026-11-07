@@ -6,7 +6,7 @@ import React from 'react';
  * The far-side limbs are drawn first in a darker tone for depth.
  * Units: meters, origin between the feet. Same head/torso proportions as Figure.tsx.
  */
-type Pose = {
+export type Pose = {
   thighF: number; shinF: number; thighB: number; shinB: number; // degrees, + = forward
   armF: number; foreF: number; armB: number; foreB: number;
   lean: number; bob: number; hipY: number;
@@ -28,6 +28,15 @@ export const walkPose = (phase: number, amt = 1): Pose => {
 
 export const standPose: Pose = {thighF: 2, shinF: 0, thighB: -2, shinB: 0, armF: 3, foreF: 6, armB: -3, foreB: 6, lean: 0, bob: 0, hipY: -0.74};
 
+/** Seated at a table, forearms resting forward. */
+export const sitPose: Pose = {thighF: 88, shinF: -88, thighB: 84, shinB: -86, armF: 42, foreF: 62, armB: 36, foreB: 58, lean: 4, bob: 0, hipY: -0.47};
+
+export const lerpPose = (a: Pose, b: Pose, p: number): Pose => {
+  const o = {} as Pose;
+  (Object.keys(a) as (keyof Pose)[]).forEach((k) => { o[k] = a[k] + (b[k] - a[k]) * p; });
+  return o;
+};
+
 /** Seated on an edge of height ~0.45 m, holding a phone up in front of the face. */
 export const sitPhonePose: Pose = {thighF: 88, shinF: -88, thighB: 82, shinB: -84, armF: 38, foreF: 105, armB: 30, foreB: 100, lean: 6, bob: 0, hipY: -0.45};
 
@@ -43,14 +52,14 @@ const limb = (len: number, w: number, deg: number, child?: React.ReactNode, chil
 
 export const FigureSide: React.FC<{
   x: number; y: number; scale: number; pose: Pose; fill?: string; back?: string; filterId?: string; flip?: boolean;
-  phone?: boolean; phoneGlow?: number;
-}> = ({x, y, scale, pose: p, fill = '#F3F2EE', back = '#9a9995', filterId, flip, phone, phoneGlow = 0}) => {
+  phone?: boolean; phoneGlow?: number; legs?: number; opacity?: number;
+}> = ({x, y, scale, pose: p, fill = '#F3F2EE', back = '#9a9995', filterId, flip, phone, phoneGlow = 0, legs = 1, opacity = 1}) => {
   const thigh = 0.4;
   const shin = 0.36;
   const upper = 0.29;
   const fore = 0.27;
   const leg = (t: number, sh: number, color: string) => (
-    <g fill={color} transform={`translate(0 ${p.hipY})`}>
+    <g fill={color} opacity={legs} transform={`translate(0 ${p.hipY})`}>
       {limb(thigh, LEG_W, t, limb(shin, LEG_W * 0.95, sh), thigh)}
     </g>
   );
@@ -72,7 +81,7 @@ export const FigureSide: React.FC<{
   // hip height drives torso placement (sitting lowers the hips)
   const torsoTop = p.hipY - 0.62;
   return (
-    <g transform={`translate(${x} ${y}) scale(${flip ? -scale : scale} ${scale})`} filter={filterId ? `url(#${filterId})` : undefined}>
+    <g transform={`translate(${x} ${y}) scale(${flip ? -scale : scale} ${scale})`} filter={filterId ? `url(#${filterId})` : undefined} opacity={opacity}>
       <g transform={`translate(0 ${p.bob})`}>
         {leg(p.thighB, p.shinB, back)}
         <g transform={`translate(0 ${p.hipY}) rotate(${p.lean}) translate(0 ${-p.hipY})`}>

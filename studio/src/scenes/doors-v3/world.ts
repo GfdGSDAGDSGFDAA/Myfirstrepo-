@@ -18,11 +18,10 @@ export const DOORS: Door[] = [
   {side: 1, z: 6.5, label: 'FREELANCING', glyph: 'laptop', item: 1},
   {side: -1, z: 9.0, label: 'RESELLING', glyph: 'tag', item: 2},
   {side: 1, z: 11.5, label: 'CONTENT CREATION', glyph: 'play', item: 3},
-  {side: -1, z: 13.6},
-  {side: 1, z: 14.8},
-  {side: -1, z: 17.0, label: 'CLOTHING BRAND', glyph: 'shirt', item: 4},
-  {side: 1, z: 19.2},
-  {side: -1, z: 21.0},
+  {side: -1, z: 14.0, label: 'CLOTHING BRAND', glyph: 'shirt', item: 4},
+  {side: 1, z: 16.2},
+  {side: -1, z: 18.4},
+  {side: 1, z: 20.4},
 ];
 export const HERO_DOOR = DOORS.find((d) => d.item === 4)!;
 
@@ -71,3 +70,6 @@ export const GLYPHS: Record<Glyph, number[][][]> = {
     [[-0.07, -0.08], [0.1, 0.01], [-0.07, 0.1], [-0.07, -0.08]],
   ],
 };
+
+/** Where the hero stands in the hallway after the dinner turns into it. */
+export const HERO_REST: [number, number] = [-0.35, 13.0];

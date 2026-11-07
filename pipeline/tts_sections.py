@@ -26,6 +26,26 @@ def trim(x, thr=0.006, pad=0.03):
     return x[max(0, idx[0] - int(pad * SR)): min(len(x), idx[-1] + int(pad * SR))]
 
 
+def squeeze(x, max_gap=0.15, thr=0.012, win=0.01):
+    """Cap internal pauses (TikTok pacing: no dead air mid-section)."""
+    n = int(win * SR)
+    frames = len(x) // n
+    loud = np.array([np.abs(x[i * n:(i + 1) * n]).max() > thr for i in range(frames)])
+    out, i = [], 0
+    while i < frames:
+        j = i
+        while j < frames and loud[j] == loud[i]:
+            j += 1
+        seg = x[i * n:j * n]
+        if not loud[i] and (j - i) * win > max_gap and i > 0 and j < frames:
+            keep = int(max_gap * SR) // 2
+            seg = np.concatenate([seg[:keep], seg[-keep:]])
+        out.append(seg)
+        i = j
+    out.append(x[frames * n:])
+    return np.concatenate(out)
+
+
 def polish(src, dst):
     chain = ",".join([
         "highpass=f=75",
@@ -86,7 +106,7 @@ def main(script_path, out_dir, tl_path):
     for s in sc["sections"]:
         a, sr = k.create(s["text"], voice=voice, speed=s.get("speed", speed), lang="en-us",
                          sentence_pause=sc.get("sentencePause", 0.2), clause_pause=sc.get("clausePause", 0.08))
-        clips.append(trim(a.astype(np.float32)))
+        clips.append(squeeze(trim(a.astype(np.float32)), s.get('maxGap', sc.get('maxGap', 0.15))))
     # place sections
     t, placed = 0.2, []
     for s, c in zip(sc["sections"], clips):

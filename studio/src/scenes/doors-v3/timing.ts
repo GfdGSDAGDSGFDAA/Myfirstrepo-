@@ -14,36 +14,51 @@ export const sec = (id: string) => L[id];
 
 export const FPS = 60;
 
+const open = w('close', 17);
+
 // Named story beats (derived from narration words or the song)
 export const T = {
+  // --- Thanksgiving dinner
+  fork: 0.95,
   told: w('hook', 2), // "they ask"
-  college: w('hook', 5),
-  only: w('hook', 5),
+  college: w('hook', 4), // "what college"
+  only: w('hook', 4),
   never: w('hook', 6), // "Nobody shows you these"
+  standUp: w('hook', 6) - 0.05,
+  morphA: 2.7,
+  morphB: 4.08,
   these: w('hook', -1),
   drop: 4.2,
+  // --- hallway
   items: [0, 1, 2, 3, 5].map((i) => w('list', i)), // E-com, Freelancing, Reselling, Content, That (clothing brand)
   hundred: w('list', 12), // "and a hundred more nobody told you about"
   ridStart: sec('ridicule').start,
   ridiculous: w('ridicule', 3),
   until: w('ridicule', 4),
-  burst: 16.37, // beat between "pulls" and "off"
+  burst: 15.79, // beat on "off"
   gpaStart: sec('gpa').start,
-  gpa: w('gpa', 7),
-  they: w('gpa', 8), // hero starts walking to his door
-  arrive: 21.35,
-  whiteIn: 21.95,
-  bedroom: 22.175, // song: bass drops out (beat)
+  gpa: w('gpa', 8),
+  they: w('gpa', 9), // hero starts walking to his door
+  arrive: 20.42,
+  stepIn: 20.78,
+  whiteIn: 21.02,
+  bedroom: sec('bedroom').start - 0.08,
+  // --- bedroom
   audiences: w('bedroom', 2),
   followersAt: w('bedroom', 9),
   phone: w('bedroom', 12),
   wifi: w('bedroom', 14),
   whyYou: w('bedroom', 15),
+  // --- close
   collegeOk: sec('close').start,
   notOnly: w('close', 3),
   pocket: w('close', 9),
-  open: w('close', 17),
-  hallwayQ: w('close', 18), // "So why are you still standing in the hallway?"
-  end: 36.084, // hard cut on the beat → loops to frame 0
+  open,
+  portalA: open + 0.2,
+  finalShot: open + 0.95,
+  hallwayQ: w('close', 18),
+  walkGo: w('close', -1), // "hallway?" → he steps forward
+  question: sec('close').end + 0.02,
+  end: 35.503, // last beat
 };
 export const FRAMES = Math.round(T.end * FPS);

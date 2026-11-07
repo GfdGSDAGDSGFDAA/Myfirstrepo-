@@ -18,7 +18,7 @@
       "id": "list",
       "at": 4.62,
       "pauseAfter": 0.22,
-      "text": "E-commerce, freelancing, reselling, content creation, that clothing brand you wanted to start, and a hundred more nobody told you about.",
+      "text": "E-commerce, freelancing, reselling, content creation, that clothing brand you wanted to start and a hundred more nobody told you about.",
       "speed": 1.1
     },
     {
@@ -29,7 +29,7 @@
     {
       "id": "gpa",
       "pauseAfter": 0.2,
-      "text": "Nobody out there is asking for your GPA, and you don't even have to know what you want yet."
+      "text": "Most of these doors never ask for your GPA and you don't even need to know what you want yet."
     },
     {
       "id": "bedroom",

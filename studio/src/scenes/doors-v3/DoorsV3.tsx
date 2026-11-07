@@ -1,12 +1,13 @@
 import React from 'react';
 import {AbsoluteFill, Html5Audio, random, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Cam} from '../../lib/camera';
-import {ease, keyframes, prog} from '../../lib/timeline';
+import {clamp01, ease, keyframes, lerp, prog} from '../../lib/timeline';
 import {buildChunks, LineCaptions} from '../../components/LineCaptions';
 import {styleA as s} from '../../styles/styleA';
 import {Hallway3} from './Hallway3';
 import {Bedroom} from './Bedroom';
-import {PhoneShot} from './PhoneShot';
+import {DinnerLayer, backWallZ, morphAt} from './Dinner';
+import {PhoneBase, PhoneOverlay, phoneState} from './PhoneShot';
 import {T, tl} from './timing';
 import {DOORS} from './world';
 
@@ -15,10 +16,9 @@ export {FRAMES as DOORS_V3_FRAMES} from './timing';
 // one line on screen at a time; `key` words settle white, others settle grey
 const CHUNKS = buildChunks(tl.lines, {
   hook: [{n: 2, key: [1]}, {n: 4, key: [3]}, {n: 3}, {n: 1, key: [0]}],
-  // one path per line, all the same style
   list: [{n: 1, key: [0]}, {n: 1, key: [0]}, {n: 1, key: [0]}, {n: 2, key: [0, 1]}, {n: 3, key: [0, 1, 2]}, {n: 4}, {n: 4, key: [2, 3]}, {n: 4}],
   ridicule: [{n: 3}, {n: 1, key: [0]}, {n: 4}, {n: 4, key: [1, 2, 3]}],
-  gpa: [{n: 4}, {n: 4, key: [3]}, {n: 4}, {n: 3}, {n: 4, key: [3]}],
+  gpa: [{n: 4}, {n: 5, key: [4]}, {n: 5}, {n: 6, key: [4, 5]}],
   bedroom: [{n: 2}, {n: 3}, {n: 2}, {n: 3, key: [2]}, {n: 5, key: [2, 4]}, {n: 3}, {n: 3, key: [2]}],
   close: [{n: 3}, {n: 3}, {n: 3, key: [1, 2]}, {n: 3}, {n: 3, key: [2]}, {n: 3, key: [2]}, {n: 4}, {n: 5, key: [4]}],
 });
@@ -28,27 +28,44 @@ const camAt = (t: number): CamV => {
   // during the list the camera frames each door the same way: 3.2 m back, leaning toward its side
   const itemKeys = T.items.map((it, i) => {
     const d = DOORS.find((dd) => dd.item === i)!;
-    return {t: it + 0.15, v: {x: d.side * 0.32, y: -0.45, z: Math.min(d.z - 3.2, 11.2), pitch: 0.03}, e: ease.inOut};
+    return {t: it + 0.15, v: {x: d.side * 0.32, y: -0.45, z: Math.min(d.z - 3.2, 10.8), pitch: 0.03}, e: ease.inOut};
   });
   return keyframes<CamV>(t, [
-    {t: 0, v: {x: 0, y: 0, z: 12.0, pitch: 0}},
-    {t: T.these, v: {x: 0, y: 0.02, z: 12.8, pitch: 0}, e: ease.soft},
-    {t: T.drop - 0.02, v: {x: 0, y: 0.05, z: 13.6, pitch: 0}, e: ease.in}, // surge in…
-    {t: T.items[0] - 0.05, v: {x: -0.2, y: -0.45, z: 0.6, pitch: 0.03}, e: ease.whip}, // …whip back on the drop
+    // Thanksgiving: elevated establishing angle, push toward the hero...
+    {t: 0, v: {x: 0.1, y: -1.25, z: 8.6, pitch: 0.3}},
+    {t: T.morphA, v: {x: -0.5, y: -0.85, z: 9.7, pitch: 0.18}, e: ease.soft},
+    // ...one continuous move down to eye level as the room becomes the hallway
+    {t: T.morphB, v: {x: -0.1, y: 0.02, z: 10.0, pitch: 0}, e: ease.inOut},
+    {t: T.drop - 0.02, v: {x: 0, y: 0.04, z: 10.25, pitch: 0}, e: ease.in},
+    {t: T.items[0] - 0.05, v: {x: -0.2, y: -0.45, z: 0.6, pitch: 0.03}, e: ease.whip}, // whip back on the drop
     ...itemKeys,
-    {t: T.hundred, v: {x: 0, y: -0.5, z: 10.6, pitch: 0.02}, e: ease.inOut},
-    {t: T.hundred + 1.2, v: {x: 0, y: -2.9, z: 7.4, pitch: -0.42}, e: ease.inOut}, // pull back, rise, tilt up: the atrium
-    {t: T.ridStart + 0.5, v: {x: 0, y: -0.45, z: 6.6, pitch: 0.02}, e: ease.inOut},
-    {t: T.burst - 0.02, v: {x: 0, y: -0.4, z: 7.8, pitch: 0.02}, e: ease.in}, // tension creep
-    {t: T.burst + 0.5, v: {x: 0, y: -0.45, z: 7.4, pitch: 0.02}, e: ease.out}, // knocked back by the light
-    {t: T.gpaStart + 0.5, v: {x: 0, y: -0.12, z: 12.6, pitch: 0}, e: ease.inOut},
-    {t: T.they, v: {x: -0.1, y: -0.12, z: 12.9, pitch: 0}, e: ease.soft},
-    {t: T.whiteIn, v: {x: -0.9, y: -0.08, z: 14.7, pitch: 0}, e: ease.inOut}, // follow him to his door
-    {t: T.bedroom, v: {x: -1.35, y: -0.05, z: 15.9, pitch: 0}, e: ease.in}, // push into the light
-    {t: T.collegeOk, v: {x: 0, y: -0.7, z: 14.6, pitch: -0.06}, cut: true}, // "College isn't bad."
-    {t: T.notOnly, v: {x: 0, y: -0.7, z: 15.4, pitch: -0.06}, e: ease.soft},
-    {t: T.pocket, v: {x: 0, y: -4.4, z: 0.5, pitch: -0.2}, e: ease.inOut}, // pull way back: every door, every floor
+    {t: T.hundred, v: {x: 0, y: -0.5, z: 10.4, pitch: 0.02}, e: ease.inOut},
+    {t: T.hundred + 1.2, v: {x: 0, y: -2.9, z: 7.4, pitch: -0.42}, e: ease.inOut}, // pull back, rise: the atrium
+    {t: T.ridStart + 0.5, v: {x: 0, y: -0.45, z: 6.4, pitch: 0.02}, e: ease.inOut},
+    {t: T.burst - 0.02, v: {x: 0, y: -0.4, z: 7.6, pitch: 0.02}, e: ease.in},
+    {t: T.burst + 0.5, v: {x: 0, y: -0.45, z: 7.2, pitch: 0.02}, e: ease.out},
+    {t: T.gpaStart + 0.5, v: {x: 0.15, y: -0.15, z: 9.7, pitch: 0}, e: ease.inOut},
+    {t: T.they, v: {x: 0.1, y: -0.15, z: 9.9, pitch: 0}, e: ease.soft},
+    {t: T.arrive, v: {x: -0.6, y: -0.12, z: 11.3, pitch: 0}, e: ease.inOut}, // follow him to his door
+    {t: T.stepIn, v: {x: -0.75, y: -0.1, z: 11.55, pitch: 0}, e: ease.soft}, // hold while it opens
+    {t: T.bedroom, v: {x: -1.25, y: -0.08, z: 12.9, pitch: 0}, e: ease.in}, // through with him
+    {t: T.collegeOk, v: {x: 0.2, y: -0.7, z: 8.6, pitch: -0.03}, cut: true}, // college: one lit door among many lit doors
+    {t: T.notOnly, v: {x: 0, y: -0.75, z: 9.4, pitch: -0.03}, e: ease.soft},
+    {t: T.pocket, v: {x: 0, y: -4.4, z: 0.5, pitch: -0.2}, e: ease.inOut},
   ]);
+};
+
+/** Final shot: every door open, the hero takes his first step. Also shown through the phone's door. */
+const FinalHall: React.FC<{t: number}> = ({t}) => {
+  const k = prog(t, T.portalA, T.end, ease.soft);
+  const cam: Cam = {x: 0, y: lerp(-0.4, -0.3, k), z: lerp(0.2, 1.5, k), pitch: 0.03, f: 1050, cx: 540, cy: 800};
+  const go = clamp01((t - T.walkGo) / 0.3);
+  const z = 3.3 + Math.max(0, t - T.walkGo) * 0.85 * go;
+  return (
+    <Hallway3 t={T.collegeOk + 1.2} cam={cam} showHero={false}
+      heroOverride={{x: 0, z, phase: (Math.max(0, t - T.walkGo) / 0.5805) * Math.PI, walk: go}}
+      numerals={prog(t, T.question - 0.2, T.question + 0.3, ease.out)} />
+  );
 };
 
 export const DoorsV3: React.FC<{withMusic?: boolean}> = ({withMusic = true}) => {
@@ -56,42 +73,57 @@ export const DoorsV3: React.FC<{withMusic?: boolean}> = ({withMusic = true}) => 
   const {fps} = useVideoConfig();
   const t = frame / fps;
   const cv = camAt(t);
-  // punch-in on the light burst
   const punch = t >= T.burst ? Math.exp(-(t - T.burst) * 5) * prog(t, T.burst, T.burst + 0.06) : 0;
   const cam: Cam = {...cv, f: 1050 * (1 + 0.16 * punch), cx: 540, cy: 780};
 
-  const shot = t < T.bedroom ? 'hall' : t < T.collegeOk ? 'bedroom' : t < T.pocket ? 'hall2' : t < T.hallwayQ ? 'phone' : 'end';
-  // final shot = the opening frame, so the loop is seamless (hallway frozen at its t=0 state, camera eases onto frame-0 framing)
-  const endCam: Cam = {x: 0, y: 0, z: 12.0 - 0.5 * (1 - prog(t, T.hallwayQ, T.end, ease.soft)), pitch: 0, f: 1050, cx: 540, cy: 780};
-  const dropFlash = t >= T.drop ? 0.22 * Math.exp(-(t - T.drop) * 10) : 0;
-  const burstFlash = t >= T.burst ? 0.18 * Math.exp(-(t - T.burst) * 8) : 0;
-  const whiteIn = prog(t, T.whiteIn, T.bedroom, ease.in) * (t < T.bedroom ? 1 : 0);
-  const fromWhite = t >= T.bedroom && t < T.bedroom + 0.4 ? 1 - prog(t, T.bedroom, T.bedroom + 0.4, ease.out)
-    : t >= T.hallwayQ ? 1 - prog(t, T.hallwayQ, T.hallwayQ + 0.3, ease.out) : 0;
+  const shot = t < T.drop ? 'dinner' : t < T.bedroom ? 'hall' : t < T.collegeOk ? 'bedroom' : t < T.pocket ? 'hall2' : t < T.finalShot ? 'phone' : 'end';
+  const m = morphAt(t);
+  const dropFlash = t >= T.drop ? 0.1 * Math.exp(-(t - T.drop) * 14) : 0;
+  const burstFlash = t >= T.burst ? 0.1 * Math.exp(-(t - T.burst) * 10) : 0;
+  const doorLight = t < T.bedroom ? prog(t, T.whiteIn, T.bedroom, ease.in) : 0; // walking into the light
+  const fromLight = t >= T.bedroom && t < T.bedroom + 0.3 ? 1 - prog(t, T.bedroom, T.bedroom + 0.3, ease.out)
+    : t >= T.collegeOk && t < T.collegeOk + 0.3 ? 1 - prog(t, T.collegeOk, T.collegeOk + 0.3, ease.out) : 0;
+  const ph = phoneState(t);
+  const a = ph.aperture;
   const grainSeed = Math.floor(frame / 4);
+  const qA = prog(t, T.question + 0.1, T.question + 0.45, ease.out);
 
   return (
     <AbsoluteFill style={{backgroundColor: s.bg}}>
+      {shot === 'dinner' && (
+        <Hallway3 t={t} cam={cam} showHero={false} endZ={backWallZ(t)} entrance={m} shaftAmt={m}>
+          <DinnerLayer t={t} cam={cam} />
+        </Hallway3>
+      )}
       {(shot === 'hall' || shot === 'hall2') && <Hallway3 t={t} cam={cam} showHero={shot === 'hall'} />}
       {shot === 'bedroom' && <Bedroom t={t} />}
-      {shot === 'phone' && <PhoneShot t={t} />}
-      {shot === 'end' && <Hallway3 t={0} cam={endCam} showHero />}
+      {shot === 'phone' && (
+        <>
+          <PhoneBase t={t} />
+          {t > T.open - 0.15 && (
+            <AbsoluteFill style={{clipPath: `polygon(${a.x0}px ${a.y0}px, ${a.x1}px ${a.y0}px, ${a.x1}px ${a.y1}px, ${a.x0}px ${a.y1}px)`}}>
+              <FinalHall t={t} />
+            </AbsoluteFill>
+          )}
+          <PhoneOverlay t={t} />
+        </>
+      )}
+      {shot === 'end' && <FinalHall t={t} />}
 
       <AbsoluteFill style={{background: `radial-gradient(ellipse 85% 65% at 50% 46%, rgba(0,0,0,0) 45%, rgba(0,0,0,${s.vignette}) 100%)`}} />
       {/* keeps captions readable over bright doors */}
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(5,5,6,0.78) 0px, rgba(5,5,6,0.5) 330px, rgba(5,5,6,0) 640px)'}} />
-      <AbsoluteFill style={{backgroundColor: s.light, opacity: Math.max(dropFlash, burstFlash, whiteIn, fromWhite)}} />
+      <AbsoluteFill style={{backgroundColor: s.light, opacity: Math.max(dropFlash, burstFlash, doorLight, fromLight)}} />
 
-      <LineCaptions t={t} chunks={CHUNKS} y={300} style={s} hidden={t > T.end - 0.12} />
+      <LineCaptions t={t} chunks={CHUNKS} y={300} style={s} hidden={t > T.question + 0.1} />
 
-      {/* comment prompt on the last line */}
-      {t > T.hallwayQ + 0.25 && (
-        <div style={{position: 'absolute', top: 420, left: 0, right: 0, textAlign: 'center', fontFamily: s.fontMono,
-          fontSize: 34, fontWeight: 500, letterSpacing: '0.08em', lineHeight: 1.5, color: s.fg,
-          opacity: prog(t, T.hallwayQ + 0.25, T.hallwayQ + 0.55, ease.out),
-          transform: `translateY(${(1 - prog(t, T.hallwayQ + 0.25, T.hallwayQ + 0.55, ease.out)) * 14}px)`,
-          textShadow: '0 0 14px rgba(255,255,255,0.35)'}}>
-          WHICH DOOR IS YOURS?<br />COMMENT ITS NUMBER (1–5)
+      {/* the ending question: same type system as the captions, big enough for a phone */}
+      {qA > 0 && (
+        <div style={{position: 'absolute', top: 280, left: 0, right: 0, textAlign: 'center', fontFamily: s.fontDisplay,
+          opacity: qA, transform: `translateY(${(1 - qA) * 16}px)`}}>
+          <div style={{fontSize: 76, fontWeight: 700, color: s.fg, letterSpacing: '-0.02em',
+            textShadow: '0 0 10px rgba(255,255,255,0.45), 0 0 28px rgba(255,255,255,0.2)'}}>Which door is yours?</div>
+          <div style={{marginTop: 18, fontSize: 40, fontWeight: 500, color: 'rgba(244,243,239,0.6)'}}>comment its number</div>
         </div>
       )}
 
