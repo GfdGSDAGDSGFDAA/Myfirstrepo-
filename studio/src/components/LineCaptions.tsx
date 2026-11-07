@@ -45,10 +45,12 @@ export const LineCaptions: React.FC<{t: number; chunks: C[]; y: number; style: S
   const ch = chunks.find((c) => t >= c.start && t < c.end + 0.16);
   if (!ch) return null;
   const out = prog(t, ch.end, ch.end + 0.16, ease.in);
+  const chars = ch.words.reduce((a, w) => a + w.w.length + 1, 0);
+  const fit = Math.min(size, 960 / (chars * 0.5));
   return (
     <div style={{
       position: 'absolute', left: 40, right: 40, top: y, display: 'flex', justifyContent: 'center',
-      whiteSpace: 'nowrap', fontFamily: style.fontDisplay, fontSize: size, letterSpacing: '-0.02em', lineHeight: 1,
+      whiteSpace: 'nowrap', fontFamily: style.fontDisplay, fontSize: fit, letterSpacing: '-0.02em', lineHeight: 1,
       opacity: 1 - out, transform: `translateY(${-12 * out}px)`, filter: out > 0 ? `blur(${out * 6}px)` : undefined,
     }}>
       {ch.words.map((w, i) => {

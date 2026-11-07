@@ -35,7 +35,7 @@ def polish(src, dst):
         "deesser=i=0.35",
         "acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2",
         "aecho=0.9:0.9:18|31:0.07|0.04",     # tiny room, not a hall
-        "loudnorm=I=-15:TP=-1.5:LRA=6",
+        "loudnorm=I=-14:TP=-1.2:LRA=6",
     ])
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-af", chain, "-ar", "48000", dst], check=True)
 

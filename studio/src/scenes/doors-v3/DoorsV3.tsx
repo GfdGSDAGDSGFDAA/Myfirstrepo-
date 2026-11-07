@@ -8,40 +8,48 @@ import {Hallway3} from './Hallway3';
 import {Bedroom} from './Bedroom';
 import {PhoneShot} from './PhoneShot';
 import {T, tl} from './timing';
+import {DOORS} from './world';
 
 export {FRAMES as DOORS_V3_FRAMES} from './timing';
 
 // one line on screen at a time; `key` words settle white, others settle grey
 const CHUNKS = buildChunks(tl.lines, {
-  hook: [{n: 4, key: [3]}, {n: 4, key: [2, 3]}, {n: 4}, {n: 1, key: [0]}],
-  list: [{n: 2}, {n: 3, key: [1, 2]}, {n: 3, key: [1, 2]}, {n: 4}, {n: 5, key: [3, 4]}],
+  hook: [{n: 2, key: [1]}, {n: 4, key: [3]}, {n: 3}, {n: 1, key: [0]}],
+  // one path per line, all the same style
+  list: [{n: 1, key: [0]}, {n: 1, key: [0]}, {n: 1, key: [0]}, {n: 2, key: [0, 1]}, {n: 3, key: [0, 1, 2]}, {n: 4}, {n: 4, key: [2, 3]}, {n: 4}],
   ridicule: [{n: 3}, {n: 1, key: [0]}, {n: 4}, {n: 4, key: [1, 2, 3]}],
-  gpa: [{n: 3}, {n: 2, key: [1]}, {n: 5}, {n: 5, key: [3, 4]}],
-  bedroom: [{n: 2}, {n: 3}, {n: 3, key: [2]}, {n: 3, key: [2]}, {n: 5, key: [2, 4]}],
+  gpa: [{n: 4}, {n: 4, key: [3]}, {n: 4}, {n: 3}, {n: 4, key: [3]}],
+  bedroom: [{n: 2}, {n: 3}, {n: 2}, {n: 3, key: [2]}, {n: 5, key: [2, 4]}, {n: 3}, {n: 3, key: [2]}],
   close: [{n: 3}, {n: 3}, {n: 3, key: [1, 2]}, {n: 3}, {n: 3, key: [2]}, {n: 3, key: [2]}, {n: 4}, {n: 5, key: [4]}],
 });
 
 type CamV = {x: number; y: number; z: number; pitch: number};
-const camAt = (t: number): CamV =>
-  keyframes<CamV>(t, [
+const camAt = (t: number): CamV => {
+  // during the list the camera frames each door the same way: 3.2 m back, leaning toward its side
+  const itemKeys = T.items.map((it, i) => {
+    const d = DOORS.find((dd) => dd.item === i)!;
+    return {t: it + 0.15, v: {x: d.side * 0.32, y: -0.45, z: Math.min(d.z - 3.2, 11.2), pitch: 0.03}, e: ease.inOut};
+  });
+  return keyframes<CamV>(t, [
     {t: 0, v: {x: 0, y: 0, z: 12.0, pitch: 0}},
     {t: T.these, v: {x: 0, y: 0.02, z: 12.8, pitch: 0}, e: ease.soft},
-    {t: T.drop - 0.02, v: {x: 0, y: 0.05, z: 13.7, pitch: 0}, e: ease.in}, // surge in…
-    {t: T.drop + 0.75, v: {x: 0, y: -0.5, z: 1.2, pitch: 0.03}, e: ease.whip}, // …whip back on the drop
-    {t: T.items[4] + 0.5, v: {x: 0, y: -0.45, z: 7.4, pitch: 0.03}, e: ease.soft},
-    {t: T.hundred, v: {x: 0, y: -0.5, z: 7.7, pitch: 0.02}, e: ease.soft},
-    {t: T.hundred + 1.05, v: {x: 0, y: -2.9, z: 6.6, pitch: -0.42}, e: ease.inOut}, // rise + tilt up into the atrium
-    {t: T.ridStart + 0.45, v: {x: 0, y: -0.45, z: 7.2, pitch: 0.02}, e: ease.inOut},
-    {t: T.burst - 0.02, v: {x: 0, y: -0.4, z: 8.5, pitch: 0.02}, e: ease.in}, // tension creep
-    {t: T.burst + 0.5, v: {x: 0, y: -0.45, z: 8.1, pitch: 0.02}, e: ease.out}, // knocked back by the light
-    {t: T.gpaStart + 0.45, v: {x: 0.15, y: -0.12, z: 12.5, pitch: 0}, e: ease.inOut},
-    {t: T.they, v: {x: 0.25, y: -0.12, z: 12.8, pitch: 0}, e: ease.soft},
-    {t: T.whiteIn, v: {x: 1.05, y: -0.05, z: 15.2, pitch: 0}, e: ease.soft},
-    {t: T.bedroom, v: {x: 1.3, y: 0, z: 16.3, pitch: 0}, e: ease.in},
+    {t: T.drop - 0.02, v: {x: 0, y: 0.05, z: 13.6, pitch: 0}, e: ease.in}, // surge in…
+    {t: T.items[0] - 0.05, v: {x: -0.2, y: -0.45, z: 0.6, pitch: 0.03}, e: ease.whip}, // …whip back on the drop
+    ...itemKeys,
+    {t: T.hundred, v: {x: 0, y: -0.5, z: 10.6, pitch: 0.02}, e: ease.inOut},
+    {t: T.hundred + 1.2, v: {x: 0, y: -2.9, z: 7.4, pitch: -0.42}, e: ease.inOut}, // pull back, rise, tilt up: the atrium
+    {t: T.ridStart + 0.5, v: {x: 0, y: -0.45, z: 6.6, pitch: 0.02}, e: ease.inOut},
+    {t: T.burst - 0.02, v: {x: 0, y: -0.4, z: 7.8, pitch: 0.02}, e: ease.in}, // tension creep
+    {t: T.burst + 0.5, v: {x: 0, y: -0.45, z: 7.4, pitch: 0.02}, e: ease.out}, // knocked back by the light
+    {t: T.gpaStart + 0.5, v: {x: 0, y: -0.12, z: 12.6, pitch: 0}, e: ease.inOut},
+    {t: T.they, v: {x: -0.1, y: -0.12, z: 12.9, pitch: 0}, e: ease.soft},
+    {t: T.whiteIn, v: {x: -0.9, y: -0.08, z: 14.7, pitch: 0}, e: ease.inOut}, // follow him to his door
+    {t: T.bedroom, v: {x: -1.35, y: -0.05, z: 15.9, pitch: 0}, e: ease.in}, // push into the light
     {t: T.collegeOk, v: {x: 0, y: -0.7, z: 14.6, pitch: -0.06}, cut: true}, // "College isn't bad."
     {t: T.notOnly, v: {x: 0, y: -0.7, z: 15.4, pitch: -0.06}, e: ease.soft},
     {t: T.pocket, v: {x: 0, y: -4.4, z: 0.5, pitch: -0.2}, e: ease.inOut}, // pull way back: every door, every floor
   ]);
+};
 
 export const DoorsV3: React.FC<{withMusic?: boolean}> = ({withMusic = true}) => {
   const frame = useCurrentFrame();
@@ -60,7 +68,7 @@ export const DoorsV3: React.FC<{withMusic?: boolean}> = ({withMusic = true}) => 
   const whiteIn = prog(t, T.whiteIn, T.bedroom, ease.in) * (t < T.bedroom ? 1 : 0);
   const fromWhite = t >= T.bedroom && t < T.bedroom + 0.4 ? 1 - prog(t, T.bedroom, T.bedroom + 0.4, ease.out)
     : t >= T.hallwayQ ? 1 - prog(t, T.hallwayQ, T.hallwayQ + 0.3, ease.out) : 0;
-  const grainSeed = Math.floor(frame / 2);
+  const grainSeed = Math.floor(frame / 4);
 
   return (
     <AbsoluteFill style={{backgroundColor: s.bg}}>
@@ -76,22 +84,14 @@ export const DoorsV3: React.FC<{withMusic?: boolean}> = ({withMusic = true}) => 
 
       <LineCaptions t={t} chunks={CHUNKS} y={300} style={s} hidden={t > T.end - 0.12} />
 
-      {/* hook overlay: gives people a reason to send it */}
-      {t < 3.9 && (
-        <div style={{position: 'absolute', top: 205, left: 24, right: 24, textAlign: 'center', fontFamily: s.fontDisplay, whiteSpace: 'nowrap',
-          fontSize: 31, fontWeight: 500, color: 'rgba(244,243,239,0.62)', letterSpacing: '-0.01em',
-          opacity: prog(t, 0, 0.25, ease.out) * (1 - prog(t, 3.5, 3.9, ease.in))}}>
-          for the kid who gets asked “so what college?” every Thanksgiving
-        </div>
-      )}
       {/* comment prompt on the last line */}
       {t > T.hallwayQ + 0.25 && (
         <div style={{position: 'absolute', top: 420, left: 0, right: 0, textAlign: 'center', fontFamily: s.fontMono,
-          fontSize: 36, fontWeight: 500, letterSpacing: '0.1em', color: s.fg,
+          fontSize: 34, fontWeight: 500, letterSpacing: '0.08em', lineHeight: 1.5, color: s.fg,
           opacity: prog(t, T.hallwayQ + 0.25, T.hallwayQ + 0.55, ease.out),
           transform: `translateY(${(1 - prog(t, T.hallwayQ + 0.25, T.hallwayQ + 0.55, ease.out)) * 14}px)`,
           textShadow: '0 0 14px rgba(255,255,255,0.35)'}}>
-          WHICH DOOR ARE YOU? 1–5
+          WHICH DOOR IS YOURS?<br />COMMENT ITS NUMBER (1–5)
         </div>
       )}
 
@@ -103,6 +103,7 @@ export const DoorsV3: React.FC<{withMusic?: boolean}> = ({withMusic = true}) => 
 
       <Html5Audio src={staticFile('audio/doors-v3/narration.wav')} />
       {withMusic && <Html5Audio src={staticFile('audio/doors-v3/music-preview-only.wav')} />}
+      <Html5Audio src={staticFile('audio/doors-v3/sfx.wav')} />
     </AbsoluteFill>
   );
 };

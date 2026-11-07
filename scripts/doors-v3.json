@@ -4,20 +4,22 @@
   "voice": "af_heart",
   "speed": 1.04,
   "fps": 30,
-  "totalDuration": 36.0,
+  "totalDuration": 38.0,
   "sentencePause": 0.16,
   "clausePause": 0.07,
   "sections": [
     {
       "id": "hook",
       "endBy": 4.02,
-      "text": "Everyone told you college is the only way. They never showed you these."
+      "text": "Every Thanksgiving, they ask what college. Nobody shows you these.",
+      "speed": 1.12
     },
     {
       "id": "list",
       "at": 4.62,
       "pauseAfter": 0.22,
-      "text": "E-commerce. Freelancing. Reselling. Content creation. That clothing brand you wanted to start. And about a hundred more."
+      "text": "E-commerce, freelancing, reselling, content creation, that clothing brand you wanted to start, and a hundred more nobody told you about.",
+      "speed": 1.1
     },
     {
       "id": "ridicule",
@@ -27,12 +29,12 @@
     {
       "id": "gpa",
       "pauseAfter": 0.2,
-      "text": "Nobody's asking for your GPA. You don't even have to know what you want yet."
+      "text": "Nobody out there is asking for your GPA, and you don't even have to know what you want yet."
     },
     {
       "id": "bedroom",
       "pauseAfter": 0.25,
-      "text": "Right now, people your age are building audiences from their bedroom, with a phone and Wi-Fi."
+      "text": "Right now, someone your age is starting from their bedroom, with a phone and Wi-Fi. So why can't it be you?"
     },
     {
       "id": "close",

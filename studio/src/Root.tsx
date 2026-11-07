@@ -18,8 +18,8 @@ export const Root: React.FC = () => (
     <Composition id="DoorsV2Clean" component={DoorsV2} durationInFrames={DOORS_V2_FRAMES}
       fps={30} width={1080} height={1920} defaultProps={{withMusic: false}} />
     <Composition id="DoorsV3" component={DoorsV3} durationInFrames={DOORS_V3_FRAMES}
-      fps={30} width={1080} height={1920} defaultProps={{withMusic: true}} />
+      fps={60} width={1080} height={1920} defaultProps={{withMusic: true}} />
     <Composition id="DoorsV3Clean" component={DoorsV3} durationInFrames={DOORS_V3_FRAMES}
-      fps={30} width={1080} height={1920} defaultProps={{withMusic: false}} />
+      fps={60} width={1080} height={1920} defaultProps={{withMusic: false}} />
   </>
 );

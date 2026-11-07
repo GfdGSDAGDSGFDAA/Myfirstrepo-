@@ -1,559 +1,604 @@
 {
  "fps": 30,
- "duration": 36.0,
+ "duration": 38.0,
  "voice": "af_heart",
  "engine": "kokoro-v1.0 + polish",
  "lines": [
   {
    "id": "hook",
-   "text": "Everyone told you college is the only way. They never showed you these.",
-   "start": 0.12,
-   "end": 4.042,
+   "text": "Every Thanksgiving, they ask what college. Nobody shows you these.",
+   "start": 0.5,
+   "end": 4.02,
    "words": [
     {
-     "w": "Everyone",
-     "start": 0.12,
-     "end": 0.68
+     "w": "Every",
+     "start": 0.5,
+     "end": 0.82
     },
     {
-     "w": "told",
-     "start": 0.68,
-     "end": 0.92
+     "w": "Thanksgiving,",
+     "start": 0.82,
+     "end": 1.46
     },
     {
-     "w": "you",
-     "start": 0.92,
-     "end": 1.08
+     "w": "they",
+     "start": 1.46,
+     "end": 1.62
     },
     {
-     "w": "college",
-     "start": 1.08,
-     "end": 1.56
+     "w": "ask",
+     "start": 1.62,
+     "end": 1.86
     },
     {
-     "w": "is",
-     "start": 1.56,
-     "end": 1.72
+     "w": "what",
+     "start": 1.86,
+     "end": 2.1
     },
     {
-     "w": "the",
-     "start": 1.72,
-     "end": 1.96
+     "w": "college.",
+     "start": 2.1,
+     "end": 2.82
     },
     {
-     "w": "only",
-     "start": 1.96,
-     "end": 2.2
+     "w": "Nobody",
+     "start": 2.82,
+     "end": 3.22
     },
     {
-     "w": "way.",
-     "start": 2.2,
-     "end": 2.68
-    },
-    {
-     "w": "They",
-     "start": 2.68,
-     "end": 2.92
-    },
-    {
-     "w": "never",
-     "start": 2.92,
-     "end": 3.16
-    },
-    {
-     "w": "showed",
-     "start": 3.16,
-     "end": 3.4
+     "w": "shows",
+     "start": 3.22,
+     "end": 3.46
     },
     {
      "w": "you",
-     "start": 3.4,
-     "end": 3.56
+     "start": 3.46,
+     "end": 3.62
     },
     {
      "w": "these.",
-     "start": 3.56,
-     "end": 4.042
+     "start": 3.62,
+     "end": 4.02
     }
    ],
-   "asr": "Everyone told you college is the only way. They never showed you these."
+   "asr": "Every Thanksgiving, they ask what college? Nobody shows you these."
   },
   {
    "id": "list",
-   "text": "E-commerce. Freelancing. Reselling. Content creation. That clothing brand you wanted to start. And about a hundred more.",
+   "text": "E-commerce, freelancing, reselling, content creation, that clothing brand you wanted to start, and a hundred more nobody told you about.",
    "start": 4.62,
-   "end": 12.172,
+   "end": 12.575,
    "words": [
     {
-     "w": "E-commerce.",
+     "w": "E-commerce,",
      "start": 4.62,
-     "end": 5.58
+     "end": 5.42
     },
     {
-     "w": "Freelancing.",
-     "start": 5.58,
-     "end": 6.54
+     "w": "freelancing,",
+     "start": 5.42,
+     "end": 6.3
     },
     {
-     "w": "Reselling.",
-     "start": 6.54,
-     "end": 7.5
+     "w": "reselling,",
+     "start": 6.3,
+     "end": 7.1
     },
     {
-     "w": "Content",
-     "start": 7.5,
-     "end": 8.06
+     "w": "content",
+     "start": 7.1,
+     "end": 7.58
     },
     {
-     "w": "creation.",
-     "start": 8.06,
-     "end": 9.02
+     "w": "creation,",
+     "start": 7.58,
+     "end": 8.3
     },
     {
-     "w": "That",
-     "start": 9.02,
-     "end": 9.18
+     "w": "that",
+     "start": 8.3,
+     "end": 8.54
     },
     {
      "w": "clothing",
-     "start": 9.18,
-     "end": 9.66
+     "start": 8.54,
+     "end": 9.02
     },
     {
      "w": "brand",
-     "start": 9.66,
-     "end": 9.98
+     "start": 9.02,
+     "end": 9.42
     },
     {
      "w": "you",
-     "start": 9.98,
-     "end": 10.14
+     "start": 9.42,
+     "end": 9.5
     },
     {
      "w": "wanted",
-     "start": 10.14,
-     "end": 10.46
+     "start": 9.5,
+     "end": 9.82
     },
     {
      "w": "to",
-     "start": 10.46,
-     "end": 10.62
+     "start": 9.82,
+     "end": 9.98
     },
     {
-     "w": "start.",
-     "start": 10.62,
-     "end": 11.02
+     "w": "start,",
+     "start": 9.98,
+     "end": 10.54
     },
     {
-     "w": "And",
-     "start": 11.02,
-     "end": 11.18
-    },
-    {
-     "w": "about",
-     "start": 11.18,
-     "end": 11.42
+     "w": "and",
+     "start": 10.54,
+     "end": 10.7
     },
     {
      "w": "a",
-     "start": 11.42,
-     "end": 11.5
+     "start": 10.7,
+     "end": 10.78
     },
     {
      "w": "hundred",
-     "start": 11.5,
+     "start": 10.78,
+     "end": 11.1
+    },
+    {
+     "w": "more",
+     "start": 11.1,
+     "end": 11.42
+    },
+    {
+     "w": "nobody",
+     "start": 11.42,
      "end": 11.82
     },
     {
-     "w": "more.",
+     "w": "told",
      "start": 11.82,
-     "end": 12.172
+     "end": 12.06
+    },
+    {
+     "w": "you",
+     "start": 12.06,
+     "end": 12.22
+    },
+    {
+     "w": "about.",
+     "start": 12.22,
+     "end": 12.575
     }
    ],
-   "asr": "E-commerce, freelancing, reselling, content creation, that clothing brand you wanted to start, and about a hundred more."
+   "asr": "E-commerce, freelancing, reselling, content creation, that clothing brand you wanted to start, and a hundred more nobody told you about."
   },
   {
    "id": "ridicule",
    "text": "People call these ridiculous, right up until somebody actually pulls it off.",
-   "start": 12.392,
-   "end": 16.513,
+   "start": 12.795,
+   "end": 16.915,
    "words": [
     {
      "w": "People",
-     "start": 12.392,
-     "end": 12.792
+     "start": 12.795,
+     "end": 13.195
     },
     {
      "w": "call",
-     "start": 12.792,
-     "end": 13.032
+     "start": 13.195,
+     "end": 13.435
     },
     {
      "w": "these",
-     "start": 13.032,
-     "end": 13.272
+     "start": 13.435,
+     "end": 13.675
     },
     {
      "w": "ridiculous,",
-     "start": 13.272,
-     "end": 14.232
+     "start": 13.675,
+     "end": 14.635
     },
     {
      "w": "right",
-     "start": 14.232,
-     "end": 14.472
+     "start": 14.635,
+     "end": 14.875
     },
     {
      "w": "up",
-     "start": 14.472,
-     "end": 14.632
+     "start": 14.875,
+     "end": 15.035
     },
     {
      "w": "until",
-     "start": 14.632,
-     "end": 14.952
+     "start": 15.035,
+     "end": 15.355
     },
     {
      "w": "somebody",
-     "start": 14.952,
-     "end": 15.432
+     "start": 15.355,
+     "end": 15.835
     },
     {
      "w": "actually",
-     "start": 15.432,
-     "end": 15.752
+     "start": 15.835,
+     "end": 16.155
     },
     {
      "w": "pulls",
-     "start": 15.752,
-     "end": 16.072
+     "start": 16.155,
+     "end": 16.475
     },
     {
      "w": "it",
-     "start": 16.072,
-     "end": 16.232
+     "start": 16.475,
+     "end": 16.635
     },
     {
      "w": "off.",
-     "start": 16.232,
-     "end": 16.513
+     "start": 16.635,
+     "end": 16.915
     }
    ],
    "asr": "People call these ridiculous, right up until somebody actually pulls it off."
   },
   {
    "id": "gpa",
-   "text": "Nobody's asking for your GPA. You don't even have to know what you want yet.",
-   "start": 16.713,
-   "end": 20.837,
+   "text": "Nobody out there is asking for your GPA, and you don't even have to know what you want yet.",
+   "start": 17.115,
+   "end": 21.899,
    "words": [
     {
-     "w": "Nobody's",
-     "start": 16.713,
-     "end": 17.353
+     "w": "Nobody",
+     "start": 17.115,
+     "end": 17.595
+    },
+    {
+     "w": "out",
+     "start": 17.595,
+     "end": 17.835
+    },
+    {
+     "w": "there",
+     "start": 17.835,
+     "end": 17.995
+    },
+    {
+     "w": "is",
+     "start": 17.995,
+     "end": 18.235
     },
     {
      "w": "asking",
-     "start": 17.353,
-     "end": 17.673
+     "start": 18.235,
+     "end": 18.555
     },
     {
      "w": "for",
-     "start": 17.673,
-     "end": 17.833
+     "start": 18.555,
+     "end": 18.715
     },
     {
      "w": "your",
-     "start": 17.833,
-     "end": 17.993
+     "start": 18.715,
+     "end": 18.955
     },
     {
-     "w": "GPA.",
-     "start": 17.993,
-     "end": 18.953
-    },
-    {
-     "w": "You",
-     "start": 18.953,
-     "end": 19.113
-    },
-    {
-     "w": "don't",
-     "start": 19.113,
-     "end": 19.353
-    },
-    {
-     "w": "even",
-     "start": 19.353,
-     "end": 19.513
-    },
-    {
-     "w": "have",
-     "start": 19.513,
-     "end": 19.673
-    },
-    {
-     "w": "to",
-     "start": 19.673,
-     "end": 19.753
-    },
-    {
-     "w": "know",
-     "start": 19.753,
-     "end": 19.993
-    },
-    {
-     "w": "what",
-     "start": 19.993,
-     "end": 20.153
-    },
-    {
-     "w": "you",
-     "start": 20.153,
-     "end": 20.313
-    },
-    {
-     "w": "want",
-     "start": 20.313,
-     "end": 20.473
-    },
-    {
-     "w": "yet.",
-     "start": 20.473,
-     "end": 20.837
-    }
-   ],
-   "asr": "Nobody's asking for your GPA. You don't even have to know what you want yet."
-  },
-  {
-   "id": "bedroom",
-   "text": "Right now, people your age are building audiences from their bedroom, with a phone and Wi-Fi.",
-   "start": 21.037,
-   "end": 26.053,
-   "words": [
-    {
-     "w": "Right",
-     "start": 21.037,
-     "end": 21.357
-    },
-    {
-     "w": "now,",
-     "start": 21.357,
-     "end": 21.757
-    },
-    {
-     "w": "people",
-     "start": 21.757,
-     "end": 21.997
-    },
-    {
-     "w": "your",
-     "start": 21.997,
-     "end": 22.237
-    },
-    {
-     "w": "age",
-     "start": 22.237,
-     "end": 22.477
-    },
-    {
-     "w": "are",
-     "start": 22.477,
-     "end": 22.637
-    },
-    {
-     "w": "building",
-     "start": 22.637,
-     "end": 23.037
-    },
-    {
-     "w": "audiences",
-     "start": 23.037,
-     "end": 23.597
-    },
-    {
-     "w": "from",
-     "start": 23.597,
-     "end": 23.757
-    },
-    {
-     "w": "their",
-     "start": 23.757,
-     "end": 23.917
-    },
-    {
-     "w": "bedroom,",
-     "start": 23.917,
-     "end": 24.557
-    },
-    {
-     "w": "with",
-     "start": 24.557,
-     "end": 24.717
-    },
-    {
-     "w": "a",
-     "start": 24.717,
-     "end": 24.877
-    },
-    {
-     "w": "phone",
-     "start": 24.877,
-     "end": 25.197
+     "w": "GPA,",
+     "start": 18.955,
+     "end": 19.915
     },
     {
      "w": "and",
-     "start": 25.197,
-     "end": 25.437
+     "start": 19.915,
+     "end": 20.075
+    },
+    {
+     "w": "you",
+     "start": 20.075,
+     "end": 20.235
+    },
+    {
+     "w": "don't",
+     "start": 20.235,
+     "end": 20.395
+    },
+    {
+     "w": "even",
+     "start": 20.395,
+     "end": 20.635
+    },
+    {
+     "w": "have",
+     "start": 20.635,
+     "end": 20.715
+    },
+    {
+     "w": "to",
+     "start": 20.715,
+     "end": 20.875
+    },
+    {
+     "w": "know",
+     "start": 20.875,
+     "end": 21.035
+    },
+    {
+     "w": "what",
+     "start": 21.035,
+     "end": 21.195
+    },
+    {
+     "w": "you",
+     "start": 21.195,
+     "end": 21.355
+    },
+    {
+     "w": "want",
+     "start": 21.355,
+     "end": 21.515
+    },
+    {
+     "w": "yet.",
+     "start": 21.515,
+     "end": 21.899
+    }
+   ],
+   "asr": "Nobody out there is asking for your GPA, and you don't even have to know what you want yet."
+  },
+  {
+   "id": "bedroom",
+   "text": "Right now, someone your age is starting from their bedroom, with a phone and Wi-Fi. So why can't it be you?",
+   "start": 22.099,
+   "end": 27.846,
+   "words": [
+    {
+     "w": "Right",
+     "start": 22.099,
+     "end": 22.339
+    },
+    {
+     "w": "now,",
+     "start": 22.339,
+     "end": 22.659
+    },
+    {
+     "w": "someone",
+     "start": 22.659,
+     "end": 22.979
+    },
+    {
+     "w": "your",
+     "start": 22.979,
+     "end": 23.139
+    },
+    {
+     "w": "age",
+     "start": 23.139,
+     "end": 23.379
+    },
+    {
+     "w": "is",
+     "start": 23.379,
+     "end": 23.539
+    },
+    {
+     "w": "starting",
+     "start": 23.539,
+     "end": 23.859
+    },
+    {
+     "w": "from",
+     "start": 23.859,
+     "end": 24.019
+    },
+    {
+     "w": "their",
+     "start": 24.019,
+     "end": 24.179
+    },
+    {
+     "w": "bedroom,",
+     "start": 24.179,
+     "end": 24.739
+    },
+    {
+     "w": "with",
+     "start": 24.739,
+     "end": 24.899
+    },
+    {
+     "w": "a",
+     "start": 24.899,
+     "end": 25.059
+    },
+    {
+     "w": "phone",
+     "start": 25.059,
+     "end": 25.459
+    },
+    {
+     "w": "and",
+     "start": 25.459,
+     "end": 25.619
     },
     {
      "w": "Wi-Fi.",
-     "start": 25.437,
-     "end": 26.053
+     "start": 25.619,
+     "end": 26.579
+    },
+    {
+     "w": "So",
+     "start": 26.579,
+     "end": 26.819
+    },
+    {
+     "w": "why",
+     "start": 26.819,
+     "end": 26.979
+    },
+    {
+     "w": "can't",
+     "start": 26.979,
+     "end": 27.219
+    },
+    {
+     "w": "it",
+     "start": 27.219,
+     "end": 27.379
+    },
+    {
+     "w": "be",
+     "start": 27.379,
+     "end": 27.539
+    },
+    {
+     "w": "you?",
+     "start": 27.539,
+     "end": 27.846
     }
    ],
-   "asr": "Right now, people your age are building audiences from their bedroom, with a phone and Wi-Fi."
+   "asr": "Right now, someone your age is starting from their bedroom with a phone and Wi-Fi. So why can't it be you?"
   },
   {
    "id": "close",
    "text": "College isn't bad. It's just not the only door. And the one in your pocket? It's already open. So why are you still standing in the hallway?",
-   "start": 26.303,
-   "end": 34.07,
+   "start": 28.096,
+   "end": 35.863,
    "words": [
     {
      "w": "College",
-     "start": 26.303,
-     "end": 26.863
+     "start": 28.096,
+     "end": 28.656
     },
     {
      "w": "isn't",
-     "start": 26.863,
-     "end": 27.183
+     "start": 28.656,
+     "end": 28.976
     },
     {
      "w": "bad.",
-     "start": 27.183,
-     "end": 27.663
+     "start": 28.976,
+     "end": 29.456
     },
     {
      "w": "It's",
-     "start": 27.663,
-     "end": 27.983
+     "start": 29.456,
+     "end": 29.776
     },
     {
      "w": "just",
-     "start": 27.983,
-     "end": 28.143
+     "start": 29.776,
+     "end": 29.936
     },
     {
      "w": "not",
-     "start": 28.143,
-     "end": 28.383
+     "start": 29.936,
+     "end": 30.176
     },
     {
      "w": "the",
-     "start": 28.383,
-     "end": 28.543
+     "start": 30.176,
+     "end": 30.336
     },
     {
      "w": "only",
-     "start": 28.543,
-     "end": 28.783
+     "start": 30.336,
+     "end": 30.576
     },
     {
      "w": "door.",
-     "start": 28.783,
-     "end": 29.343
+     "start": 30.576,
+     "end": 31.136
     },
     {
      "w": "And",
-     "start": 29.343,
-     "end": 29.503
+     "start": 31.136,
+     "end": 31.296
     },
     {
      "w": "the",
-     "start": 29.503,
-     "end": 29.663
+     "start": 31.296,
+     "end": 31.456
     },
     {
      "w": "one",
-     "start": 29.663,
-     "end": 29.823
+     "start": 31.456,
+     "end": 31.616
     },
     {
      "w": "in",
-     "start": 29.823,
-     "end": 29.983
+     "start": 31.616,
+     "end": 31.776
     },
     {
      "w": "your",
-     "start": 29.983,
-     "end": 30.143
+     "start": 31.776,
+     "end": 31.936
     },
     {
      "w": "pocket?",
-     "start": 30.143,
-     "end": 30.703
+     "start": 31.936,
+     "end": 32.496
     },
     {
      "w": "It's",
-     "start": 30.703,
-     "end": 30.943
+     "start": 32.496,
+     "end": 32.736
     },
     {
      "w": "already",
-     "start": 30.943,
-     "end": 31.343
+     "start": 32.736,
+     "end": 33.136
     },
     {
      "w": "open.",
-     "start": 31.343,
-     "end": 32.063
+     "start": 33.136,
+     "end": 33.856
     },
     {
      "w": "So",
-     "start": 32.063,
-     "end": 32.223
+     "start": 33.856,
+     "end": 34.016
     },
     {
      "w": "why",
-     "start": 32.223,
-     "end": 32.463
+     "start": 34.016,
+     "end": 34.256
     },
     {
      "w": "are",
-     "start": 32.463,
-     "end": 32.623
+     "start": 34.256,
+     "end": 34.416
     },
     {
      "w": "you",
-     "start": 32.623,
-     "end": 32.783
+     "start": 34.416,
+     "end": 34.576
     },
     {
      "w": "still",
-     "start": 32.783,
-     "end": 33.023
+     "start": 34.576,
+     "end": 34.816
     },
     {
      "w": "standing",
-     "start": 33.023,
-     "end": 33.343
+     "start": 34.816,
+     "end": 35.136
     },
     {
      "w": "in",
-     "start": 33.343,
-     "end": 33.503
+     "start": 35.136,
+     "end": 35.296
     },
     {
      "w": "the",
-     "start": 33.503,
-     "end": 33.583
+     "start": 35.296,
+     "end": 35.376
     },
     {
      "w": "hallway?",
-     "start": 33.583,
-     "end": 34.07
+     "start": 35.376,
+     "end": 35.863
     }
    ],
    "asr": "College isn't bad. It's just not the only door. And the one in your pocket? It's already open. So why are you still standing in the hallway?"

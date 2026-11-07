@@ -15,7 +15,9 @@ const fmt = (n: number) => Math.round(n).toLocaleString('en-US');
 export const Bedroom: React.FC<{t: number}> = ({t}) => {
   const lt = t - T.bedroom;
   const push = prog(t, T.bedroom, T.collegeOk, ease.soft);
-  const zoom = interpolate(push, [0, 1], [1.0, 1.14]);
+  const reveal = prog(t, T.bedroom, T.bedroom + 1.3, ease.out);
+  const zoom = interpolate(reveal, [0, 1], [1.32, 1.0]) * interpolate(push, [0, 1], [1.0, 1.1]);
+  const panX = interpolate(reveal, [0, 1], [-260, 0]);
   const fadeIn = prog(t, T.bedroom, T.bedroom + 0.35, ease.out);
   const beatPulse = Math.exp(-sinceBeat(t, beats) * 8);
 
@@ -45,7 +47,7 @@ export const Bedroom: React.FC<{t: number}> = ({t}) => {
           <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
         </filter>
       </defs>
-      <g transform={`translate(${PH.x} ${PH.y}) scale(${zoom}) translate(${-PH.x} ${-PH.y})`}>
+      <g transform={`translate(${panX} 0) translate(${PH.x} ${PH.y}) scale(${zoom}) translate(${-PH.x} ${-PH.y})`}>
         {/* back wall + floor */}
         <line x1={-200} y1={FLOOR_Y} x2={1280} y2={FLOOR_Y} stroke={s.fg} strokeWidth={2} opacity={0.5} />
         {Array.from({length: 9}, (_, i) => (
@@ -76,10 +78,10 @@ export const Bedroom: React.FC<{t: number}> = ({t}) => {
           fill="none" stroke={s.fg} strokeWidth={1.8} opacity={0.45} />
         {/* bed */}
         <rect x={60} y={1060} width={34} height={FLOOR_Y - 1060} rx={6} fill="none" stroke={s.fg} strokeWidth={2} opacity={0.55} />
-        <rect x={94} y={1230} width={560} height={74} rx={18} fill="#0b0b0b" stroke={s.fg} strokeWidth={2} opacity={0.75} />
-        <rect x={110} y={1196} width={150} height={44} rx={22} fill="#0b0b0b" stroke={s.fg} strokeWidth={1.8} opacity={0.6} />
-        <line x1={110} y1={1304} x2={110} y2={FLOOR_Y} stroke={s.fg} strokeWidth={2} opacity={0.45} />
-        <line x1={630} y1={1304} x2={630} y2={FLOOR_Y} stroke={s.fg} strokeWidth={2} opacity={0.45} />
+        <rect x={94} y={1290} width={560} height={66} rx={18} fill="#0b0b0b" stroke={s.fg} strokeWidth={2} opacity={0.75} />
+        <rect x={110} y={1252} width={150} height={44} rx={22} fill="#0b0b0b" stroke={s.fg} strokeWidth={1.8} opacity={0.6} />
+        <line x1={110} y1={1356} x2={110} y2={FLOOR_Y} stroke={s.fg} strokeWidth={2} opacity={0.45} />
+        <line x1={630} y1={1356} x2={630} y2={FLOOR_Y} stroke={s.fg} strokeWidth={2} opacity={0.45} />
 
         {/* phone light */}
         <circle cx={PH.x} cy={PH.y} r={420} fill="url(#phoneGlow)" opacity={0.85 + 0.15 * beatPulse} />

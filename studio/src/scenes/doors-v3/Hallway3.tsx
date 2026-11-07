@@ -24,6 +24,7 @@ export const doorAngle = (t: number, i: number) => {
   if (d.item !== undefined) a = 68 * springIn(t, T.items[d.item] - 0.04, 0.5);
   const burst = springIn(t, T.burst + Math.abs(d.z - 9) * 0.012, 0.55);
   a = lerp(a, 86, clamp01(burst));
+  if (d === HERO_DOOR) a = lerp(a, 88, clamp01(springIn(t, T.arrive - 0.5, 0.6)));
   if (closeShot(t)) a = 86;
   return a;
 };
@@ -51,9 +52,8 @@ const collegeLight = (t: number) => {
 
 // ------------------------------------------------------------ geometry helpers
 const ADVISERS: [number, number, number][] = [
-  // x, z, scale (varied builds = different people)
-  [-1.05, 15.9, 1.04], [1.1, 16.4, 0.96], [-1.3, 17.2, 1.08], [1.32, 17.8, 1.0], [-1.05, 18.6, 0.93],
-  [1.0, 19.3, 1.06], [-1.32, 20.2, 0.98], [1.3, 20.9, 1.02], [-1.0, 21.7, 1.07], [1.08, 22.4, 0.95],
+  // x, z, scale — six people, varied builds
+  [-1.1, 16.9, 1.04], [1.15, 17.5, 0.97], [-1.3, 18.6, 1.06], [1.3, 19.4, 1.0], [-1.1, 20.6, 0.95], [1.1, 21.4, 1.05],
 ];
 const DOUBTERS: [number, number][] = [[-0.95, 9.6], [0.9, 10.1], [-1.05, 12.6], [0.9, 13.6]];
 
@@ -186,15 +186,16 @@ export const Hallway3: React.FC<{t: number; cam: Cam; showHero: boolean}> = ({t,
       const wAmt = clamp01(Math.min((t - 0.1) / 0.3, (3.5 - t) / 0.35));
       hero = <Figure x={p.x} y={p.y} scale={p.s} walkPhase={((z - 15.3) / 0.36) * Math.PI} walk={wAmt} filterId="figGlow" />;
     } else {
-      const arrive = T.whiteIn + 0.2;
-      const u = clamp01((t - T.they) / (arrive - T.they));
-      const x = lerp(-0.25, HERO_DOOR.side * W - 0.3, ease.soft(u));
-      const z = lerp(16.0, HERO_DOOR.z + DW / 2, ease.soft(u));
+      // steady pace into the doorway (no stop-start), a step on every beat
+      const end = T.bedroom - 0.05;
+      const u = clamp01((t - T.they) / (end - T.they));
+      const x = lerp(-0.25, HERO_DOOR.side * W - HERO_DOOR.side * 0.05, u);
+      const z = lerp(16.0, HERO_DOOR.z + DW / 2, u);
       const p = P([x, FLOOR, z]);
-      const amt = clamp01(Math.min((t - T.they) / 0.25, (arrive + 0.2 - t) / 0.25));
-      const phase = ((t - T.they) / 0.5805) * Math.PI; // a step on every beat
+      const amt = clamp01((t - T.they) / 0.3);
+      const phase = ((t - T.they) / 0.5805) * Math.PI;
       const pose = amt > 0.02 ? walkPose(phase, amt) : standPose;
-      hero = <FigureSide x={p.x} y={p.y} scale={p.s} pose={pose} filterId="figGlow" />;
+      hero = <FigureSide x={p.x} y={p.y} scale={p.s} pose={pose} filterId="figGlow" flip={HERO_DOOR.side < 0} />;
     }
   }
   const heroPos = (): Vec3 => (t < T.they ? [-0.25, FLOOR, 16.0] : [-0.25, FLOOR, 16.0]);
@@ -232,8 +233,8 @@ export const Hallway3: React.FC<{t: number; cam: Cam; showHero: boolean}> = ({t,
     const fadeOut = prog(t, T.these, T.drop, ease.in);
     return (
       <g key={`a${i}`} transform={mirror ? `translate(${2 * p.x} 0) scale(-1 1)` : undefined}>
-        <Figure x={p.x} y={p.y} scale={p.s * sc} fill={s.fgDim} outline strokePx={2.4}
-          opacity={(0.55 + 0.45 * depthFade(p.d, 2, 14)) * (1 - 0.7 * fadeOut) * prog(t, -0.3 + i * 0.03, 0.2 + i * 0.03)}
+        <Figure x={p.x} y={p.y} scale={p.s * sc} fill="#8e8d89" outline bodyFill="#161616" strokePx={2.4}
+          opacity={(1 - 0.85 * fadeOut) * prog(t, -0.3 + i * 0.03, 0.2 + i * 0.03)}
           pointDeg={(mirror ? 180 - ang : ang) - jab} pointAmt={raise} leanDeg={lean} />
       </g>
     );
@@ -250,15 +251,14 @@ export const Hallway3: React.FC<{t: number; cam: Cam; showHero: boolean}> = ({t,
     const tp = P([nearDoor.side * W, FLOOR - 1.3, nearDoor.z + DW / 2]);
     const sh = {x: p.x + (mirror ? -0.272 : 0.272) * p.s, y: p.y - 1.29 * p.s};
     const ang = (Math.atan2(tp.y - sh.y, tp.x - sh.x) * 180) / Math.PI;
-    const hop = Math.exp(-sinceBeat(t, beats) * 7) * (1 - blown);
-    const chuckle = Math.abs(Math.sin(t * 17 + i)) * 0.4 * (1 - blown);
-    const laugh = clamp01(hop + chuckle);
+    const laugh = (0.5 + 0.5 * Math.sin(t * 2 * Math.PI * 1.6 + i * 1.3)) ** 1.5 * (1 - blown);
+    const pointer = i % 2 === 0;
     const appear = prog(t, T.ridStart + i * 0.18, T.ridStart + i * 0.18 + 0.3, ease.out);
     return (
       <g key={`b${i}`} transform={mirror ? `translate(${2 * p.x} 0) scale(-1 1)` : undefined}>
-        <Figure x={p.x} y={p.y - laugh * 0.045 * p.s} scale={p.s} fill={s.fg} outline strokePx={3}
-          opacity={appear * laughOn * (1 - gone) * 0.85} pointDeg={mirror ? 180 - ang : ang} pointAmt={0.9 * (1 - blown)}
-          leanDeg={-6 - 11 * laugh - 16 * blown} headDY={-0.08 * laugh} leftArmDeg={-38 * (1 - blown) + 20 * blown} />
+        <Figure x={p.x} y={p.y - laugh * 0.02 * p.s} scale={p.s} fill={s.fg} outline bodyFill="#161616" strokePx={3}
+          opacity={appear * laughOn * (1 - gone)} pointDeg={pointer ? (mirror ? 180 - ang : ang) : 128} pointAmt={(pointer ? 0.9 : 1) * (1 - blown)}
+          leanDeg={(pointer ? -4 : -7) - (pointer ? 5 : 9) * laugh - 16 * blown} headDY={-0.06 * laugh} leftArmDeg={-38 * (1 - blown) + 20 * blown} />
       </g>
     );
   });
@@ -268,7 +268,8 @@ export const Hallway3: React.FC<{t: number; cam: Cam; showHero: boolean}> = ({t,
     if (d.item === undefined || closeShot(t)) return null;
     const it = T.items[d.item];
     const isHero = d === HERO_DOOR;
-    const a = prog(t, it, it + 0.25, ease.out) * (1 - prog(t, it + 1.3, it + 1.7, ease.soft)) +
+    const nextIt = T.items[d.item + 1] ?? T.hundred;
+    const a = prog(t, it, it + 0.2, ease.out) * (1 - prog(t, nextIt - 0.05, nextIt + 0.15, ease.soft)) +
       (isHero ? prog(t, T.they, T.they + 0.3) * (1 - prog(t, T.whiteIn - 0.5, T.whiteIn)) : 0);
     if (a <= 0.01) return null;
     const top = P([d.side * W, FLOOR - DH, d.z + DW / 2]);
@@ -276,9 +277,10 @@ export const Hallway3: React.FC<{t: number; cam: Cam; showHero: boolean}> = ({t,
     const text = `${d.item + 1} · ${d.label}`;
     const half = text.length * 14.5;
     if (isHero && top.d > 9) return null; // far away it would sit on the college arch; the caption names it anyway
-    const x = isHero ? 1044 - half : Math.max(36 + half, Math.min(1044 - half, top.x));
-    const y = top.y - 34;
-    if (Math.abs(x - 540) < 90 && !isHero) return null;
+    // keep labels off the college arch in the middle of frame
+    const x = Math.max(36 + half, Math.min(1044 - half, d.side > 0 ? Math.max(top.x, 640 + half) : Math.min(top.x, 440 - half)));
+    if (top.y > 1250) return null;
+    const y = Math.min(top.y - 34, 840);
     return (
       <g key={`l${i}`} opacity={Math.min(1, a)}>
         <line x1={top.x} y1={top.y - 8} x2={top.x} y2={y + 12} stroke={s.fg} strokeWidth={2} opacity={0.8} />

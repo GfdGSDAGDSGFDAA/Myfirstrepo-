@@ -17,11 +17,12 @@ export const DOORS: Door[] = [
   {side: -1, z: 4.0, label: 'E-COMMERCE', glyph: 'box', item: 0},
   {side: 1, z: 6.5, label: 'FREELANCING', glyph: 'laptop', item: 1},
   {side: -1, z: 9.0, label: 'RESELLING', glyph: 'tag', item: 2},
-  {side: 1, z: 11.5},
-  {side: -1, z: 14.0, label: 'CONTENT CREATION', glyph: 'play', item: 3},
-  {side: 1, z: 17.6, label: 'CLOTHING BRAND', glyph: 'shirt', item: 4},
-  {side: -1, z: 19.6},
-  {side: 1, z: 21.2},
+  {side: 1, z: 11.5, label: 'CONTENT CREATION', glyph: 'play', item: 3},
+  {side: -1, z: 13.6},
+  {side: 1, z: 14.8},
+  {side: -1, z: 17.0, label: 'CLOTHING BRAND', glyph: 'shirt', item: 4},
+  {side: 1, z: 19.2},
+  {side: -1, z: 21.0},
 ];
 export const HERO_DOOR = DOORS.find((d) => d.item === 4)!;
 

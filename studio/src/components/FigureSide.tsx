@@ -17,11 +17,12 @@ export const walkPose = (phase: number, amt = 1): Pose => {
   const c = Math.cos(phase);
   const k = (p: number) => Math.max(0, Math.sin(p)) ; // knee lifts on the swing phase
   return {
-    thighF: 26 * s * amt, shinF: -42 * k(phase - 0.9) * amt,
-    thighB: -26 * s * amt, shinB: -42 * k(phase + Math.PI - 0.9) * amt,
-    armF: -22 * s * amt, foreF: 18 * amt + 10 * Math.max(0, -s) * amt,
-    armB: 22 * s * amt, foreB: 18 * amt + 10 * Math.max(0, s) * amt,
-    lean: 4 * amt, bob: -Math.abs(c) * 0.03 * amt, hipY: -0.74,
+    // stride matched to ~0.5 m/step so feet don't skate
+    thighF: 20 * s * amt, shinF: -36 * k(phase - 0.7) * amt,
+    thighB: -20 * s * amt, shinB: -36 * k(phase + Math.PI - 0.7) * amt,
+    armF: -16 * s * amt, foreF: 16 * amt + 8 * Math.max(0, -s) * amt,
+    armB: 16 * s * amt, foreB: 16 * amt + 8 * Math.max(0, s) * amt,
+    lean: 3 * amt, bob: -Math.abs(c) * 0.022 * amt, hipY: -0.74,
   };
 };
 
