@@ -102,9 +102,9 @@ export const Bedroom: React.FC<{t: number}> = ({t}) => {
 
       {/* floating stat chips (screen space so they stay crisp) */}
       {[
-        {at: T.audiences, x: 470, y: 560, icon: 'play', text: 'DAY 1 · 14 VIEWS'},
-        {at: T.followersAt, x: 470, y: 670, icon: 'play', text: 'DAY 30 · 802 VIEWS'},
-        {at: T.phone, x: 470, y: 780, icon: 'play', text: `DAY 120 · ${(views / 1000).toFixed(1)}K VIEWS`},
+        {at: T.audiences, x: 470, y: 560, icon: 'bag', text: 'DAY 1 · FIRST ORDER'},
+        {at: T.followersAt, x: 470, y: 670, icon: 'bag', text: 'DAY 30 · 18 ORDERS'},
+        {at: T.phone, x: 470, y: 780, icon: 'bag', text: `DAY 120 · ${Math.round(views / 58)} ORDERS`},
       ].map((c, i, arr) => {
         const next = arr[i + 1];
         const a = chip(c.at) * (next ? 1 - 0.55 * chip(next.at) : 1);
@@ -114,6 +114,7 @@ export const Bedroom: React.FC<{t: number}> = ({t}) => {
           <g key={i} opacity={a} transform={`translate(${c.x} ${y}) scale(${0.9 + 0.1 * a})`}>
             <rect x={-24} y={-44} width={560} height={84} rx={32} fill="#0b0b0b" stroke={s.fg} strokeWidth={2} />
             {c.icon === 'play' && <polygon points="4,-17 4,15 31,-1" fill={s.fg} />}
+            {c.icon === 'bag' && <g fill="none" stroke={s.fg} strokeWidth={4} strokeLinejoin="round"><path d="M 2 -10 L 32 -10 L 29 18 L 5 18 Z" /><path d="M 10 -10 C 10 -24 24 -24 24 -10" /></g>}
             {c.icon === 'plus' && <path d="M 17 -14 L 17 12 M 4 -1 L 30 -1" stroke={s.fg} strokeWidth={5} strokeLinecap="round" />}
             {c.icon === 'heart' && <path d="M 17 12 C -8 -4 2 -22 17 -10 C 32 -22 42 -4 17 12 Z" fill={s.fg} />}
             <text x={52} y={12} fontFamily={s.fontMono} fontSize={36} fontWeight={500} letterSpacing="0.04em" fill={s.fg}>{c.text}</text>
