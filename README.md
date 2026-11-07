@@ -39,3 +39,5 @@ bash pipeline/setup_models.sh models
 | 0.0–3.3 s | "At seventeen, everyone points you to the same door." | The hero walks toward the one lit door. Outlined advisers raise their arms on "points". The door light flares on "same door". |
 | 3.5–6.9 s | "Almost nobody shows you the rest of the hallway." | Arms drop and the advisers dissolve. The camera pulls back and rises. 8 side doors draw and ignite far→near, each with a panned glass ping. |
 | 7.1–11.1 s | "College is one door. It was never the only one." | The COLLEGE label appears. Its light settles to match the others. All doors swell together on "only one". The hero turns toward the side doors. |
+
+> **New here? Read `docs/HANDOFF.md` first.**
