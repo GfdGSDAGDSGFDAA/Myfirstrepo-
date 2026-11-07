@@ -30,3 +30,8 @@ Any new package with an install script must be reviewed before it is added to th
 ## Audit log
 - 2026-11-07: full audit. 300 npm packages hash-locked to registry.npmjs.org, `npm audit` = 0 vulnerabilities.
   Pip tree reviewed; unused `faster-whisper` chain (incl. `httpx2`/`httpcore2`, legit: Tom Christie / pydantic/httpx2, pulled by huggingface_hub) removed.
+- 2026-11-07: third-party vetting (read-only review, nothing executed):
+  - `jackywest/idea-to-3d` @ `9bb6749610223cd0ffc009abee38fc3bc62f3716`: 3 commits / 2 days old, 1 author. `install.mjs` = 15 lines, only copies the skill folder to `~/.claude/skills`. SKILL.md clean. Dev dep puppeteer-core (Google). Verdict: OK to install **pinned to this commit**; it's brand new, so re-read the diff before updating.
+  - `EssouliAnas/claude-animated-shorts` @ `772f51f425fcc9e17f205d454946efe035134e6f`: 1 commit / 5 days old, 1 author. `setup.ps1` only checks tools, `pip --user numpy scipy`, `npm install`, downloads CC0 Kenney models from kenney.nl, sets REMOTION_TMP, links the skill. SKILL.md clean. Deps are real (three, @react-three/fiber, postprocessing, @remotion/three). Verdict: OK as a **reference / separate folder**; use `npm ci` (not `npm install`); don't run inside the Pathform repo.
+  - `m-bain/whisperX`: real (PyPI `whisperx` 3.8.6, since 2024). Don't use `uvx git+https://...` (unpinned HEAD); if ever needed: `pip install whisperx==3.8.6` in a venv. Not needed now (Parakeet + ElevenLabs timestamps cover it).
+  - `npx skills add remotion-dev/skills`: npm `skills` = github.com/vercel-labs/skills (maintainers include Vercel's CEO); installs Remotion's official skills. OK.
