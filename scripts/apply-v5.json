@@ -1,0 +1,48 @@
+{
+  "title": "Apply v5 \u2014 panel round 3: hoodie = the denial, honest net math, time passes, clown-share prompt",
+  "music": "Santigold - Disparate Youth (TikTok sound, starts at 'Don't look ahead')",
+  "voice": "af_heart",
+  "speed": 1.1,
+  "fps": 60,
+  "totalDuration": 36.0,
+  "sentencePause": 0.14,
+  "clausePause": 0.06,
+  "sections": [
+    {
+      "id": "hook",
+      "speed": 1.08,
+      "pauseAfter": 0.2,
+      "text": "Time off, denied. Closing Saturday. Thirteen twenty-five an hour."
+    },
+    {
+      "id": "idea",
+      "pauseAfter": 0.18,
+      "text": "So you put that notification on a hoodie, and your friends call it unrealistic."
+    },
+    {
+      "id": "flop",
+      "pauseAfter": 0.2,
+      "text": "Your first store flops. Sixty dollars, gone. That's four and a half closing hours. Your second one flops too."
+    },
+    {
+      "id": "how",
+      "pauseAfter": 0.2,
+      "text": "So the third time, you don't buy anything first. You post the mockup three nights in a row. The third one hits. Forty people ask. Fourteen pay. You print fourteen."
+    },
+    {
+      "id": "math",
+      "pauseAfter": 0.22,
+      "text": "After costs, two hundred thirty-eight dollars. Minus the hundred and one you lost before, you're still up."
+    },
+    {
+      "id": "friend",
+      "pauseAfter": 0.22,
+      "text": "And the friend who said unrealistic? Wants one for free."
+    },
+    {
+      "id": "end",
+      "pauseAfter": 0.0,
+      "text": "Still closing Saturday. For now."
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import {ApplyV1, APPLY_V1_FRAMES} from './scenes/apply-v1/ApplyV1';
 import {ApplyV2, APPLY_V2_FRAMES} from './scenes/apply-v2/ApplyV2';
 import {ApplyV3, APPLY_V3_FRAMES} from './scenes/apply-v3/ApplyV3';
 import {ApplyV4, APPLY_V4_FRAMES} from './scenes/apply-v4/ApplyV4';
+import {ApplyV5, APPLY_V5_FRAMES} from './scenes/apply-v5/ApplyV5';
 
 const handle = delayRender('fonts');
 fontsReady.then(() => continueRender(handle));
@@ -42,6 +43,11 @@ export const Root: React.FC = () => (
     <Composition id="ApplyV4" component={ApplyV4} durationInFrames={APPLY_V4_FRAMES}
       fps={60} width={1080} height={1920} defaultProps={{withMusic: true}} />
     <Composition id="ApplyV4Clean" component={ApplyV4} durationInFrames={APPLY_V4_FRAMES}
+      fps={60} width={1080} height={1920} defaultProps={{withMusic: false}} />
+    {/* Pathform #2 v5 (panel round 3): the hoodie IS the denial, honest net math, time passes. ApplyV5 = with song (REVIEW ONLY). */}
+    <Composition id="ApplyV5" component={ApplyV5} durationInFrames={APPLY_V5_FRAMES}
+      fps={60} width={1080} height={1920} defaultProps={{withMusic: true}} />
+    <Composition id="ApplyV5Clean" component={ApplyV5} durationInFrames={APPLY_V5_FRAMES}
       fps={60} width={1080} height={1920} defaultProps={{withMusic: false}} />
   </>
 );
