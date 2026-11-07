@@ -1,0 +1,19 @@
+{
+  "advisersPoint": "h1.1.start",
+  "these": "h2.-1.start",
+  "drop": "4.2",
+  "item1": "i1.start",
+  "item2": "i2.start",
+  "item3": "i3.start",
+  "item4": "i4.start",
+  "ridiculous": "r1.-1.start",
+  "works": "r2.-1.start",
+  "gpa": "g1.-1.start",
+  "doIt": "g2.-2.start",
+  "walkIn": "g2.end -0.2",
+  "whiteout": "22.15",
+  "collegeReal": "e1.0.start",
+  "notOnly": "e2.-1.start",
+  "purpose": "e3.-1.start",
+  "end": "end"
+}

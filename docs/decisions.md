@@ -13,3 +13,9 @@ Status: **P** = provisional (awaiting owner review), **A** = accepted, **R** = r
 | 7 | Original synthesized SFX, no music in master export | P | Clean licensing; platform music added at posting |
 | 8 | Labels name only 3 side doors + COLLEGE | P | Far doors cluster at the vanishing point; unlabeled doors read as "and more" |
 | 9 | Not anti-college: line 3 "College is one door" keeps college lit and equal | A (brief) | Brief requires balance |
+| 10 | Owner review of v1: animation approved; female voice (af_heart) preferred | A | Owner feedback |
+| 11 | Captions v2: one font + one size, rows stack top→bottom, bold white + soft neon glow vs grey | A (owner) | Replaces v1 lead/body/punch sizes |
+| 12 | Message v2: "you don't need college to make it"; paths incl. e-commerce, day trading, content, own business | A (owner) | College still shown as a real door (credibility) |
+| 13 | Narration lines pinned to song: hook ends before 4.2 s drop; list items on beats; ending after 22.15 s bass-out | P | Music sets the structure |
+| 14 | Two exports: with song (internal review only) and clean (post with platform sound) | A | Licensing |
+| 15 | Minimal SFX — the song carries it (owner: "don't need that much SFX") | A (owner) | |

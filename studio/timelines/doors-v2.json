@@ -1,0 +1,431 @@
+{
+  "fps": 30,
+  "duration": 28.0,
+  "voice": "af_heart",
+  "engine": "kokoro-v1.0 (temporary)",
+  "lines": [
+    {
+      "id": "h1",
+      "text": "Everyone told you to go to college.",
+      "start": 0.25,
+      "end": 2.045,
+      "words": [
+        {
+          "w": "Everyone",
+          "start": 0.25,
+          "end": 0.693
+        },
+        {
+          "w": "told",
+          "start": 0.693,
+          "end": 0.949
+        },
+        {
+          "w": "you",
+          "start": 0.949,
+          "end": 1.159
+        },
+        {
+          "w": "to",
+          "start": 1.159,
+          "end": 1.322
+        },
+        {
+          "w": "go",
+          "start": 1.322,
+          "end": 1.485
+        },
+        {
+          "w": "to",
+          "start": 1.485,
+          "end": 1.648
+        },
+        {
+          "w": "college.",
+          "start": 1.648,
+          "end": 2.045
+        }
+      ]
+    },
+    {
+      "id": "h2",
+      "text": "Nobody mentioned these.",
+      "start": 2.295,
+      "end": 3.566,
+      "words": [
+        {
+          "w": "Nobody",
+          "start": 2.295,
+          "end": 2.684
+        },
+        {
+          "w": "mentioned",
+          "start": 2.684,
+          "end": 3.229
+        },
+        {
+          "w": "these.",
+          "start": 3.229,
+          "end": 3.566
+        }
+      ]
+    },
+    {
+      "id": "i1",
+      "text": "E-commerce.",
+      "start": 4.78,
+      "end": 5.515,
+      "words": [
+        {
+          "w": "E-commerce.",
+          "start": 4.78,
+          "end": 5.515
+        }
+      ]
+    },
+    {
+      "id": "i2",
+      "text": "Day trading.",
+      "start": 5.94,
+      "end": 6.722,
+      "words": [
+        {
+          "w": "Day",
+          "start": 5.94,
+          "end": 6.211
+        },
+        {
+          "w": "trading.",
+          "start": 6.211,
+          "end": 6.722
+        }
+      ]
+    },
+    {
+      "id": "i3",
+      "text": "Content creation.",
+      "start": 7.11,
+      "end": 8.177,
+      "words": [
+        {
+          "w": "Content",
+          "start": 7.11,
+          "end": 7.614
+        },
+        {
+          "w": "creation.",
+          "start": 7.614,
+          "end": 8.177
+        }
+      ]
+    },
+    {
+      "id": "i4",
+      "text": "Running your own business.",
+      "start": 8.27,
+      "end": 9.503,
+      "words": [
+        {
+          "w": "Running",
+          "start": 8.27,
+          "end": 8.644
+        },
+        {
+          "w": "your",
+          "start": 8.644,
+          "end": 8.886
+        },
+        {
+          "w": "own",
+          "start": 8.886,
+          "end": 9.084
+        },
+        {
+          "w": "business.",
+          "start": 9.084,
+          "end": 9.503
+        }
+      ]
+    },
+    {
+      "id": "r1",
+      "text": "The stuff people call ridiculous\u2026",
+      "start": 10.01,
+      "end": 11.791,
+      "words": [
+        {
+          "w": "The",
+          "start": 10.01,
+          "end": 10.23
+        },
+        {
+          "w": "stuff",
+          "start": 10.23,
+          "end": 10.547
+        },
+        {
+          "w": "people",
+          "start": 10.547,
+          "end": 10.913
+        },
+        {
+          "w": "call",
+          "start": 10.913,
+          "end": 11.181
+        },
+        {
+          "w": "ridiculous\u2026",
+          "start": 11.181,
+          "end": 11.791
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "text": "right up until it works.",
+      "start": 11.991,
+      "end": 13.207,
+      "words": [
+        {
+          "w": "right",
+          "start": 11.991,
+          "end": 12.29
+        },
+        {
+          "w": "up",
+          "start": 12.29,
+          "end": 12.45
+        },
+        {
+          "w": "until",
+          "start": 12.45,
+          "end": 12.748
+        },
+        {
+          "w": "it",
+          "start": 12.748,
+          "end": 12.909
+        },
+        {
+          "w": "works.",
+          "start": 12.909,
+          "end": 13.207
+        }
+      ]
+    },
+    {
+      "id": "g1",
+      "text": "None of these care about your GPA.",
+      "start": 15.79,
+      "end": 17.619,
+      "words": [
+        {
+          "w": "None",
+          "start": 15.79,
+          "end": 16.058
+        },
+        {
+          "w": "of",
+          "start": 16.058,
+          "end": 16.229
+        },
+        {
+          "w": "these",
+          "start": 16.229,
+          "end": 16.546
+        },
+        {
+          "w": "care",
+          "start": 16.546,
+          "end": 16.814
+        },
+        {
+          "w": "about",
+          "start": 16.814,
+          "end": 17.131
+        },
+        {
+          "w": "your",
+          "start": 17.131,
+          "end": 17.4
+        },
+        {
+          "w": "GPA.",
+          "start": 17.4,
+          "end": 17.619
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "text": "They care if you can actually do it.",
+      "start": 17.869,
+      "end": 19.631,
+      "words": [
+        {
+          "w": "They",
+          "start": 17.869,
+          "end": 18.111
+        },
+        {
+          "w": "care",
+          "start": 18.111,
+          "end": 18.354
+        },
+        {
+          "w": "if",
+          "start": 18.354,
+          "end": 18.508
+        },
+        {
+          "w": "you",
+          "start": 18.508,
+          "end": 18.706
+        },
+        {
+          "w": "can",
+          "start": 18.706,
+          "end": 18.904
+        },
+        {
+          "w": "actually",
+          "start": 18.904,
+          "end": 19.323
+        },
+        {
+          "w": "do",
+          "start": 19.323,
+          "end": 19.477
+        },
+        {
+          "w": "it.",
+          "start": 19.477,
+          "end": 19.631
+        }
+      ]
+    },
+    {
+      "id": "e1",
+      "text": "College is a real door.",
+      "start": 22.45,
+      "end": 23.927,
+      "words": [
+        {
+          "w": "College",
+          "start": 22.45,
+          "end": 22.942
+        },
+        {
+          "w": "is",
+          "start": 22.942,
+          "end": 23.145
+        },
+        {
+          "w": "a",
+          "start": 23.145,
+          "end": 23.29
+        },
+        {
+          "w": "real",
+          "start": 23.29,
+          "end": 23.608
+        },
+        {
+          "w": "door.",
+          "start": 23.608,
+          "end": 23.927
+        }
+      ]
+    },
+    {
+      "id": "e2",
+      "text": "It's just not the only one.",
+      "start": 24.227,
+      "end": 25.627,
+      "words": [
+        {
+          "w": "It's",
+          "start": 24.227,
+          "end": 24.484
+        },
+        {
+          "w": "just",
+          "start": 24.484,
+          "end": 24.74
+        },
+        {
+          "w": "not",
+          "start": 24.74,
+          "end": 24.95
+        },
+        {
+          "w": "the",
+          "start": 24.95,
+          "end": 25.16
+        },
+        {
+          "w": "only",
+          "start": 25.16,
+          "end": 25.417
+        },
+        {
+          "w": "one.",
+          "start": 25.417,
+          "end": 25.627
+        }
+      ]
+    },
+    {
+      "id": "e3",
+      "text": "So pick yours on purpose.",
+      "start": 26.177,
+      "end": 27.595,
+      "words": [
+        {
+          "w": "So",
+          "start": 26.177,
+          "end": 26.358
+        },
+        {
+          "w": "pick",
+          "start": 26.358,
+          "end": 26.641
+        },
+        {
+          "w": "yours",
+          "start": 26.641,
+          "end": 26.977
+        },
+        {
+          "w": "on",
+          "start": 26.977,
+          "end": 27.157
+        },
+        {
+          "w": "purpose.",
+          "start": 27.157,
+          "end": 27.595
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "advisersPoint": 0.693,
+    "these": 3.229,
+    "drop": 4.2,
+    "item1": 4.78,
+    "item2": 5.94,
+    "item3": 7.11,
+    "item4": 8.27,
+    "ridiculous": 11.181,
+    "works": 12.909,
+    "gpa": 17.4,
+    "doIt": 19.323,
+    "walkIn": 19.431,
+    "whiteout": 22.15,
+    "collegeReal": 22.45,
+    "notOnly": 25.417,
+    "purpose": 27.157,
+    "end": 28.0
+  }
+}

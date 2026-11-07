@@ -15,6 +15,10 @@ import json, sys
 def resolve(rule, tl):
     parts = rule.split()
     base, off = parts[0], float(parts[1]) if len(parts) > 1 else 0.0
+    try:  # absolute seconds (e.g. a music pick)
+        return float(base) + off
+    except ValueError:
+        pass
     if base == "end":
         return tl["duration"] + off
     lines = {l["id"]: l for l in tl["lines"]}

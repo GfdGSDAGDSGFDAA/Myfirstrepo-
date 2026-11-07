@@ -48,6 +48,12 @@ def main(script_path, out_dir, timeline_path):
     audio = [np.zeros(int(t * SR), dtype=np.float32)]
     lines = []
     for ln in script["lines"]:
+        if "at" in ln:  # pin this line to an absolute time (e.g. a music downbeat)
+            if ln["at"] < t - 1e-3:
+                print(f"WARN {ln['id']}: wanted {ln['at']}s but previous line ends {t:.2f}s")
+            else:
+                audio.append(np.zeros(int((ln["at"] - t) * SR), dtype=np.float32))
+                t = ln["at"]
         samples, sr = k.create(ln["text"], voice=voice, speed=ln.get("speed", speed), lang="en-us")
         assert sr == SR
         s = trim(samples.astype(np.float32))
@@ -58,8 +64,9 @@ def main(script_path, out_dir, timeline_path):
         gap = ln.get("pauseAfter", 0.25)
         audio.append(np.zeros(int(gap * SR), dtype=np.float32))
         t += dur + gap
-    tail = script.get("tail", 0.8)
-    audio.append(np.zeros(int(tail * SR), dtype=np.float32))
+    total = script.get("totalDuration")
+    tail = (total - t) if total else script.get("tail", 0.8)
+    audio.append(np.zeros(max(0, int(tail * SR)), dtype=np.float32))
     y = np.concatenate(audio)
     y = y / (np.abs(y).max() + 1e-9) * 0.89  # peak ~ -1 dBFS
     os.makedirs(out_dir, exist_ok=True)

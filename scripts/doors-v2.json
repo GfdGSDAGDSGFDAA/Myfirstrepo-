@@ -1,0 +1,28 @@
+{
+  "title": "Doors v2 — you don't need college to make it",
+  "music": "VYZEE (Slowed) — first 28s; drop at 4.2s, bass cuts out at 22.2s",
+  "voice": "af_heart",
+  "speed": 1.0,
+  "fps": 30,
+  "leadIn": 0.25,
+  "totalDuration": 28.0,
+  "lines": [
+    { "id": "h1", "text": "Everyone told you to go to college.", "pauseAfter": 0.25 },
+    { "id": "h2", "text": "Nobody mentioned these.", "pauseAfter": 0.0 },
+
+    { "id": "i1", "text": "E-commerce.", "at": 4.78, "pauseAfter": 0.0 },
+    { "id": "i2", "text": "Day trading.", "at": 5.94, "pauseAfter": 0.0 },
+    { "id": "i3", "text": "Content creation.", "at": 7.11, "pauseAfter": 0.0 },
+    { "id": "i4", "text": "Running your own business.", "at": 8.27, "pauseAfter": 0.0 },
+
+    { "id": "r1", "text": "The stuff people call ridiculous…", "at": 10.01, "pauseAfter": 0.2 },
+    { "id": "r2", "text": "right up until it works.", "pauseAfter": 0.0 },
+
+    { "id": "g1", "text": "None of these care about your GPA.", "at": 15.79, "pauseAfter": 0.25 },
+    { "id": "g2", "text": "They care if you can actually do it.", "pauseAfter": 0.0 },
+
+    { "id": "e1", "text": "College is a real door.", "at": 22.45, "pauseAfter": 0.3 },
+    { "id": "e2", "text": "It's just not the only one.", "pauseAfter": 0.55 },
+    { "id": "e3", "text": "So pick yours on purpose.", "pauseAfter": 0.0 }
+  ]
+}
