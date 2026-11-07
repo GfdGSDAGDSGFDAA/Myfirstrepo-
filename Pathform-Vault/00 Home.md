@@ -8,7 +8,8 @@ tags: [pathform, home]
 > Roblox game work lives in a **separate** vault.
 
 ## Start here
-- New chat? Paste [[Prompts/Starter prompt for a new Claude Code chat]]
+- New chat on the PC? Paste [[Prompts/PC video-making chat starter]]
+- Older cloud-era starter: [[Prompts/Starter prompt for a new Claude Code chat]]
 - PC setup and ElevenLabs: [[12 PC Setup and ElevenLabs]]
 
 ## Notes
