@@ -1,0 +1,501 @@
+{
+ "fps": 60,
+ "duration": 34.0,
+ "voice": "af_heart",
+ "engine": "kokoro-v1.0 + polish",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Time off, denied. Closing Saturday. Thirteen twenty-five an hour.",
+   "start": 0.2,
+   "end": 3.77,
+   "words": [
+    {
+     "w": "Time",
+     "start": 0.2,
+     "end": 0.52
+    },
+    {
+     "w": "off,",
+     "start": 0.52,
+     "end": 0.84
+    },
+    {
+     "w": "denied.",
+     "start": 0.84,
+     "end": 1.32
+    },
+    {
+     "w": "Closing",
+     "start": 1.32,
+     "end": 1.8
+    },
+    {
+     "w": "Saturday.",
+     "start": 1.8,
+     "end": 2.52
+    },
+    {
+     "w": "Thirteen",
+     "start": 2.52,
+     "end": 2.88
+    },
+    {
+     "w": "twenty-five",
+     "start": 2.88,
+     "end": 3.24
+    },
+    {
+     "w": "an",
+     "start": 3.24,
+     "end": 3.4
+    },
+    {
+     "w": "hour.",
+     "start": 3.4,
+     "end": 3.77
+    }
+   ],
+   "asr": "Time off denied, closing Saturday, 1325 an hour."
+  },
+  {
+   "id": "idea",
+   "text": "So you design a hoodie on your break, and your friends call it unrealistic.",
+   "start": 3.97,
+   "end": 7.642,
+   "words": [
+    {
+     "w": "So",
+     "start": 3.97,
+     "end": 4.21
+    },
+    {
+     "w": "you",
+     "start": 4.21,
+     "end": 4.29
+    },
+    {
+     "w": "design",
+     "start": 4.29,
+     "end": 4.61
+    },
+    {
+     "w": "a",
+     "start": 4.61,
+     "end": 4.69
+    },
+    {
+     "w": "hoodie",
+     "start": 4.69,
+     "end": 5.09
+    },
+    {
+     "w": "on",
+     "start": 5.09,
+     "end": 5.17
+    },
+    {
+     "w": "your",
+     "start": 5.17,
+     "end": 5.25
+    },
+    {
+     "w": "break,",
+     "start": 5.25,
+     "end": 5.73
+    },
+    {
+     "w": "and",
+     "start": 5.73,
+     "end": 5.89
+    },
+    {
+     "w": "your",
+     "start": 5.89,
+     "end": 6.05
+    },
+    {
+     "w": "friends",
+     "start": 6.05,
+     "end": 6.37
+    },
+    {
+     "w": "call",
+     "start": 6.37,
+     "end": 6.53
+    },
+    {
+     "w": "it",
+     "start": 6.53,
+     "end": 6.69
+    },
+    {
+     "w": "unrealistic.",
+     "start": 6.69,
+     "end": 7.642
+    }
+   ],
+   "asr": "So you design a hoodie on your break, and your friends call it unrealistic."
+  },
+  {
+   "id": "irony",
+   "text": "Then they apply to companies that started as somebody else's idea.",
+   "start": 7.822,
+   "end": 11.231,
+   "words": [
+    {
+     "w": "Then",
+     "start": 7.822,
+     "end": 8.062
+    },
+    {
+     "w": "they",
+     "start": 8.062,
+     "end": 8.222
+    },
+    {
+     "w": "apply",
+     "start": 8.222,
+     "end": 8.542
+    },
+    {
+     "w": "to",
+     "start": 8.542,
+     "end": 8.702
+    },
+    {
+     "w": "companies",
+     "start": 8.702,
+     "end": 9.182
+    },
+    {
+     "w": "that",
+     "start": 9.182,
+     "end": 9.422
+    },
+    {
+     "w": "started",
+     "start": 9.422,
+     "end": 9.742
+    },
+    {
+     "w": "as",
+     "start": 9.742,
+     "end": 9.982
+    },
+    {
+     "w": "somebody",
+     "start": 9.982,
+     "end": 10.302
+    },
+    {
+     "w": "else's",
+     "start": 10.302,
+     "end": 10.782
+    },
+    {
+     "w": "idea.",
+     "start": 10.782,
+     "end": 11.231
+    }
+   ],
+   "asr": "Then they apply to companies that started as somebody else's idea."
+  },
+  {
+   "id": "flop",
+   "text": "Your first store flops. So does your second.",
+   "start": 11.451,
+   "end": 13.681,
+   "words": [
+    {
+     "w": "Your",
+     "start": 11.451,
+     "end": 11.691
+    },
+    {
+     "w": "first",
+     "start": 11.691,
+     "end": 11.851
+    },
+    {
+     "w": "store",
+     "start": 11.851,
+     "end": 12.251
+    },
+    {
+     "w": "flops.",
+     "start": 12.251,
+     "end": 12.811
+    },
+    {
+     "w": "So",
+     "start": 12.811,
+     "end": 12.971
+    },
+    {
+     "w": "does",
+     "start": 12.971,
+     "end": 13.131
+    },
+    {
+     "w": "your",
+     "start": 13.131,
+     "end": 13.211
+    },
+    {
+     "w": "second.",
+     "start": 13.211,
+     "end": 13.681
+    }
+   ],
+   "asr": "Your first store flops, so does your second."
+  },
+  {
+   "id": "how",
+   "text": "Third time, you post the hoodie before it even exists. Forty people ask where to buy it. Thirty-eight pay before you print a single one.",
+   "start": 13.881,
+   "end": 20.622,
+   "words": [
+    {
+     "w": "Third",
+     "start": 13.881,
+     "end": 14.281
+    },
+    {
+     "w": "time,",
+     "start": 14.281,
+     "end": 14.601
+    },
+    {
+     "w": "you",
+     "start": 14.601,
+     "end": 14.761
+    },
+    {
+     "w": "post",
+     "start": 14.761,
+     "end": 15.001
+    },
+    {
+     "w": "the",
+     "start": 15.001,
+     "end": 15.081
+    },
+    {
+     "w": "hoodie",
+     "start": 15.081,
+     "end": 15.561
+    },
+    {
+     "w": "before",
+     "start": 15.561,
+     "end": 15.721
+    },
+    {
+     "w": "it",
+     "start": 15.721,
+     "end": 15.961
+    },
+    {
+     "w": "even",
+     "start": 15.961,
+     "end": 16.201
+    },
+    {
+     "w": "exists.",
+     "start": 16.201,
+     "end": 16.761
+    },
+    {
+     "w": "Forty",
+     "start": 16.761,
+     "end": 17.321
+    },
+    {
+     "w": "people",
+     "start": 17.321,
+     "end": 17.561
+    },
+    {
+     "w": "ask",
+     "start": 17.561,
+     "end": 17.801
+    },
+    {
+     "w": "where",
+     "start": 17.801,
+     "end": 17.961
+    },
+    {
+     "w": "to",
+     "start": 17.961,
+     "end": 18.041
+    },
+    {
+     "w": "buy",
+     "start": 18.041,
+     "end": 18.201
+    },
+    {
+     "w": "it.",
+     "start": 18.201,
+     "end": 18.521
+    },
+    {
+     "w": "Thirty-eight",
+     "start": 18.521,
+     "end": 19.081
+    },
+    {
+     "w": "pay",
+     "start": 19.081,
+     "end": 19.321
+    },
+    {
+     "w": "before",
+     "start": 19.321,
+     "end": 19.561
+    },
+    {
+     "w": "you",
+     "start": 19.561,
+     "end": 19.641
+    },
+    {
+     "w": "print",
+     "start": 19.641,
+     "end": 19.961
+    },
+    {
+     "w": "a",
+     "start": 19.961,
+     "end": 20.041
+    },
+    {
+     "w": "single",
+     "start": 20.041,
+     "end": 20.281
+    },
+    {
+     "w": "one.",
+     "start": 20.281,
+     "end": 20.622
+    }
+   ],
+   "asr": "Third time, you post the hoodie before it even exists. 40 people ask where to buy it. Thirty-eight pay before you print a single one."
+  },
+  {
+   "id": "payoff",
+   "text": "Now the people who laughed are in your replies, asking how you started.",
+   "start": 20.842,
+   "end": 24.305,
+   "words": [
+    {
+     "w": "Now",
+     "start": 20.842,
+     "end": 21.162
+    },
+    {
+     "w": "the",
+     "start": 21.162,
+     "end": 21.322
+    },
+    {
+     "w": "people",
+     "start": 21.322,
+     "end": 21.482
+    },
+    {
+     "w": "who",
+     "start": 21.482,
+     "end": 21.642
+    },
+    {
+     "w": "laughed",
+     "start": 21.642,
+     "end": 22.042
+    },
+    {
+     "w": "are",
+     "start": 22.042,
+     "end": 22.202
+    },
+    {
+     "w": "in",
+     "start": 22.202,
+     "end": 22.282
+    },
+    {
+     "w": "your",
+     "start": 22.282,
+     "end": 22.442
+    },
+    {
+     "w": "replies,",
+     "start": 22.442,
+     "end": 23.162
+    },
+    {
+     "w": "asking",
+     "start": 23.162,
+     "end": 23.482
+    },
+    {
+     "w": "how",
+     "start": 23.482,
+     "end": 23.642
+    },
+    {
+     "w": "you",
+     "start": 23.642,
+     "end": 23.802
+    },
+    {
+     "w": "started.",
+     "start": 23.802,
+     "end": 24.305
+    }
+   ],
+   "asr": "Now the people who laughed are in your replies, asking how you started."
+  },
+  {
+   "id": "cta",
+   "text": "So what would you sell first?",
+   "start": 24.555,
+   "end": 25.833,
+   "words": [
+    {
+     "w": "So",
+     "start": 24.555,
+     "end": 24.795
+    },
+    {
+     "w": "what",
+     "start": 24.795,
+     "end": 24.875
+    },
+    {
+     "w": "would",
+     "start": 24.875,
+     "end": 25.035
+    },
+    {
+     "w": "you",
+     "start": 25.035,
+     "end": 25.115
+    },
+    {
+     "w": "sell",
+     "start": 25.115,
+     "end": 25.435
+    },
+    {
+     "w": "first?",
+     "start": 25.435,
+     "end": 25.833
+    }
+   ],
+   "asr": "So what would you sell first?"
+  }
+ ]
+}

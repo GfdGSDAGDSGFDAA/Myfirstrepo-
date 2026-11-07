@@ -1,0 +1,19 @@
+{
+  "title": "Apply v3 — job pain opener, real 'how' (pre-selling), comment question",
+  "music": "Santigold - Disparate Youth (TikTok sound, starts at 'Don't look ahead'): bar = 1.5785 s",
+  "voice": "af_heart",
+  "speed": 1.1,
+  "fps": 60,
+  "totalDuration": 34.0,
+  "sentencePause": 0.14,
+  "clausePause": 0.06,
+  "sections": [
+    {"id": "hook", "speed": 1.08, "pauseAfter": 0.2, "text": "Time off, denied. Closing Saturday. Thirteen twenty-five an hour."},
+    {"id": "idea", "pauseAfter": 0.18, "text": "So you design a hoodie on your break, and your friends call it unrealistic."},
+    {"id": "irony", "pauseAfter": 0.22, "text": "Then they apply to companies that started as somebody else's idea."},
+    {"id": "flop", "pauseAfter": 0.2, "text": "Your first store flops. So does your second."},
+    {"id": "how", "pauseAfter": 0.22, "text": "Third time, you post the hoodie before it even exists. Forty people ask where to buy it. Thirty-eight pay before you print a single one."},
+    {"id": "payoff", "pauseAfter": 0.25, "text": "Now the people who laughed are in your replies, asking how you started."},
+    {"id": "cta", "pauseAfter": 0.0, "text": "So what would you sell first?"}
+  ]
+}
