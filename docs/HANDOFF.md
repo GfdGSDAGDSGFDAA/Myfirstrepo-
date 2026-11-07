@@ -243,7 +243,8 @@ Tokens live in `src/styles/styleA.ts`; spec in `docs/style-a.md`.
 | **Doors v2** (28 s) | Added the list of paths, music-synced to VYZEE | Too many pauses (lines pinned to beats), captions stacked, list shown going down instead of one-at-a-time, walk/laugh goofy, hallway/setting could look better, wanted dramatic moments, bedroom scene, "don't say college is bad", simulate 3 viewers |
 | **Doors v3** (34–36 s) | Continuous narration, 1-line captions, side-profile walk, atrium reveal, laughing crowd, bedroom, phone-door ending, loop | Wanted solid (not see-through) figures, quicker/smoother list with doors L/R/L/R, better laugh, camera reveal when walking into the door, bedroom must match the door he enters, Thanksgiving question as a spoken hook, ask "which door? 1–5" better, 60 fps, no pause after "GPA"/before "clothing brand" |
 | **Doors V4** (37.3 s, FINAL for now; code ids `DoorsV3*`) | See §9 | Owner's ChatGPT-written "V4 brief" (Thanksgiving dinner → morph → real phone-door ending). Implemented. |
-| **Apply v1** (≈38 s, `ApplyV1Clean`, `scenes/apply-v1/`) | See §9b | First cut sent; owner will send a song next |
+| **Apply v1** (≈38 s, `ApplyV1Clean`, `scenes/apply-v1/`) | See §9b | Owner: "horrible" — too movie-like, weak hook, see-through figures |
+| **Apply v2–v6** (`scenes/apply-v2…v6/`) | See §9c | v6 = CURRENT (`ApplyV6Clean`, 36.1 s, Disparate Youth). Built through 5 rounds of a 4-persona viewer panel |
 
 ---
 
@@ -282,6 +283,23 @@ Tokens live in `src/styles/styleA.ts`; spec in `docs/style-a.md`.
 - QA stills in one go: `cd studio && node qa-stills.mjs ApplyV1Clean out.png 0.25 1.0 5.5 12 …` (times in seconds → one tiled sheet).
 - Speech bubbles in the "Too risky / Be realistic / Get a real job" beat replace the captions on purpose (captions hidden there).
 - When the song arrives: analyze it (Step C), add a `withMusic` composition, and re-time the hook/drop.
+
+## 9c. Apply v6 (video #2, current) and what the viewer panel taught us
+
+- Script `scripts/apply-v6.json`; scenes `studio/src/scenes/apply-v6/` (`ApplyV6.tsx`, `Apps.tsx` = lock screen / store cards / post / receipt / group chat, `Street.tsx`); SFX `pipeline/sfx_apply6.py`.
+- Song: Santigold "Disparate Youth" (TikTok cut from "Don't look ahead…"). Review copy = `ApplyV6`; post `ApplyV6Clean` and add the sound in TikTok.
+- Panel (4 fresh role-play agents per round; model output, NOT real data). Swipe → actions by round:
+
+| Persona | R1 (v2) | R2 (v3) | R3 (v4) | R4 (v5) | R5 (v6) |
+|---|---|---|---|---|---|
+| Malik 15 | swipe 8 s | swipe 8.5 s | watched, 0 | watched, like | watched, 0 |
+| Sofia 17 | swipe 6.8 s | watched, 0 | like | like+share+save | like+share+save |
+| Jordan 20 | swipe 7 s | comment | like+comment+profile | like+comment+profile | like+comment+profile |
+| Andre 24 | swipe 9.5 s | watched, 0 | like+share | like+share+save+profile | like+share |
+
+- Lessons that generalise: open on a relatable notification, not a slogan; show losses in a unit viewers feel (closing hours); real numbers that add up (sims check math); a "how" held on screen; humour beats revenge; no CTA pills; honesty labels.
+- Still costing follows: TTS voice (fix: ElevenLabs), faceless account, no series. A 15-year-old isn't served by a job-pain hook; make a money-first teen variant if that audience matters.
+- A delivered MP4 (`pathform-apply-v1-clean.mp4`, 42 MB) slipped into one commit (39b1852) before root `*.mp4` was gitignored; harmless, but history carries it.
 
 ## 10. Audio details (everything)
 

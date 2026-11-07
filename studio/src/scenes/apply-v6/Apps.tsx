@@ -249,7 +249,7 @@ export const Receipt: React.FC<{t: number}> = ({t}) => {
     <AbsoluteFill style={{opacity: a, transform: `translateY(${(1 - a) * 30}px)`}}>
       <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0}}>
         <Defs />
-        <text x={90} y={455} fontFamily={M} fontSize={26} letterSpacing={3} fill={FG} opacity={0.6}>HOW IT WORKED · SCREENSHOT THIS</text>
+        <text x={90} y={455} fontFamily={M} fontSize={26} letterSpacing={3} fill={FG} opacity={0.6}>HOW IT WORKED</text>
         {steps.map((st, i) => (
           <g key={st} opacity={prog(t, T.math + 0.1 + i * 0.1, T.math + 0.3 + i * 0.1, ease.out)}>
             <circle cx={112} cy={512 + i * 62} r={22} fill={FG} />
@@ -276,7 +276,7 @@ export const Receipt: React.FC<{t: number}> = ({t}) => {
         <g opacity={up}>
           <rect x={140} y={1300} width={800} height={150} rx={36} fill={LIGHT} />
           <text x={180} y={1368} fontFamily={D} fontWeight={800} fontSize={40} fill="#0b0b0b">Net so far</text>
-          <text x={180} y={1418} fontFamily={D} fontWeight={600} fontSize={28} fill="#0b0b0b" opacity={0.75}>my time: ~8 hrs → ~$30/hr this drop</text>
+          <text x={180} y={1418} fontFamily={D} fontWeight={600} fontSize={28} fill="#0b0b0b" opacity={0.75}>~$30/hr this drop · ~$17/hr counting the flops</text>
           <text x={900} y={1400} textAnchor="end" fontFamily={D} fontWeight={800} fontSize={72} fill="#0b0b0b">+$137</text>
         </g>
       </svg>

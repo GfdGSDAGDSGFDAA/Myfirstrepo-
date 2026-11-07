@@ -41,3 +41,12 @@ Status: **P** = provisional (awaiting owner review), **A** = accepted, **R** = r
 | 35 | Camera gained optional `yaw` (+ = look right); old scenes unaffected | A | Spreads gates/signs that stacked behind each other |
 | 36 | End card prompt "What would you build?" (comment bait, no selling) | P | Gives a reason to comment; owner to confirm |
 | 37 | Song: none yet — owner sends a TikTok sound after the first cut; then add `ApplyV1` (with music, review only) + re-time cuts to its beats | P | |
+| 38 | Owner review of v1: "animation horrible", too movie-like (giant tower, garage, box stacking), see-through figures, weak hook, bad phones/ending | A (owner) | Rebuilt as v2 → v6 |
+| 39 | Song for #2: Santigold "Disparate Youth" (TikTok cut starts at "Don't look ahead, there's stormy weather"); bar 1.5785 s; lift at 23.75 s | A (owner) | Review copies only; post `*Clean` + add sound in TikTok |
+| 40 | Viewer-sim panel = 4 personas (15 / 17 / 20 / 24), fresh agents each round, told nothing about the target, stricter each round | A (owner) | Model role-play, NOT audience data |
+| 41 | Panel R1 (v2): all 4 swiped 6.8–9.5 s at the conveyor "one plan" belt → belt CUT (owner) | A (owner) | |
+| 42 | Keep Kokoro voice for #2 (ElevenLabs on the PC for #3). Every round, every sim docked the TTS voice + faceless account | A (owner) | Biggest remaining cost |
+| 43 | No series yet (owner). Every sim said a series/part-2 promise is the only thing that earns a follow | A (owner) | Revisit for #3 |
+| 44 | v6 structure: 11:48 PM work-notification lock screen → hoodie whose print IS "Time off: Denied" → flops in closing hours → 3-night mockup post, 40 asked / 14 paid, refund rule → receipt (net +$137 after −$101 flops) → group chat "$45" → same lock screen Aug 29 "pre-order #15" | A | Panel R4–R5: 3 of 4 personas at 2+ actions |
+| 45 | Honesty rules kept: "ILLUSTRATIVE STORY" tag; real costs ($11 blank, $7 DTF, $8 ship, $2 fees); both hourly figures (~$30 this drop / ~$17 with flops); refused a sim's "real drop" label | A | Never present a made-up story as real |
+| 46 | No share-prompt pill on the end card: all 4 sims read every variant as bait | A (panel) | |

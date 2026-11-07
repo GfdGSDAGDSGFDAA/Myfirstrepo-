@@ -44,20 +44,11 @@ export const ApplyV6: React.FC<{withMusic?: boolean}> = ({withMusic = false}) =>
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(5,5,6,0.8) 0px, rgba(5,5,6,0.55) 360px, rgba(5,5,6,0) 560px)'}} />
       <AbsoluteFill style={{backgroundColor: s.light, opacity: flash}} />
 
-      <LineCaptions t={t} chunks={CHUNKS} y={250} style={s} hidden={t > T.forever + 0.35} />
+      <LineCaptions t={t} chunks={CHUNKS} y={250} style={s} hidden={t > T.forever + 0.6} />
 
       <div style={{position: 'absolute', top: 196, right: 60, fontFamily: s.fontMono, fontSize: 20, letterSpacing: 2, color: s.fg, opacity: 0.45}}>ILLUSTRATIVE STORY</div>
 
-      {/* share prompt (above the gradient so it stays bright) */}
-      {shot === 'end' && t > T.forever + 0.35 && (() => {
-        const k = prog(t, T.forever + 0.35, T.forever + 0.7, ease.out);
-        return (
-          <div style={{position: 'absolute', top: 236 + (1 - k) * 20, left: 100, right: 100, padding: '22px 0', borderRadius: 62, background: s.fg,
-            opacity: k, textAlign: 'center', fontFamily: s.fontDisplay, fontWeight: 800, fontSize: 38, lineHeight: 1.25, color: '#0b0b0b'}}>
-            send this to the jay<br />in your group chat
-          </div>
-        );
-      })()}
+      {/* no share prompt: every viewer sim read it as bait */}
 
       <AbsoluteFill style={{
         opacity: s.grain, mixBlendMode: 'screen',
