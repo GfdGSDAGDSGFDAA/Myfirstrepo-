@@ -12,7 +12,7 @@ const CY = 1080;
 export const PhoneShot: React.FC<{t: number}> = ({t}) => {
   const inP = prog(t, T.pocket - 0.02, T.pocket + 0.35, ease.out);
   const open = prog(t, T.open - 0.12, T.open + 0.4, ease.out); // door swings on "open"
-  const dive = prog(t, T.open + 0.15, T.end - 0.25, ease.in); // camera dives through the door
+  const dive = prog(t, T.open + 0.15, T.hallwayQ - 0.1, ease.in); // camera dives through the door
   const scale = interpolate(inP, [0, 1], [1.12, 1]) * interpolate(dive, [0, 1], [1, 9]) * (1 + 0.05 * prog(t, T.pocket, T.open, ease.soft));
   const rays = open;
 
@@ -65,7 +65,7 @@ export const PhoneShot: React.FC<{t: number}> = ({t}) => {
         <line x1={CX - dw / 2 - 30} y1={dy + dh / 2} x2={CX + dw / 2 + 30} y2={dy + dh / 2} stroke={s.fg} strokeWidth={2} opacity={0.5} />
       </g>
       {/* white-out into the cut */}
-      <rect x={0} y={0} width={1080} height={1920} fill={LIGHT} opacity={prog(t, T.open + 0.35, T.end - 0.12, ease.in)} />
+      <rect x={0} y={0} width={1080} height={1920} fill={LIGHT} opacity={prog(t, T.open + 0.3, T.hallwayQ - 0.08, ease.in)} />
     </svg>
   );
 };

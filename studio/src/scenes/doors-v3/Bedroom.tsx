@@ -19,7 +19,7 @@ export const Bedroom: React.FC<{t: number}> = ({t}) => {
   const fadeIn = prog(t, T.bedroom, T.bedroom + 0.35, ease.out);
   const beatPulse = Math.exp(-sinceBeat(t, beats) * 8);
 
-  const views = interpolate(t, [T.audiences, T.collegeOk], [1204, 48210], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.in});
+  const views = interpolate(t, [T.phone, T.phone + 0.5], [9800, 12400], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.in});
   const followers = interpolate(t, [T.followersAt, T.collegeOk], [12, 1180], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.in});
   const chip = (at: number) => prog(t, at, at + 0.28, ease.out);
   const wifi = prog(t, T.wifi - 0.05, T.wifi + 0.3, ease.out);
@@ -100,20 +100,21 @@ export const Bedroom: React.FC<{t: number}> = ({t}) => {
 
       {/* floating stat chips (screen space so they stay crisp) */}
       {[
-        {at: T.audiences, x: 610, y: 610, icon: 'play', text: `${fmt(views)} VIEWS`},
-        {at: T.followersAt, x: 640, y: 708, icon: 'plus', text: `${fmt(followers)} FOLLOWERS`},
-        {at: T.phone, x: 590, y: 806, icon: 'heart', text: `${(views * 0.127 / 1000).toFixed(1)}K LIKES`},
-      ].map((c, i) => {
-        const a = chip(c.at);
+        {at: T.audiences, x: 470, y: 560, icon: 'play', text: 'DAY 1 · 14 VIEWS'},
+        {at: T.followersAt, x: 470, y: 670, icon: 'play', text: 'DAY 30 · 802 VIEWS'},
+        {at: T.phone, x: 470, y: 780, icon: 'play', text: `DAY 120 · ${(views / 1000).toFixed(1)}K VIEWS`},
+      ].map((c, i, arr) => {
+        const next = arr[i + 1];
+        const a = chip(c.at) * (next ? 1 - 0.55 * chip(next.at) : 1);
         if (a <= 0) return null;
         const y = c.y + (1 - a) * 26 - Math.sin(lt * 1.6 + i) * 6;
         return (
           <g key={i} opacity={a} transform={`translate(${c.x} ${y}) scale(${0.9 + 0.1 * a})`}>
-            <rect x={-20} y={-34} width={380} height={64} rx={32} fill="#0b0b0b" stroke={s.fg} strokeWidth={2} />
-            {c.icon === 'play' && <polygon points="6,-14 6,12 28,-1" fill={s.fg} />}
+            <rect x={-24} y={-44} width={560} height={84} rx={32} fill="#0b0b0b" stroke={s.fg} strokeWidth={2} />
+            {c.icon === 'play' && <polygon points="4,-17 4,15 31,-1" fill={s.fg} />}
             {c.icon === 'plus' && <path d="M 17 -14 L 17 12 M 4 -1 L 30 -1" stroke={s.fg} strokeWidth={5} strokeLinecap="round" />}
             {c.icon === 'heart' && <path d="M 17 12 C -8 -4 2 -22 17 -10 C 32 -22 42 -4 17 12 Z" fill={s.fg} />}
-            <text x={48} y={9} fontFamily={s.fontMono} fontSize={27} fontWeight={500} letterSpacing="0.06em" fill={s.fg}>{c.text}</text>
+            <text x={52} y={12} fontFamily={s.fontMono} fontSize={36} fontWeight={500} letterSpacing="0.04em" fill={s.fg}>{c.text}</text>
           </g>
         );
       })}

@@ -20,17 +20,17 @@ export const T = {
   never: w('hook', 8),
   these: w('hook', -1),
   drop: 4.2,
-  items: [0, 1, 3, 4, 5, 8].map((i) => w('list', i)), // E-com, Day, Freelancing, Reselling, Your(own brand), Content
+  items: [0, 1, 2, 3, 5].map((i) => w('list', i)), // E-com, Freelancing, Reselling, Content, That (clothing brand)
   hundred: w('list', -5), // "And about a hundred more"
   ridStart: sec('ridicule').start,
   ridiculous: w('ridicule', 3),
   until: w('ridicule', 4),
-  burst: 15.23, // beat between "pulls" and "off"
+  burst: 15.79, // beat between "pulls" and "off"
   gpaStart: sec('gpa').start,
   gpa: w('gpa', 4),
   they: w('gpa', 5),
   doIt: w('gpa', -2),
-  whiteIn: 21.55,
+  whiteIn: 21.9,
   bedroom: 22.15, // song: bass drops out
   audiences: w('bedroom', 7),
   followersAt: w('bedroom', 10),
@@ -39,7 +39,8 @@ export const T = {
   collegeOk: sec('close').start,
   notOnly: w('close', 3),
   pocket: w('close', 9),
-  open: w('close', -1),
-  end: 31.44, // hard cut on the beat
+  open: w('close', 17),
+  hallwayQ: w('close', 18), // "So why are you still standing in the hallway?"
+  end: 34.342, // hard cut on the beat → loops to frame 0
 };
 export const FRAMES = Math.round(T.end * tl.fps);

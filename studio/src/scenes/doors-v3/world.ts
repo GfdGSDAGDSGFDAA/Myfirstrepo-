@@ -8,22 +8,22 @@ export const DH = 2.3;
 export const TIER = 3.1; // atrium floor-to-floor height
 export const TIERS = 4;
 
-export type Glyph = 'box' | 'candles' | 'laptop' | 'tag' | 'store' | 'play';
+export type Glyph = 'box' | 'candles' | 'laptop' | 'tag' | 'store' | 'play' | 'shirt';
 export type Door = {side: -1 | 1; z: number; label?: string; glyph?: Glyph; item?: number};
 
 // Ordered near → far; `item` = position in the spoken list.
 export const DOORS: Door[] = [
   {side: 1, z: 1.6},
   {side: -1, z: 4.0, label: 'E-COMMERCE', glyph: 'box', item: 0},
-  {side: 1, z: 6.5, label: 'DAY TRADING', glyph: 'candles', item: 1},
-  {side: -1, z: 9.0, label: 'FREELANCING', glyph: 'laptop', item: 2},
-  {side: 1, z: 11.5, label: 'RESELLING', glyph: 'tag', item: 3},
-  {side: -1, z: 14.0, label: 'YOUR OWN BRAND', glyph: 'store', item: 4},
-  {side: 1, z: 17.6, label: 'CONTENT CREATION', glyph: 'play', item: 5},
+  {side: 1, z: 6.5, label: 'FREELANCING', glyph: 'laptop', item: 1},
+  {side: -1, z: 9.0, label: 'RESELLING', glyph: 'tag', item: 2},
+  {side: 1, z: 11.5},
+  {side: -1, z: 14.0, label: 'YOUR CLOTHING BRAND', glyph: 'shirt', item: 4},
+  {side: 1, z: 17.6, label: 'CONTENT CREATION', glyph: 'play', item: 3},
   {side: -1, z: 19.6},
   {side: 1, z: 21.2},
 ];
-export const HERO_DOOR = DOORS.find((d) => d.item === 5)!;
+export const HERO_DOOR = DOORS.find((d) => d.item === 3)!;
 
 // Upper atrium tiers ("…and about a hundred more")
 export const TIER_DOORS: {side: -1 | 1; z: number; k: number}[] = [];
@@ -60,6 +60,10 @@ export const GLYPHS: Record<Glyph, number[][][]> = {
     [[-0.34, 0.12], [-0.3, 0.28], [0.3, 0.28], [0.34, 0.12]],
     [[-0.34, 0.12], [-0.23, 0.04], [-0.11, 0.12], [0, 0.04], [0.11, 0.12], [0.23, 0.04], [0.34, 0.12]],
     [[-0.08, -0.3], [-0.08, -0.06], [0.08, -0.06], [0.08, -0.3]],
+  ],
+  shirt: [
+    [[-0.1, 0.3], [-0.32, 0.2], [-0.4, 0.02], [-0.27, -0.03], [-0.22, 0.08], [-0.22, -0.34], [0.22, -0.34], [0.22, 0.08], [0.27, -0.03], [0.4, 0.02], [0.32, 0.2], [0.1, 0.3]],
+    [[-0.1, 0.3], [-0.05, 0.22], [0.05, 0.22], [0.1, 0.3]],
   ],
   play: [
     [[-0.3, -0.2], [0.3, -0.2], [0.3, 0.22], [-0.3, 0.22], [-0.3, -0.2]],

@@ -55,7 +55,7 @@ const ADVISERS: [number, number, number][] = [
   [-1.05, 15.9, 1.04], [1.1, 16.4, 0.96], [-1.3, 17.2, 1.08], [1.32, 17.8, 1.0], [-1.05, 18.6, 0.93],
   [1.0, 19.3, 1.06], [-1.32, 20.2, 0.98], [1.3, 20.9, 1.02], [-1.0, 21.7, 1.07], [1.08, 22.4, 0.95],
 ];
-const DOUBTERS: [number, number][] = [[-0.85, 10.6], [0.95, 11.5], [-1.0, 13.1], [0.8, 14.2]];
+const DOUBTERS: [number, number][] = [[-0.95, 9.6], [0.9, 10.1], [-1.05, 12.6], [0.9, 13.6]];
 
 export const Hallway3: React.FC<{t: number; cam: Cam; showHero: boolean}> = ({t, cam, showHero}) => {
   const P = (p: Vec3) => project(cam, p);
@@ -256,9 +256,9 @@ export const Hallway3: React.FC<{t: number; cam: Cam; showHero: boolean}> = ({t,
     const appear = prog(t, T.ridStart + i * 0.18, T.ridStart + i * 0.18 + 0.3, ease.out);
     return (
       <g key={`b${i}`} transform={mirror ? `translate(${2 * p.x} 0) scale(-1 1)` : undefined}>
-        <Figure x={p.x} y={p.y - laugh * 0.03 * p.s} scale={p.s} fill={s.fgDim} outline strokePx={2.4}
-          opacity={appear * laughOn * (1 - gone)} pointDeg={mirror ? 180 - ang : ang} pointAmt={0.9 * (1 - blown)}
-          leanDeg={-5 - 7 * laugh - 16 * blown} headDY={-0.05 * laugh} leftArmDeg={-38 * (1 - blown) + 20 * blown} />
+        <Figure x={p.x} y={p.y - laugh * 0.045 * p.s} scale={p.s} fill={s.fg} outline strokePx={3}
+          opacity={appear * laughOn * (1 - gone) * 0.85} pointDeg={mirror ? 180 - ang : ang} pointAmt={0.9 * (1 - blown)}
+          leanDeg={-6 - 11 * laugh - 16 * blown} headDY={-0.08 * laugh} leftArmDeg={-38 * (1 - blown) + 20 * blown} />
       </g>
     );
   });
@@ -273,15 +273,15 @@ export const Hallway3: React.FC<{t: number; cam: Cam; showHero: boolean}> = ({t,
     if (a <= 0.01) return null;
     const top = P([d.side * W, FLOOR - DH, d.z + DW / 2]);
     if (top.d < 0.6 || (top.d > 8.5 && !isHero)) return null;
-    const half = d.label!.length * 11.5;
-    const x = Math.max(36 + half, Math.min(1044 - half, top.x));
+    const half = d.label!.length * 14.5;
+    const x = Math.max(36 + half, Math.min(1044 - half, isHero && top.d > 6 ? Math.max(top.x, 640 + half) : top.x));
     const y = top.y - 34;
     if (Math.abs(x - 540) < 90 && !isHero) return null;
     return (
       <g key={`l${i}`} opacity={Math.min(1, a)}>
         <line x1={top.x} y1={top.y - 8} x2={top.x} y2={y + 12} stroke={s.fg} strokeWidth={2} opacity={0.8} />
-        <text x={x} y={y} textAnchor="middle" fontFamily={s.fontMono} fontSize={32}
-          fontWeight={500} letterSpacing="0.1em" fill={s.fg} stroke={s.bg} strokeWidth={10} paintOrder="stroke">{d.label}</text>
+        <text x={x} y={y} textAnchor="middle" fontFamily={s.fontMono} fontSize={42}
+          fontWeight={500} letterSpacing="0.08em" fill={s.fg} stroke={s.bg} strokeWidth={10} paintOrder="stroke">{d.label}</text>
       </g>
     );
   });
